@@ -1,26 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import './base.module.scss'
 
-function App() {
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import HomePage from './pages/HomePage'
+import AboutPage from './pages/AboutPage'
+import ActionPage from './pages/ActionPage'
+import DonationPage from './pages/DonationPage'
+import GamePage from './pages/GamePage'
+import SayingPage from './pages/SayingPage'
+import ErrorPage from './pages/ErrorPage'
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <BrowserRouter>
+      <Routes>
+        <Route path='about' element={<AboutPage />} />
+        <Route path='action' element={<ActionPage />} />
+        <Route path='donation' element={<DonationPage />} />
+        <Route path='game' element={<GamePage />} />
+        <Route path='saying' element={<SayingPage />} />
+        <Route path='/' element={<HomePage />} />
+        <Route path='*' element={<ErrorPage/>}/>
+      </Routes>
+    </BrowserRouter>
+  )
 }
 
-export default App;
+export default App
