@@ -1,5 +1,5 @@
 import './base.module.scss'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { HashRouter, Routes, Route } from 'react-router-dom'
 import HomePage from './pages/HomePage'
 import AboutPage from './pages/AboutPage'
 import ActionPage from './pages/ActionPage'
@@ -10,12 +10,10 @@ import ErrorPage from './pages/ErrorPage'
 import SecretPage from './pages/SecretPage'
 import DiscountPage from './pages/DiscountPage'
 
-const basename = process.env.PUBLIC_URL
-
 const App = () => {
   return (
     <div style={{minWidth: '390px'}}>
-      <BrowserRouter basename={basename}>
+      <HashRouter>
         <Routes>
           <Route path='about' element={<AboutPage />} />
           <Route path='action' element={<ActionPage />} />
@@ -27,7 +25,7 @@ const App = () => {
           <Route path='/' element={<HomePage />} />
           <Route path='*' element={<ErrorPage />} />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </div>
   )
 }
