@@ -4,12 +4,13 @@ import YoutubeDisplayBox from '../components/YoutubeDisplayBox'
 import Divider from '../Layout/Divider'
 import { dotBookData } from '../wordingData'
 import DotProductItem from '../components/DotProductItem'
+import { pageOpeningData } from '../wordingData'
 
 const ActionPage: React.FC = () => {
   return (
     <MainWrapper>
       <div className='leading-loose mt-4 text-justify'>
-        在青春點點點結束後，教主馬克語教母瑪麗仍然努力將青點教的教義發揚光大，期望能夠讓青點宇宙逐漸擴大，給大家智慧的光輝。以下紀錄教主教母在弘揚青點教過程中的點點滴滴。
+        {pageOpeningData.action[0]}
       </div>
       <Divider content='逝世追思紀念會' />
       {memorialData.map((data) => (

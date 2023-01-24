@@ -4,6 +4,7 @@ import allPayLogo from '../assets/Logo/allPayLogo.png'
 import payPalLogo from '../assets/Logo/payPalLogo.png'
 import streetLogo from '../assets/Logo/streetLogo.png'
 import DonationItem from '../components/DonationItem'
+import { pageOpeningData } from '../wordingData'
 
 
 
@@ -12,7 +13,7 @@ const DonationPage: React.FC = () => {
   return (
     <MainWrapper>
       <div className='leading-loose mt-4 text-justify'>
-        各位青點教友們還記得櫻鈴和巴夫洛夫的狗，當鈴聲響起就要捐錢給教主教母，不管是保馬基金或瑪莉的隆乳基金都需要大家的努力。贊助青春點點點，讓我們的青春夢可以走得更長更順。
+        {pageOpeningData.donation}
       </div>
       <div className='grid grid-cols-2 my-4 gap-4'>
         <DonationItem title='加入會員' url='http://bit.ly/supportmarcy'>

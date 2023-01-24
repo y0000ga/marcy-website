@@ -1,9 +1,7 @@
 import axios from 'axios'
-
-const youtubeKey = 'AIzaSyCOIV7ofPOEZtYDiz5wYLsg9y8LISB3dTA'
+import { youtubeAuth } from '../keyData'
 
 const youtubeURL = 'https://www.googleapis.com/youtube/v3'
-
 
 export const youtubeGetInfoApi = async (id: string) => {
   try {
@@ -11,7 +9,7 @@ export const youtubeGetInfoApi = async (id: string) => {
       params: {
         id: id,
         part: 'statistics',
-        key: `${youtubeKey}`,
+        key: `${youtubeAuth}`,
       },
     })
     return res
@@ -27,7 +25,7 @@ export const youtubeGetChannelInfoApi = async (id: string) => {
       params: {
         part: 'snippet, statistics',
         id: id,
-        key: `${youtubeKey}`,
+        key: `${youtubeAuth}`,
       },
     })
     return res

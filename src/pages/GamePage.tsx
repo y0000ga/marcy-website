@@ -3,6 +3,7 @@ import MainWrapper from '../Layout/MainWrapper'
 import PsychTest from '../components/PsychTest'
 import { BsDot, BsCircle } from 'react-icons/bs'
 import { TfiLayoutLineSolid } from 'react-icons/tfi'
+import { pageOpeningData } from '../wordingData'
 
 const psychTestData = [
   {
@@ -88,20 +89,17 @@ const psychTestData = [
 const GamePage: React.FC = () => {
   return (
     <MainWrapper>
-      <div>
-        <Divider content='麻雀的心理測驗' />
-        {psychTestData.map((data, index) => (
-          <PsychTest number={index + 1} topic={data.topic} key={data.topic}>
-            {data.children}
-          </PsychTest>
-        ))}
+      <div className='leading-loose mt-4 text-justify'>
+        {pageOpeningData.game}
       </div>
+      <Divider content='麻雀的心理測驗' />
+      {psychTestData.map((data, index) => (
+        <PsychTest number={index + 1} topic={data.topic} key={data.topic}>
+          {data.children}
+        </PsychTest>
+      ))}
     </MainWrapper>
   )
 }
 
 export default GamePage
-
-
-// 第五個是橫線: 你現在的生活
-// 第六個是直線: 你在未來所期望的生活

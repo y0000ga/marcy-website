@@ -1,33 +1,6 @@
 import { BsArrowLeftSquareFill, BsArrowRightSquareFill } from 'react-icons/bs'
 import { useState, useEffect } from 'react'
-
-const advertiseInfo: { title: string; imgUrl: string; videoUrl: string }[] = [
-  {
-    title: '☎ 處女約炮 | 馬克信箱 17w34',
-    imgUrl: 'https://i.ytimg.com/vi/501872k71bc/maxresdefault.jpg',
-    videoUrl: 'https://www.youtube.com/watch?v=501872k71bc',
-  },
-  {
-    title: '【廣成】男人就是內建不負責任的生物',
-    imgUrl: 'https://i.ytimg.com/vi/-AERKQc6n-U/maxresdefault.jpg',
-    videoUrl: 'https://www.youtube.com/watch?v=-AERKQc6n-U',
-  },
-  {
-    title: '㍡渣男訊號！(0.38) | 馬克信箱 18w35',
-    imgUrl: 'https://i.ytimg.com/vi/3UKShkBr8zg/maxresdefault.jpg',
-    videoUrl: 'https://www.youtube.com/watch?app=desktop&v=3UKShkBr8zg',
-  },
-  {
-    title: '開放里里長報告：科學脫單來了！| 馬克信箱 18w33',
-    imgUrl: 'https://i.ytimg.com/vi/4I55Dx8rsTw/maxresdefault.jpg',
-    videoUrl: 'https://www.youtube.com/watch?v=4I55Dx8rsTw&t=1s',
-  },
-  {
-    title: '♨ 肉慾橫流的同志三溫暖 | 馬克信箱 19w16',
-    imgUrl: 'https://i.ytimg.com/vi/PpXp_1YCNoU/maxresdefault.jpg',
-    videoUrl: 'https://www.youtube.com/watch?v=PpXp_1YCNoU',
-  },
-]
+import { advertiseInfo } from '../wordingData';
 
 const AdvertiseBox: React.FC = () => {
   const enabled = true

@@ -6,6 +6,7 @@ import EmojiPicker from 'emoji-picker-react'
 import { BsEmojiSmileFill } from 'react-icons/bs'
 import { RxCross2 } from 'react-icons/rx'
 import { useState } from 'react'
+import { pageOpeningData } from '../wordingData'
 
 enum GenderEnum {
   female = 'female',
@@ -46,6 +47,9 @@ const SecretPage: React.FC = () => {
 
   return (
     <MainWrapper>
+      <div className='leading-loose mt-4 text-justify'>
+        {pageOpeningData.secret[0]}
+      </div>
       <form onSubmit={handleSubmit(onSubmit)} className='flex flex-col'>
         <div className='my-2 text-xl flex items-center'>
           <label className='w-1/6 text-justify'>綽號</label>

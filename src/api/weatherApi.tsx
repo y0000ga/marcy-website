@@ -1,6 +1,5 @@
 import axios from 'axios'
-
-const weatherAuth = 'CWB-E8AA8563-C728-495D-84CC-5E8823B5ABE0'
+import { weatherAuth } from '../keyData'
 
 export const weatherApi = async () => {
   try {
