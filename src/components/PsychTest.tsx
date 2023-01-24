@@ -1,7 +1,6 @@
 import { useEffect, useState, useRef } from 'react'
 import { useForm, SubmitHandler } from 'react-hook-form'
 import Swal from 'sweetalert2'
-
 import PsychTestIcon_1 from '../assets/PsychTestIcon/PsychTestIcon(1).png'
 import PsychTestIcon_2 from '../assets/PsychTestIcon/PsychTestIcon(2).png'
 import PsychTestIcon_3 from '../assets/PsychTestIcon/PsychTestIcon(3).png'

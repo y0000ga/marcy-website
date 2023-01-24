@@ -22,7 +22,7 @@ const App = () => {
           <Route path='saying' element={<SayingPage />} />
           <Route path='secret' element={<SecretPage />} />
           <Route path='discount' element={<DiscountPage />} />
-          <Route path='/' element={<HomePage />} />
+          <Route path='home' element={<HomePage />} />
           <Route path='*' element={<ErrorPage />} />
         </Routes>
       </HashRouter>
