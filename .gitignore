@@ -2,7 +2,7 @@
 /node_modules
 /.pnp
 .pnp.js
-target.md
+*.md
 
 /src/keyData.tsx
 /src/wordingData.tsx
