@@ -10,10 +10,12 @@ import ErrorPage from './pages/ErrorPage'
 import SecretPage from './pages/SecretPage'
 import DiscountPage from './pages/DiscountPage'
 
+const basename = process.env.PUBLIC_URL
+
 const App = () => {
   return (
     <div style={{minWidth: '390px'}}>
-      <BrowserRouter>
+      <BrowserRouter basename={basename}>
         <Routes>
           <Route path='about' element={<AboutPage />} />
           <Route path='action' element={<ActionPage />} />
