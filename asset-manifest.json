@@ -1,0 +1,38 @@
+{
+  "files": {
+    "main.css": "/marcy-website/static/css/main.296cdcf3.css",
+    "main.js": "/marcy-website/static/js/main.4166a25d.js",
+    "static/media/sayingBackground.svg": "/marcy-website/static/media/sayingBackground.d32257e0cc529420b2b2b013e595e43f.svg",
+    "static/media/gameBackground.svg": "/marcy-website/static/media/gameBackground.018f354922e6c8a65d6e34d75c1eb001.svg",
+    "static/media/donationBackground.svg": "/marcy-website/static/media/donationBackground.a9872333f8f9f9cc6506c5379804dbb8.svg",
+    "static/media/MaryInThree.svg": "/marcy-website/static/media/MaryInThree.ba013789bbc57b6412353c305ae10313.svg",
+    "static/media/actionBackground.svg": "/marcy-website/static/media/actionBackground.7f3531d97d7a27f10cc3b2446092561b.svg",
+    "static/media/aboutBackground.svg": "/marcy-website/static/media/aboutBackground.e7255a3ca4652694769a7ea01f818b9c.svg",
+    "static/media/HankCake.svg": "/marcy-website/static/media/HankCake.1faf15701252f9039f9d6c691d38c85d.svg",
+    "static/media/MarkFace.svg": "/marcy-website/static/media/MarkFace.6a00cb4c3dbffcf1ac49bc9fe780b853.svg",
+    "static/media/secretBackground.png": "/marcy-website/static/media/secretBackground.19a190c764c5a3f2b957.png",
+    "static/media/donationLogo.svg": "/marcy-website/static/media/donationLogo.e36a8de900123b95dec5b263444a4037.svg",
+    "static/media/allPayLogo.png": "/marcy-website/static/media/allPayLogo.103789a0317d1f9e74ec.png",
+    "static/media/discountBackground.png": "/marcy-website/static/media/discountBackground.ff810da426320e590c3a.png",
+    "static/media/PsychTestIcon(5).png": "/marcy-website/static/media/PsychTestIcon(5).410aabcdf37f6dfe1caf.png",
+    "static/media/SayingIcon (4).png": "/marcy-website/static/media/SayingIcon (4).53caaaff83ba26b38d2c.png",
+    "static/media/PsychTestIcon(1).png": "/marcy-website/static/media/PsychTestIcon(1).6c9a03416793d62fe90b.png",
+    "static/media/PsychTestIcon(3).png": "/marcy-website/static/media/PsychTestIcon(3).852aef7084d02eedd7cc.png",
+    "static/media/PsychTestIcon(4).png": "/marcy-website/static/media/PsychTestIcon(4).9e51a4cea0de201ce2c3.png",
+    "static/media/SayingIcon (1).png": "/marcy-website/static/media/SayingIcon (1).bd507b78d4faa8480266.png",
+    "static/media/SayingIcon (2).png": "/marcy-website/static/media/SayingIcon (2).6757f54184def9c039ee.png",
+    "static/media/SayingIcon (3).png": "/marcy-website/static/media/SayingIcon (3).e10183e04bf64303f629.png",
+    "static/media/PsychTestIcon(2).png": "/marcy-website/static/media/PsychTestIcon(2).33ff1dbb78594db53caa.png",
+    "static/media/PsychTestIcon(6).png": "/marcy-website/static/media/PsychTestIcon(6).98c58e1eb2c2f54cc050.png",
+    "static/media/marcyLogo.svg": "/marcy-website/static/media/marcyLogo.a18661b83d2d5d080f4a9f6a79416f9f.svg",
+    "static/media/streetLogo.png": "/marcy-website/static/media/streetLogo.d7ef660456e9b681b4a9.png",
+    "static/media/payPalLogo.png": "/marcy-website/static/media/payPalLogo.25b341e7e8db7bd5e1e5.png",
+    "index.html": "/marcy-website/index.html",
+    "main.296cdcf3.css.map": "/marcy-website/static/css/main.296cdcf3.css.map",
+    "main.4166a25d.js.map": "/marcy-website/static/js/main.4166a25d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.296cdcf3.css",
+    "static/js/main.4166a25d.js"
+  ]
+}
