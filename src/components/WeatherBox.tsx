@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { weatherApi } from '../api'
+import { weatherApi } from '../api/weatherApi'
 
 const WeatherBox: React.FC = () => {
   const [currentWeather, setCurrentWeather] = useState<string[]>()

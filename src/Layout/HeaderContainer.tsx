@@ -6,7 +6,7 @@ import TitleBackground from '../components/TitleBackground'
 interface HeaderContainerProps {}
 
 const HeaderContainer: React.FC<HeaderContainerProps> = () => {
-  const pathname:string = useLocation().pathname
+  const pathname: string = useLocation().pathname
   return (
     <>
       {pathname === '/' && (
@@ -19,7 +19,9 @@ const HeaderContainer: React.FC<HeaderContainerProps> = () => {
         pathname === '/action' ||
         pathname === '/saying' ||
         pathname === '/donation' ||
-        pathname === '/game') && <TitleBackground pathname={pathname} />}
+        pathname === '/game' ||
+        pathname === '/discount' ||
+        pathname === '/secret') && <TitleBackground pathname={pathname} />}
     </>
   )
 }

@@ -1,4 +1,4 @@
-import { youtubeGetInfoApi } from '../api'
+import { youtubeGetInfoApi } from '../api/youtubeApi'
 import { useEffect, useState } from 'react'
 import { AiOutlineEye, AiOutlineLike, AiOutlineComment } from 'react-icons/ai'
 
@@ -70,7 +70,7 @@ const YoutubeDisplayBox: React.FC<YoutubeDisplayBoxProps> = ({
       <div className='leading-loose my-4 text-justify'>{description}</div>
       <ul className='leading-loose my-4 text-justify'>
         {quote?.map((data) => (
-          <li className='bg-yellow-100 my-4' key={data}>
+          <li className='bg-yellow-100 my-4 px-4' key={data}>
             🗣{data}
           </li>
         ))}

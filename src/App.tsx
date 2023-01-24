@@ -9,6 +9,8 @@ import DonationPage from './pages/DonationPage'
 import GamePage from './pages/GamePage'
 import SayingPage from './pages/SayingPage'
 import ErrorPage from './pages/ErrorPage'
+import SecretPage from './pages/SecretPage'
+import DiscountPage from './pages/DiscountPage'
 
 const App = () => {
   return (
@@ -19,8 +21,10 @@ const App = () => {
         <Route path='donation' element={<DonationPage />} />
         <Route path='game' element={<GamePage />} />
         <Route path='saying' element={<SayingPage />} />
+        <Route path='secret' element={<SecretPage />} />
+        <Route path='discount' element={<DiscountPage />} />
         <Route path='/' element={<HomePage />} />
-        <Route path='*' element={<ErrorPage/>}/>
+        <Route path='*' element={<ErrorPage />} />
       </Routes>
     </BrowserRouter>
   )
