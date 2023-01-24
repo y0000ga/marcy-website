@@ -2,8 +2,8 @@
 /node_modules
 /.pnp
 .pnp.js
-.target.md
-.vscode
+target.md
+
 /src/keyData.tsx
 /src/wordingData.tsx
 
