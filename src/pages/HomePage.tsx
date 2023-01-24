@@ -17,10 +17,6 @@ const HomePage: React.FC<HomePageProps> = () => {
           <span className='text-sky-500 font-normal'>上班可以聽 LWW </span>
           與瑪麗繼續共同主持，每週一、四上午11點更新。
         </div>
-        <Divider content='傳教行動中' />
-        <Divider content='教主教母說' />
-        <Divider content='救救窮信箱' />
-        <Divider content='青點遊戲室' />
         <Divider content='相關新聞' />
       </div>
     </MainWrapper>

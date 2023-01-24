@@ -14,19 +14,21 @@ import DiscountPage from './pages/DiscountPage'
 
 const App = () => {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path='about' element={<AboutPage />} />
-        <Route path='action' element={<ActionPage />} />
-        <Route path='donation' element={<DonationPage />} />
-        <Route path='game' element={<GamePage />} />
-        <Route path='saying' element={<SayingPage />} />
-        <Route path='secret' element={<SecretPage />} />
-        <Route path='discount' element={<DiscountPage />} />
-        <Route path='/' element={<HomePage />} />
-        <Route path='*' element={<ErrorPage />} />
-      </Routes>
-    </BrowserRouter>
+    <div style={{minWidth: '390px'}}>
+      <BrowserRouter>
+        <Routes>
+          <Route path='about' element={<AboutPage />} />
+          <Route path='action' element={<ActionPage />} />
+          <Route path='donation' element={<DonationPage />} />
+          <Route path='game' element={<GamePage />} />
+          <Route path='saying' element={<SayingPage />} />
+          <Route path='secret' element={<SecretPage />} />
+          <Route path='discount' element={<DiscountPage />} />
+          <Route path='/' element={<HomePage />} />
+          <Route path='*' element={<ErrorPage />} />
+        </Routes>
+      </BrowserRouter>
+    </div>
   )
 }
 

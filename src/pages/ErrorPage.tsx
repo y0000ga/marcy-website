@@ -1,8 +1,12 @@
-const ErrorPage: React.FC = () => {
+import { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 
-  return (
-    <h1>Error Page</h1>
-  )
+const ErrorPage = () => {
+  const navigate = useNavigate()
+  useEffect(() => {
+    navigate('/')
+  }, [navigate])
+  return <div></div>
 }
 
 export default ErrorPage
