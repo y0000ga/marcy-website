@@ -9,7 +9,7 @@ const HeaderContainer: React.FC<HeaderContainerProps> = () => {
   const pathname: string = useLocation().pathname
   return (
     <>
-      {pathname === '/' && (
+      {pathname === '/home' && (
         <>
           <WeatherBox />
           <AdvertiseBox />
