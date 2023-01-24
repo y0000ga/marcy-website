@@ -2,10 +2,7 @@
 /node_modules
 /.pnp
 .pnp.js
-*.md
-
 /src/keyData.tsx
-/src/wordingData.tsx
 
 # testing
 /coverage

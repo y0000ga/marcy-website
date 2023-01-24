@@ -10,8 +10,8 @@ const DiscountPage: React.FC = () => {
       <div className='leading-loose mt-4 text-justify'>
         {pageOpeningData.discount}
       </div>
-      {/* <OnlineDiscount />
-      <OnSiteDiscount /> */}
+      <OnlineDiscount />
+      <OnSiteDiscount />
     </MainWrapper>
   )
 }
