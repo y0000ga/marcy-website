@@ -1,12 +1,25 @@
 import Divider from '../Layout/Divider'
-import { onlineDiscountData, discountTypeData } from '../wordingData'
+import { onlineDiscountData } from '../wordingData'
 import { useState } from 'react'
 import DiscountItem from './DiscountItem'
+import { useTranslation } from 'react-i18next'
 
 const OnlineDiscount: React.FC = () => {
-  const [discountType, setDiscountType] = useState('請選擇優惠類別')
+  const { t } = useTranslation()
+  const [discountType, setDiscountType] = useState<string>(
+    t('discount.selectAll') as string
+  )
   const [discount, setDiscount] = useState(onlineDiscountData)
-  const onlineDiscountType = ['請選擇優惠類別', '全部', ...discountTypeData]
+  const onlineDiscountType = [
+    t('discount.selectAll'),
+    t('discount.all'),
+    t('discountTypeData.0'),
+    t('discountTypeData.1'),
+    t('discountTypeData.2'),
+    t('discountTypeData.3'),
+    t('discountTypeData.4'),
+    t('discountTypeData.5'),
+  ]
   const chooseDiscountTypeHandler = (event: {
     target: { value: React.SetStateAction<string> }
   }) => {
@@ -24,7 +37,7 @@ const OnlineDiscount: React.FC = () => {
   }
   return (
     <div>
-      <Divider content='線上優惠區' />
+      <Divider content={t('divider.onlineDiscount') as string} />
       <select
         className='border border-gray-300 px-4 py-2  rounded-md left-1/2 -translate-x-1/2'
         value={discountType}

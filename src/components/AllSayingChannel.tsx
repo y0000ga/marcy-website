@@ -2,8 +2,10 @@ import { youtubeGetChannelInfoApi } from '../api/youtubeApi'
 import Divider from '../Layout/Divider'
 import { useState, useEffect } from 'react'
 import { BsPerson, BsCameraVideo, BsEye } from 'react-icons/bs'
+import { useTranslation } from 'react-i18next'
 
 const AllSayingChannel = () => {
+  const { t } = useTranslation()
   const [markOrangeInfo, setMarkOrangeInfo] = useState() as any
   const [marcyMailboxInfo, setMarcyMailboxInfo] = useState() as any
 
@@ -23,7 +25,7 @@ const AllSayingChannel = () => {
 
   return (
     <>
-      <Divider content='青點教各種平台' />
+      <Divider content={t('divider.allSayingPlace') as string} />
       {markOrangeInfo && (
         <div
           className='flex my-4'

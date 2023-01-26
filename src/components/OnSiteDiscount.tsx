@@ -1,18 +1,22 @@
 import Divider from '../Layout/Divider'
 import Map from './Map'
-import { discountTypeData, onSiteDiscountData } from '../wordingData'
+import { onSiteDiscountData } from '../wordingData'
 import { useState } from 'react'
 import DiscountItem from './DiscountItem'
+import { useTranslation } from 'react-i18next'
 
 const OnSiteDiscount: React.FC = () => {
-  const [discountType, setDiscountType] = useState('請選擇優惠類別')
+  const { t } = useTranslation()
+  const [discountType, setDiscountType] = useState<string>(
+    t('discount.selectAll') as string
+  )
   const [discount, setDiscount] = useState(onSiteDiscountData)
   const onSiteDiscountType = [
-    '請選擇優惠類別',
-    '全部',
-    discountTypeData[0],
-    discountTypeData[2],
-    discountTypeData[6],
+    t('discount.selectAll'),
+    t('discount.all'),
+    t('discountTypeData.0'),
+    t('discountTypeData.2'),
+    t('discountTypeData.6'),
   ]
   const chooseDiscountTypeHandler = (event: {
     target: { value: React.SetStateAction<string> }
@@ -31,7 +35,7 @@ const OnSiteDiscount: React.FC = () => {
   }
   return (
     <div>
-      <Divider content='現場優惠區' />
+      <Divider content={t('divider.onSiteDiscount') as string} />
       <Map discount={discount} />
       <select
         className='border border-gray-300 px-4 py-2 mt-4 rounded-md left-1/2 -translate-x-1/2'

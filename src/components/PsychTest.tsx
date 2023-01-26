@@ -8,6 +8,8 @@ import PsychTestIcon_4 from '../assets/PsychTestIcon/PsychTestIcon(4).png'
 import PsychTestIcon_5 from '../assets/PsychTestIcon/PsychTestIcon(5).png'
 import PsychTestIcon_6 from '../assets/PsychTestIcon/PsychTestIcon(6).png'
 
+//phyTest
+
 const psychTestIconData = [
   PsychTestIcon_1,
   PsychTestIcon_2,

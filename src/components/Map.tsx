@@ -6,7 +6,8 @@ import {
 } from '@react-google-maps/api'
 import { useState } from 'react'
 import DiscountItem from './DiscountItem'
-import { discountTypeData } from '../wordingData'
+import { useTranslation } from 'react-i18next'
+import { googleMapAuth } from '../keyData'
 
 const center = { lat: 24.985859218125146, lng: 120.20513028560073 }
 
@@ -27,12 +28,13 @@ interface MapProps {
 }
 
 const Map: React.FC<MapProps> = ({ discount }) => {
+  const { t } = useTranslation()
   const onSiteDiscountType = [
-    '請選擇優惠類別',
-    '全部',
-    discountTypeData[0],
-    discountTypeData[2],
-    discountTypeData[6],
+    t('discount.selectAll'),
+    t('discount.all'),
+    t('discountTypeData.0'),
+    t('discountTypeData.2'),
+    t('discountTypeData.6'),
   ]
   const containerStyle = {
     width: '100%',
@@ -53,7 +55,7 @@ const Map: React.FC<MapProps> = ({ discount }) => {
   }>()
   const [isInfoShown, setIsInfoShown] = useState(false)
   const { isLoaded } = useLoadScript({
-    googleMapsApiKey: 'AIzaSyBdSDIkzu_cKFs2lIsEg2VjFpndkg2_qro',
+    googleMapsApiKey: googleMapAuth,
   })
   if (!isLoaded) return <div>Loading...</div>
   return (

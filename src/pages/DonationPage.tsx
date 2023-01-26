@@ -4,28 +4,38 @@ import allPayLogo from '../assets/Logo/allPayLogo.png'
 import payPalLogo from '../assets/Logo/payPalLogo.png'
 import streetLogo from '../assets/Logo/streetLogo.png'
 import DonationItem from '../components/DonationItem'
-import { pageOpeningData } from '../wordingData'
-
-
-
+import { useTranslation } from 'react-i18next'
 
 const DonationPage: React.FC = () => {
+  const { t } = useTranslation()
   return (
     <MainWrapper>
       <div className='leading-loose mt-4 text-justify'>
-        {pageOpeningData.donation}
+        {t('pageOpeningData.donation.0')}
       </div>
       <div className='grid grid-cols-2 my-4 gap-4'>
-        <DonationItem title='加入會員' url='http://bit.ly/supportmarcy'>
+        <DonationItem
+          title={t('donationData.0.title')}
+          url={t('donationData.0.url') as string}
+        >
           <BsPersonPlus className='text-8xl w-28 h-28' />
         </DonationItem>
-        <DonationItem title='台灣點友請進' url='https://p.allpay.com.tw/kp4Ja'>
+        <DonationItem
+          title={t('donationData.1.title')}
+          url={t('donationData.1.url') as string}
+        >
           <img src={allPayLogo} alt='allPay' className='rounded-full w-28' />
         </DonationItem>
-        <DonationItem title='海外點友請進' url='https://paypal.me/ormarc'>
+        <DonationItem
+          title={t('donationData.2.title')}
+          url={t('donationData.2.url') as string}
+        >
           <img src={payPalLogo} alt='payPal' className='w-28' />
         </DonationItem>
-        <DonationItem title='900866569'>
+        <DonationItem
+          title={t('donationData.3.title')}
+          url={t('donationData.3.url') as string}
+        >
           <img src={streetLogo} alt='Street' className='rounded-full w-28' />
         </DonationItem>
       </div>

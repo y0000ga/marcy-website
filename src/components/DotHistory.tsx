@@ -2,19 +2,22 @@ import Divider from '../Layout/Divider'
 import { dotHistory, historyYear } from '../wordingData'
 import { useState } from 'react'
 import DotHistoryItem from './DotHistoryItem'
+import { useTranslation } from 'react-i18next'
 
 const DotHistory: React.FC = () => {
   const [year, setYear] = useState('all')
   const [history, setHistory] = useState(dotHistory)
+  const { t } = useTranslation()
+  const allYear = t('historyYear')
   return (
     <>
-      <Divider content='青點歷史' />
+      <Divider content={t('divider.history') as string} />
       <div className='leading-loose mt-4 text-justify flex flex-col items-center'>
         <select
           value={year}
           onChange={(event) => {
             setYear(event.target.value)
-            if (event.target.value === '不限定年度') {
+            if (event.target.value === allYear) {
               setHistory(dotHistory)
               return
             }

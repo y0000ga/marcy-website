@@ -6,12 +6,12 @@ import EmojiPicker from 'emoji-picker-react'
 import { BsEmojiSmileFill } from 'react-icons/bs'
 import { RxCross2 } from 'react-icons/rx'
 import { useState } from 'react'
-import { pageOpeningData } from '../wordingData'
+import { useTranslation } from 'react-i18next'
 
 enum GenderEnum {
-  female = 'female',
-  male = 'male',
-  other = 'other',
+  female = '女',
+  male = '男',
+  other = '其他',
 }
 
 enum TypeEnum {
@@ -29,6 +29,7 @@ interface IFormInput {
 }
 
 const SecretPage: React.FC = () => {
+  const { t } = useTranslation()
   const navigate = useNavigate()
   const [isEmojiShown, setIsEmojiShown] = useState(false)
   const [chosenEmoji, setChosenEmoji] = useState<string>('😭')
@@ -37,8 +38,10 @@ const SecretPage: React.FC = () => {
     await Swal.fire({
       position: 'top-end',
       icon: 'success',
-      title: `感到 ${chosenEmoji} 的 ${data.nickname}...`,
-      text: `你的${data.type}煩惱會隨著互動框一起消失`,
+      title: `${t('secret.feel')} ${chosenEmoji} ${t('secret.someones')} ${
+        data.nickname
+      }...`,
+      text: `${t('secret.yours')}${data.type}${t('secret.disappear')}`,
       showConfirmButton: false,
       timer: 1500,
     })
@@ -48,11 +51,11 @@ const SecretPage: React.FC = () => {
   return (
     <MainWrapper>
       <div className='leading-loose mt-4 text-justify'>
-        {pageOpeningData.secret[0]}
+        {t('pageOpeningData.secret.0')}
       </div>
       <form onSubmit={handleSubmit(onSubmit)} className='flex flex-col'>
         <div className='my-2 text-xl flex items-center'>
-          <label className='w-1/6 text-justify'>綽號</label>
+          <label className='w-1/6 text-justify'>{t('secret.nickname')}</label>
           <input
             className='my-2 px-4 border border-gray-300 h-10 rounded-lg w-72'
             {...register('nickname', { required: true, maxLength: 20 })}
@@ -61,31 +64,45 @@ const SecretPage: React.FC = () => {
         </div>
         <div className='flex'>
           <div className='my-2 text-xl flex items-center w-1/2'>
-            <label className='w-1/3 text-justify'>性別</label>
+            <label className='w-1/3 text-justify'>{t('secret.gender')}</label>
             <select
               className='my-2 border border-gray-300 h-10 rounded-lg w-28 px-4'
               {...register('gender', { required: true })}
             >
-              <option value='female'>女</option>
-              <option value='male'>男</option>
-              <option value='other'>其他</option>
+              <option value={t('secret.female') as string}>
+                {t('secret.female')}
+              </option>
+              <option value={t('secret.male') as string}>
+                {t('secret.male')}
+              </option>
+              <option value={t('secret.other') as string}>
+                {t('secret.other')}
+              </option>
             </select>
           </div>
           <div className='my-2 text-xl flex items-center w-1/2'>
-            <label className='text-justify w-1/3'>類型</label>
+            <label className='text-justify w-1/3'>{t('secret.type')}</label>
             <select
               className='my-2 border border-gray-300 h-10 rounded-lg w-28 px-4'
               {...register('type', { required: true })}
             >
-              <option value='愛情'>愛情</option>
-              <option value='友情'>友情</option>
-              <option value='工作'>工作</option>
-              <option value='其他'>其他</option>
+              <option value={t('secret.relationship') as string}>
+                {t('secret.relationship')}
+              </option>
+              <option value={t('secret.friendship') as string}>
+                {t('secret.friendship')}
+              </option>
+              <option value={t('secret.career') as string}>
+                {t('secret.career')}
+              </option>
+              <option value={t('secret.other') as string}>
+                {t('secret.other')}
+              </option>
             </select>
           </div>
         </div>
         <div className='my-2 text-xl flex items-start'>
-          <label className='w-1/6 text-justify'>內容</label>
+          <label className='w-1/6 text-justify'>{t('secret.content')}</label>
           <textarea
             className='my-2 p-4 border border-gray-300 rounded-lg w-72 h-80'
             {...register('content', {
@@ -97,7 +114,7 @@ const SecretPage: React.FC = () => {
           />
         </div>
         <div className='my-2 text-xl flex items-start'>
-          <label className='w-1/6 text-justify'>心情</label>
+          <label className='w-1/6 text-justify'>{t('secret.mood')}</label>
           {chosenEmoji}
           {chosenEmoji === '' ? (
             <BsEmojiSmileFill
@@ -123,10 +140,12 @@ const SecretPage: React.FC = () => {
             }}
           />
         )}
-        <input
+        <button
           type='submit'
           className='border border-sky-500 m-4 h-10 rounded-lg text-sky-500 hover:bg-sky-500 hover:text-white cursor-pointer'
-        />
+        >
+          {t('secret.submit')}
+        </button>
       </form>
     </MainWrapper>
   )

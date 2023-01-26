@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next'
 import { FaBook } from 'react-icons/fa'
 import { MdProductionQuantityLimits } from 'react-icons/md'
 
@@ -20,6 +21,7 @@ const DotProductItem: React.FC<DotProductItemProps> = ({ data }) => {
       window.open(buyUrl, '_blank')
     })
   }
+  const { t } = useTranslation()
 
   return (
     <div className='my-4'>
@@ -28,7 +30,12 @@ const DotProductItem: React.FC<DotProductItemProps> = ({ data }) => {
       {(creator || date) && (
         <div className='flex justify-evenly items-center my-2'>
           {creator && <div>{creator}</div>}
-          {date && <div>{date}出版</div>}
+          {date && (
+            <div>
+              {date}
+              {t('dotProductItem.publish')}
+            </div>
+          )}
         </div>
       )}
       {type === 'book' && (

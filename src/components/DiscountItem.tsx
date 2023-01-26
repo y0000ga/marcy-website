@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next'
 import { RxExternalLink } from 'react-icons/rx'
 import { discountTypeData } from '../wordingData'
 
@@ -20,6 +21,7 @@ const DiscountItem: React.FC<DiscountItemProps> = ({
   content,
   address,
 }) => {
+  const { t } = useTranslation()
   return (
     <div className='my-4 tracking-widest'>
       <div className='flex items-center'>
@@ -55,7 +57,9 @@ const DiscountItem: React.FC<DiscountItemProps> = ({
       <div className='p-2 leading-loose'>
         <div className='my-2'>{service}</div>
         <div className='my-2 '>
-          {method}，將提供{content}
+          {method}
+          {t('discountItem.offer')}
+          {content}
         </div>
         <div
           className='my-2 flex items-start cursor-pointer'

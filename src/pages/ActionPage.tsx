@@ -1,18 +1,23 @@
 import MainWrapper from '../Layout/MainWrapper'
-import { memorialData, recommendData, marySongData, dotCreateData } from '../wordingData'
+import {
+  memorialData,
+  recommendData,
+  dotCreateData,
+  dotBookData,
+} from '../wordingData'
 import YoutubeDisplayBox from '../components/YoutubeDisplayBox'
 import Divider from '../Layout/Divider'
-import { dotBookData } from '../wordingData'
 import DotProductItem from '../components/DotProductItem'
-import { pageOpeningData } from '../wordingData'
+import { useTranslation } from 'react-i18next'
 
 const ActionPage: React.FC = () => {
+  const { t } = useTranslation()
   return (
     <MainWrapper>
       <div className='leading-loose mt-4 text-justify'>
-        {pageOpeningData.action[0]}
+        {t('pageOpeningData.action.0')}
       </div>
-      <Divider content='逝世追思紀念會' />
+      <Divider content={t('divider.memoryCeremony') as string} />
       {memorialData.map((data) => (
         <YoutubeDisplayBox
           key={data.id}
@@ -21,12 +26,12 @@ const ActionPage: React.FC = () => {
           title={data.title}
         />
       ))}
-      <Divider content='廣女的第一首歌' />
+      <Divider content={t('divider.firstSong') as string} />
       <YoutubeDisplayBox
-        key={marySongData.id}
-        id={marySongData.id}
-        title={marySongData.title}
-        description={marySongData.description}
+        key={t('marySongData.id')}
+        id={t('marySongData.id')}
+        title={t('marySongData.title')}
+        description={t('marySongData.description')}
       />
       <Divider content='青春巨著' />
       <div className='flex flex-col justify-center'>
