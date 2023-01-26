@@ -7,7 +7,6 @@
     "memoryCeremony": "逝世追思紀念會",
     "firstSong": "廣女的第一首歌",
     "phyTestTitle": "麻雀的心理測驗",
-    "relativeNews": "相關新聞",
     "allSaying": "名言大集合",
     "allSayingPlace": "青點教各種平台",
     "dictionary": "青春字典",
@@ -16,8 +15,12 @@
     "onlineDiscount": "線上優惠區",
     "onSiteDiscount": "現場優惠區",
     "listeningGuide": "聆聽指南",
-    "recommend": "入教首推"
+    "recommend": "入教首推",
+    "method": "參與馬克信箱",
+    "otherDonation": "其他捐款方式"
   },
+  "keyInBadMood":"請輸入您的煩惱",
+  "otherDonation": "如果你不想每個月都捐款給教主教母，也可以透過超級感謝的方式在特定集數表達心意，也可以編輯感謝訊息。",
   "phyTestTopic": [
     "你是一個怎麼樣的人",
     "你喜歡的異性類型是",
@@ -649,5 +652,24 @@
     { "title": "台灣點友請進", "url": "https://p.allpay.com.tw/kp4Ja" },
     { "title": "海外點友請進", "url": "https://paypal.me/ormarc" },
     { "title": "900866569", "url": "" }
-  ]
+  ],
+  "method": {
+    "letter": {
+      "title": "如何寄信到馬克信箱",
+      "address": "100404 台北市羅斯福路二段 102 號 25 樓飛碟電台馬克信箱收",
+      "warning": [
+        "不要把鈔票放在貼近信封口的地方，會害馬克瑪麗拆信的時候傷到錢",
+        "如果要收到回信，要記得附上回郵信封和郵票",
+        "目前國內平信郵資為 8 元，明信片郵資為 5 元，記得附上足量郵資，避免被郵差退回"
+      ]
+    },
+    "picture": {
+      "title": "封面圖投稿",
+      "address": "barleyorange@yahoo.com.tw ",
+      "warning": [
+        "歡迎一次投稿同系列作品兩三張以上，讓照片輪播",
+        "標題請寫馬克信箱封面圖投稿"
+      ]
+    }
+  }
 }

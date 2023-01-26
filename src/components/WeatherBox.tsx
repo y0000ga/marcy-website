@@ -14,7 +14,7 @@ const WeatherBox: React.FC = () => {
     weatherInfo()
   }, [])
   return (
-    <div className='h-10 flex justify-center items-center bg-red-500 overflow-hidden -z-10'>
+    <div className='h-10 flex justify-center items-center bg-red-500 overflow-hidden -z-10 w-full'>
       <p className='inline-block text-white animate-marquee'>
         目前教主教母所在的天龍國
         {currentWeather ? currentWeather?.join('且') : '未知'}

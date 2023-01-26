@@ -208,7 +208,7 @@ const OnlineDiscount: React.FC = () => {
     <div>
       <Divider content={t('divider.onlineDiscount') as string} />
       <select
-        className='border border-gray-300 px-4 py-2  rounded-md left-1/2 -translate-x-1/2'
+        className='border border-gray-300 px-4 py-2 my-8  rounded-md left-1/2 -translate-x-1/2'
         value={discountType}
         onChange={chooseDiscountTypeHandler}
       >
@@ -218,10 +218,9 @@ const OnlineDiscount: React.FC = () => {
           </option>
         ))}
       </select>
-      <div>
+      <div className='flex flex-wrap justify-between'>
         {discount.map((data) => (
           <DiscountItem
-
             key={data.title}
             title={data.title}
             type={data.type}

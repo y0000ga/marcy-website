@@ -1,5 +1,9 @@
 import Divider from '../Layout/Divider'
 import { useTranslation } from 'react-i18next'
+import ListeningGuideIcon01 from '../assets/ListeningGuideIcon/ListeningGuideIcon (1).png'
+import ListeningGuideIcon02 from '../assets/ListeningGuideIcon/ListeningGuideIcon (2).png'
+import ListeningGuideIcon03 from '../assets/ListeningGuideIcon/ListeningGuideIcon (3).png'
+import ListeningGuideIcon04 from '../assets/ListeningGuideIcon/ListeningGuideIcon (4).png'
 
 const ListeningGuide = () => {
   const { t } = useTranslation()
@@ -7,30 +11,39 @@ const ListeningGuide = () => {
     {
       title: t('listeningGuideData.0.title'),
       description: t('listeningGuideData.0.description'),
+      imgUrl: ListeningGuideIcon01,
     },
     {
       title: t('listeningGuideData.1.title'),
       description: t('listeningGuideData.1.description'),
+      imgUrl: ListeningGuideIcon02,
     },
     {
       title: t('listeningGuideData.2.title'),
       description: t('listeningGuideData.2.description'),
+      imgUrl: ListeningGuideIcon03,
     },
     {
       title: t('listeningGuideData.3.title'),
       description: t('listeningGuideData.3.description'),
+      imgUrl: ListeningGuideIcon04,
     },
   ]
   return (
     <>
       <Divider content={t('divider.listeningGuide') as string} />
       <div className='leading-loose mt-4 text-justify flex flex-col'>
-        <ul>
+        <ul className='flex flex-wrap justify-center'>
           {listeningGuide.map((data) => (
-            <li key={data.title}>
-              <span className='font-semibold'>{data.title}</span>
-              <br />
-              {data.description}
+            <li key={data.title} className='flex flex-col md:w-96 m-8'>
+              <div className='flex justify-center'>
+                <img src={data.imgUrl} alt='icon' className='border border-red-500'/>
+              </div>
+              <div>
+                <span className='font-semibold'>{data.title}</span>
+                <br />
+                {data.description}
+              </div>
             </li>
           ))}
         </ul>

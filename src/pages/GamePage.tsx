@@ -5,6 +5,7 @@ import { BsDot, BsCircle } from 'react-icons/bs'
 import { TfiLayoutLineSolid } from 'react-icons/tfi'
 import { useTranslation } from 'react-i18next'
 import { useEffect } from 'react'
+import gameIcon from '../assets/Figure/gameIcon.png'
 
 const GamePage: React.FC = () => {
   const { t, i18n } = useTranslation()
@@ -94,15 +95,18 @@ const GamePage: React.FC = () => {
   ]
   return (
     <MainWrapper>
+      <img src={gameIcon} alt='game' className='m-auto' />
       <div className='leading-loose mt-4 text-justify'>
         {t('pageOpeningData.game.0')}
       </div>
       <Divider content={t('divider.phyTestTitle') as string} />
-      {psychTestData.map((data, index) => (
-        <PsychTest number={index + 1} topic={data.topic} key={data.topic}>
-          {data.children}
-        </PsychTest>
-      ))}
+      <div className='flex flex-wrap justify-around'>
+        {psychTestData.map((data, index) => (
+          <PsychTest number={index + 1} topic={data.topic} key={data.topic}>
+            {data.children}
+          </PsychTest>
+        ))}
+      </div>
     </MainWrapper>
   )
 }

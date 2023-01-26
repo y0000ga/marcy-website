@@ -45,9 +45,12 @@ const DotDictionary: React.FC = () => {
     <>
       <Divider content={t('divider.dictionary') as string} />
       <div className='leading-loose mt-4 text-justify flex flex-col'>
-        <ul>
+        <ul className='md:flex md:flex-wrap'>
           {dotDictionary.map((word) => (
-            <li key={word.title}>
+            <li
+              key={word.title}
+              className='my-4 p-4 rounded-2xl md:border-r-8 md:border-l-8 md:border-white bg-yellow-100 md:w-1/2'
+            >
               <span className='font-semibold'>{word.title}</span>
               <br />
               {word.description}

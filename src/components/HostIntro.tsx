@@ -34,55 +34,43 @@ const HostIntro: React.FC = () => {
     <>
       <Divider content={t('divider.host') as string} />
       <HostIntroItem title={t('hostIntroData.0.name')}>
-        {markIntro.map((data, index) => (
-          <li key={data}>
-            {data}
-            {index === 3 ? (
-              <>
-                <MarkFace className='w-full border h-full p-2 my-2' />
-                <div className='text-center text-neutral-400 mb-4'>
-                  {t('figureDescription.1')}
-                </div>
-              </>
-            ) : (
-              ''
-            )}
-          </li>
-        ))}
+        <div className='flex flex-col items-center'>
+          <MarkFace className='w-full border h-full p-2 my-2 md:w-96' />
+          <div className='text-center text-neutral-400 mb-4'>
+            {t('figureDescription.1')}
+          </div>
+        </div>
+        <div className='lg:ml-4'>
+          {markIntro.map((data) => (
+            <li key={data}>{data}</li>
+          ))}
+        </div>
       </HostIntroItem>
       <HostIntroItem title={t('hostIntroData.1.name')}>
-        {maryIntro.map((data, index) => (
-          <li key={data}>
-            {data}
-            {index === 3 ? (
-              <>
-                <MaryInThree className='w-full border h-full p-2 my-2' />
-                <div className='text-center text-neutral-400 mb-4'>
-                  {t('figureDescription.2')}
-                </div>
-              </>
-            ) : (
-              ''
-            )}
-          </li>
-        ))}
+        <div className='flex flex-col items-center'>
+          <MaryInThree className='w-full border h-full p-2 my-2 lg:w-96' />
+          <div className='text-center text-neutral-400 mb-4'>
+            {t('figureDescription.2')}
+          </div>
+        </div>
+        <div className='lg:ml-4'>
+          {maryIntro.map((data) => (
+            <li key={data}>{data}</li>
+          ))}
+        </div>
       </HostIntroItem>
       <HostIntroItem title={t('hostIntroData.2.name')}>
-        {hankIntro.map((data, index) => (
-          <li key={data}>
-            {data}
-            {index === 2 ? (
-              <>
-                <HankCake className='w-full border h-full p-2 my-2' />
-                <div className='text-center text-neutral-400 mb-4'>
-                  {t('figureDescription.3')}
-                </div>
-              </>
-            ) : (
-              ''
-            )}
-          </li>
-        ))}
+        <div className='flex flex-col items-center'>
+          <HankCake className='w-full border h-full p-2 my-2 lg:w-96' />
+          <div className='text-center text-neutral-400 mb-4'>
+            {t('figureDescription.3')}
+          </div>
+        </div>
+        <div className='ml-4'>
+          {hankIntro.map((data) => (
+            <li key={data}>{data}</li>
+          ))}
+        </div>
       </HostIntroItem>
     </>
   )

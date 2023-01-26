@@ -6,6 +6,9 @@ import streetLogo from '../assets/Logo/streetLogo.png'
 import DonationItem from '../components/DonationItem'
 import { useTranslation } from 'react-i18next'
 import { useEffect } from 'react'
+import Divider from '../Layout/Divider'
+import superThank from '../assets/Figure/superThank.png'
+import donationIcon from '../assets/Figure/donationIcon.png'
 
 const DonationPage: React.FC = () => {
   const { t, i18n } = useTranslation()
@@ -15,10 +18,11 @@ const DonationPage: React.FC = () => {
   }, [i18n, lng])
   return (
     <MainWrapper>
+      <img src={donationIcon} alt='donation' className='m-auto'/>
       <div className='leading-loose mt-4 text-justify'>
         {t('pageOpeningData.donation.0')}
       </div>
-      <div className='grid grid-cols-2 my-4 gap-4'>
+      <div className='grid grid-cols-2 my-4 gap-4 md:flex md:justify-between'>
         <DonationItem
           title={t('donationData.0.title')}
           url={t('donationData.0.url') as string}
@@ -43,6 +47,15 @@ const DonationPage: React.FC = () => {
         >
           <img src={streetLogo} alt='Street' className='rounded-full w-28' />
         </DonationItem>
+      </div>
+      <div>
+        <Divider content={t('divider.otherDonation') as string} />
+        <div className='md:flex'>
+          <img src={superThank} alt='superThank' className='w-96 m-auto ' />
+          <div className='text-justify my-8 leading-loose md:ml-4'>
+            {t('otherDonation')}
+          </div>
+        </div>
       </div>
     </MainWrapper>
   )

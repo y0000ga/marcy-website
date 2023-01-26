@@ -31,7 +31,7 @@ const DiscountItem: React.FC<DiscountItemProps> = ({
     t('discountTypeData.6'),
   ]
   return (
-    <div className='my-4 tracking-widest'>
+    <div className='my-4 w-full tracking-widest md:w-1/2 flex flex-col '>
       <div className='flex items-center'>
         <div
           className={`border w-fit p-2 rounded-md font-light ${

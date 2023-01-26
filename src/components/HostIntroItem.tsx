@@ -29,7 +29,7 @@ const HostIntroItem: React.FC<HostIntroItemProps> = ({ children, title }) => {
         </div>
       </div>
       {isShown ? (
-        <ul className='list-inside list-disc'>{children}</ul>
+        <ul className='list-inside list-decimal lg:flex lg:items-center'>{children}</ul>
       ) : undefined}
     </div>
   )

@@ -119,7 +119,7 @@ const OnSiteDiscount: React.FC = () => {
       <Divider content={t('divider.onSiteDiscount') as string} />
       <Map discount={discount} />
       <select
-        className='border border-gray-300 px-4 py-2 mt-4 rounded-md left-1/2 -translate-x-1/2'
+        className='border border-gray-300 px-4 py-2 my-8 rounded-md left-1/2 -translate-x-1/2'
         value={discountType}
         onChange={chooseDiscountTypeHandler}
       >
@@ -129,7 +129,7 @@ const OnSiteDiscount: React.FC = () => {
           </option>
         ))}
       </select>
-      <div>
+      <div className='flex flex-wrap justify-center'>
         {discount.map((data) => (
           <DiscountItem
             key={data.title}

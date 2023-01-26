@@ -39,7 +39,7 @@ const AdvertiseBox: React.FC = () => {
 
   return (
     <>
-      <div className='flex justify-between -z-10'>
+      <div className='flex justify-between -z-10 w-full'>
         <div
           className={`h-3 w-full bg-sky-500`}
           style={{ width: `${advertise * 2 + 2}0%` }}
@@ -49,14 +49,14 @@ const AdvertiseBox: React.FC = () => {
           style={{ width: `${8 - advertise * 2}0%` }}
         ></div>
       </div>
-      <div className='w-full overflow-hidden max-h-96  cursor-pointer select-none'>
+      <div className='w-full overflow-hidden max-h-96  cursor-pointer select-none '>
+        <div className='w-full text-xl sm:text-2xl md:text-3xl lg:text-5xl absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex justify-center text-center items-center text-neutral-600 text-md font-black'>
+          {advertises[advertise].title}
+        </div>
         <div
           className='flex justify-center items-center'
           onClick={advertiseHandler}
         >
-          <div className='absolute -z-10 flex justify-center text-center items-center text-neutral-600 text-md font-black'>
-            {advertises[advertise].title}
-          </div>
           <img
             src={advertises[advertise].imgUrl}
             alt='advertise'

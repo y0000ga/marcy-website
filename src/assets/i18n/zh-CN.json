@@ -7,7 +7,6 @@
     "memoryCeremony": "逝世追思纪念会",
     "firstSong": "广女的第一首歌",
     "phyTestTitle": "麻雀的心理测验",
-    "relativeNews": "相关新闻",
     "allSaying": "名言大集合",
     "allSayingPlace": "青点教各种平台",
     "dictionary": "青春字典",
@@ -16,8 +15,12 @@
     "onlineDiscount": "线上优惠区",
     "onSiteDiscount": "现场优惠区",
     "listeningGuide": "聆听指南",
-    "recommend": "入教首推"
+    "recommend": "入教首推",
+    "method": "参与马克信箱",
+    "otherDonation": "其他捐款方式"
   },
+  "keyInBadMood": "请输入您的烦恼",
+  "otherDonation": "如果你不想每个月都捐款给教主教母，也可以透过超级感谢的方式在特定集数表达心意，也可以编辑感谢讯息。",
   "phyTestTopic": [
     "你是一个怎麽样的人",
     "你喜欢的异性类型是",
@@ -103,30 +106,30 @@
     "20230119": "哥哥妹妹有意思将更改名字，并调整拨放时间于下午一点"
   },
   "unlimitedYear": "不限定年度",
-  "dotDictionaryData01": { "title": "马信", "description": "马克信箱简称" },
-  "dotDictionaryData02": { "title": "点友", "description": "青春点点点的听众" },
-  "dotDictionaryData03": { "title": "欧小柔", "description": "女声马克" },
-  "dotDictionaryData04": {
+  "dotDictionary01": { "title": "马信", "description": "马克信箱简称" },
+  "dotDictionary02": { "title": "点友", "description": "青春点点点的听众" },
+  "dotDictionary03": { "title": "欧小柔", "description": "女声马克" },
+  "dotDictionary04": {
     "title": "保马基金",
     "description": "保释马克的费用"
   },
-  "dotDictionaryData05": {
+  "dotDictionary05": {
     "title": "追思纪念会",
     "description": "青春点点点节目停播逝世週年追思纪念会"
   },
-  "dotDictionaryData06": {
+  "dotDictionary06": {
     "title": "屁灵魂",
     "description": "玛丽创造的新词，形容老人却有着屁孩的灵魂"
   },
-  "dotDictionaryData07": {
+  "dotDictionary07": {
     "title": "欧游点点点",
     "description": "书名《为青春出发：马克玛丽的欧游点点点》"
   },
-  "dotDictionaryData08": {
+  "dotDictionary08": {
     "title": "华人女单",
     "description": "由于玛丽单身已久，在节目上被封为「单身大使」、「华人女单」"
   },
-  "dotDictionaryData09": {
+  "dotDictionary09": {
     "title": "抖内",
     "description": "救救穷DJ，可以在信裡附上钱给马克玛丽，没有硬性规定一定要附，但附了会让教主教母很开心"
   },
@@ -232,16 +235,16 @@
   },
   "dotCreateData": [
     {
-      "title": "马曆2022｜活用马曆，让大家一起去地狱躺平。",
-      "description": "这本日曆不是给自己看的，把马曆放在办公室的制高点，让行经的人们不得不多看一眼。把马曆转45度角向外，让真实的恶意以你为圆心喷射出去。为自己买了天天向上的日曆后，你需要暗黑的马曆，均衡一下。"
+      "title": "马曆2022",
+      "description": "活用马曆，让大家一起去地狱躺平。这本日曆不是给自己看的，把马曆放在办公室的制高点，让行经的人们不得不多看一眼。把马曆转45度角向外，让真实的恶意以你为圆心喷射出去。为自己买了天天向上的日曆后，你需要暗黑的马曆，均衡一下。"
     },
     {
-      "title": "马曆2023｜做一隻不会在龟兔赛跑中输掉比赛的兔子",
-      "description": "原子习惯说，只要每天进步1%，一年累积下来，你就会成长3700%！ 问题是，我们要从哪裡开始下手，要如何有意识地做出改变呢？ 就让马曆成为你每日的提醒吧！"
+      "title": "马曆2023",
+      "description": "原子习惯说，只要每天进步1%，一年累积下来，你就会成长3700%！ 问题是，我们要从哪裡开始下手，要如何有意识地做出改变呢？ 就让马曆成为你每日的提醒，做一隻不会在龟兔赛跑中输掉比赛的兔子。"
     },
     {
       "title": "马克玛丽 X Triple.Cell",
-      "description": "你今天听马克信箱了吗？用教主和教母的贴图在 Line 群组裡面横着走吧!"
+      "description": "你今天听马克信箱了吗？用教主和教母的 16 个贴图绝对可以在 Line 群组裡面横着走，成为新 24 不孝和最会拒绝别人的人。"
     }
   ],
   "dotSayingData": [
@@ -649,5 +652,24 @@
     { "title": "台湾点友请进", "url": "https://p.allpay.com.tw/kp4Ja" },
     { "title": "海外点友请进", "url": "https://paypal.me/ormarc" },
     { "title": "900866569", "url": "" }
-  ]
+  ],
+  "method": {
+    "letter": {
+      "title": "如何寄信到马克信箱",
+      "address": "100404 台北市罗斯福路二段 102 号 25 楼飞碟电台马克信箱收",
+      "warning": [
+        "不要把钞票放在贴近信封口的地方，会害马克玛丽拆信的时候伤到钱",
+        "如果要收到回信，要记得附上回邮信封和邮票",
+        "目前国内平信邮资为 8 元，明信片邮资为 5 元，记得附上足量邮资，避免被邮差退回"
+      ]
+    },
+    "picture": {
+      "title": "封面图投稿",
+      "address": "barleyorange@yahoo.com.tw ",
+      "warning": [
+        "欢迎一次投稿同系列作品两三张以上，让照片轮播",
+        "标题请写马克信箱封面图投稿"
+      ]
+    }
+  }
 }

@@ -103,10 +103,6 @@ const SayingGet: React.FC = () => {
       title: t('dotSayingData.22.title'),
       description: t('dotSayingData.22.description'),
     },
-    {
-      title: t('dotSayingData.23.title'),
-      description: t('dotSayingData.24.description'),
-    },
   ]
   
   const [sayingIndex, setSayingIndex] = useState<number[]>([
@@ -132,7 +128,7 @@ const SayingGet: React.FC = () => {
       或許你心裡有一些事情目前還處於無解的狀態，就讓教主教主給你一句話。偶然出現的言語或許能給你力量，一邊在內心想著問題並按下按鈕。
       <div
         onClick={chooseSayingHandler}
-        className='border border-sky-500 text-sky-500 w-fit mx-auto mt-4 px-4 py-2 rounded-lg hover:text-white hover:bg-sky-500 cursor-pointer tracking-widest'
+        className='border border-sky-500 text-sky-500 w-fit mx-auto my-8 px-4 py-2 rounded-lg hover:text-white hover:bg-sky-500 cursor-pointer tracking-widest'
       >
         獲得一句話
       </div>

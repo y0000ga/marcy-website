@@ -1,11 +1,12 @@
 import MainWrapper from '../Layout/MainWrapper'
-import Divider from '../Layout/Divider'
+import Method from '../components/Method'
 import { useTranslation } from 'react-i18next'
 import { useEffect } from 'react'
 
 const HomePage: React.FC = () => {
   const { t, i18n } = useTranslation()
   const lng = localStorage.getItem('lng') as string
+  console.log(lng)
   useEffect(() => {
     i18n.changeLanguage(lng)
   }, [i18n, lng])
@@ -15,7 +16,7 @@ const HomePage: React.FC = () => {
         <div className='text-3xl text-center mb-4 font-bold tracking-widest'>
           {t('marcyMailBox')}
         </div>
-        <div className='text-xl leading-10 tracking-widest font-extralight text-justify'>
+        <div className=' leading-10 tracking-widest text-justify'>
           {t('pageOpeningData.home.0')}
           <span className='text-sky-500 font-normal'>
             {t('pageOpeningData.home.1')}
@@ -26,8 +27,7 @@ const HomePage: React.FC = () => {
           </span>
           {t('pageOpeningData.home.4')}
         </div>
-
-        <Divider content={t('divider.relativeNews') as string} />
+        <Method/>
       </div>
     </MainWrapper>
   )

@@ -22,16 +22,18 @@ const AboutPage: React.FC = () => {
         </div>
       </div>
       <div className='leading-loose mt-4 text-justify'>
-        {t('pageOpeningData.about.0')}
-        <div>
+        <div className='flex items-center flex-col'>
           <img
             src='https://cdn2.ettoday.net/images/2344/d2344809.jpg'
             alt='spirit'
-            className='my-4'
+            className='my-4 '
           />
           <div className='text-center text-neutral-400 mb-4'>
             {t('figureDescription.0')}
           </div>
+        </div>
+        <div>
+          {t('pageOpeningData.about.0')}
           {t('pageOpeningData.about.1')}
         </div>
       </div>

@@ -15,10 +15,10 @@ const MainWrapper: React.FC<MainWrapperProps> = ({ children }) => {
     navigate('/donation')
   }
   return (
-    <div className='w-full overflow-hidden' style={{ minWidth: '320px' }}>
+    <div className='w-full overflow-hidden flex flex-col items-center' style={{ minWidth: '320px' }}>
       <Header />
       <HeaderContainer />
-      <div className='w-full my-10 px-5 sm:px-12 md:px-20 lg:px-36 xl:px-40 xl:text-xl 2xl:px-52 z-0'>
+      <div className=' my-10 px-5 sm:px-12 md:px-20 lg:px-36 xl:px-40 xl:text-xl 2xl:px-52 z-0 max-w-screen-2xl'>
         {children}
       </div>
       <div
@@ -27,7 +27,7 @@ const MainWrapper: React.FC<MainWrapperProps> = ({ children }) => {
       >
         <img src={donationLogo} alt='donation' className='w-24 border' />
       </div>
-      <div className='border-t border-gray-200 p-10 text-center leading-loose shadow-2xl'>
+      <div className='border-t border-gray-200 p-10 text-center leading-loose shadow-2xl w-full'>
         {t('footer.0')}
         <br />
         {t('footer.1')}

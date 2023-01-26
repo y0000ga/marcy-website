@@ -8,6 +8,7 @@ import { RxCross2 } from 'react-icons/rx'
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useEffect } from 'react'
+import secretIcon from '../assets/Figure/SecretIcon.png'
 
 enum TypeEnum {
   relationship = '愛情',
@@ -51,6 +52,7 @@ const SecretPage: React.FC = () => {
       <div className='leading-loose mt-4 text-justify'>
         {t('pageOpeningData.secret.0')}
       </div>
+      <img src={secretIcon} alt='secret' className='mx-auto my-8'/>
       <form onSubmit={handleSubmit(onSubmit)} className='flex flex-col'>
         <div className='my-2 text-lg flex items-center'>
           <label className='text-justify mr-4'>{t('secret.nickname')}</label>
@@ -81,7 +83,7 @@ const SecretPage: React.FC = () => {
           </select>
         </div>
         <textarea
-          placeholder='請輸入您的煩惱'
+          placeholder={t('keyInBadMood') as string}
           className='my-2 p-4 border text-lg border-gray-300 rounded-lg h-80 w-full'
           {...register('content', {
             required: true,
@@ -121,7 +123,7 @@ const SecretPage: React.FC = () => {
 
         <button
           type='submit'
-          className='border border-sky-500 m-4 h-10 rounded-lg text-sky-500 hover:bg-sky-500 hover:text-white cursor-pointer'
+          className='border border-sky-500 my-4 h-10 rounded-lg text-sky-500 hover:bg-sky-500 hover:text-white cursor-pointer'
         >
           {t('secret.submit')}
         </button>
