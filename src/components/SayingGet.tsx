@@ -3,12 +3,112 @@ import SayingIcon_2 from '../assets/SayingIcon/SayingIcon (2).png'
 import SayingIcon_3 from '../assets/SayingIcon/SayingIcon (3).png'
 import SayingIcon_4 from '../assets/SayingIcon/SayingIcon (4).png'
 import { useState } from 'react'
-import { dotSayingData } from '../wordingData'
 import Swal from 'sweetalert2'
+import { useTranslation } from 'react-i18next'
 
 const sayingIcons = [SayingIcon_1, SayingIcon_2, SayingIcon_3, SayingIcon_4]
 
 const SayingGet: React.FC = () => {
+  const { t } = useTranslation()
+  const dotSayingData = [
+    {
+      title: t('dotSayingData.0.title'),
+      description: t('dotSayingData.0.description'),
+    },
+    {
+      title: t('dotSayingData.1.title'),
+      description: t('dotSayingData.1.description'),
+    },
+    {
+      title: t('dotSayingData.2.title'),
+      description: t('dotSayingData.2.description'),
+    },
+    {
+      title: t('dotSayingData.3.title'),
+      description: t('dotSayingData.3.description'),
+    },
+    {
+      title: t('dotSayingData.4.title'),
+      description: t('dotSayingData.4.description'),
+    },
+    {
+      title: t('dotSayingData.5.title'),
+      description: t('dotSayingData.5.description'),
+    },
+    {
+      title: t('dotSayingData.6.title'),
+      description: t('dotSayingData.6.description'),
+    },
+    {
+      title: t('dotSayingData.7.title'),
+      description: t('dotSayingData.7.description'),
+    },
+    {
+      title: t('dotSayingData.8.title'),
+      description: t('dotSayingData.8.description'),
+    },
+    {
+      title: t('dotSayingData.9.title'),
+      description: t('dotSayingData.9.description'),
+    },
+    {
+      title: t('dotSayingData.10.title'),
+      description: t('dotSayingData.10.description'),
+    },
+    {
+      title: t('dotSayingData.11.title'),
+      description: t('dotSayingData.11.description'),
+    },
+    {
+      title: t('dotSayingData.12.title'),
+      description: t('dotSayingData.12.description'),
+    },
+    {
+      title: t('dotSayingData.13.title'),
+      description: t('dotSayingData.13.description'),
+    },
+    {
+      title: t('dotSayingData.14.title'),
+      description: t('dotSayingData.14.description'),
+    },
+    {
+      title: t('dotSayingData.15.title'),
+      description: t('dotSayingData.15.description'),
+    },
+    {
+      title: t('dotSayingData.16.title'),
+      description: t('dotSayingData.16.description'),
+    },
+    {
+      title: t('dotSayingData.17.title'),
+      description: t('dotSayingData.17.description'),
+    },
+    {
+      title: t('dotSayingData.18.title'),
+      description: t('dotSayingData.18.description'),
+    },
+    {
+      title: t('dotSayingData.19.title'),
+      description: t('dotSayingData.19.description'),
+    },
+    {
+      title: t('dotSayingData.20.title'),
+      description: t('dotSayingData.20.description'),
+    },
+    {
+      title: t('dotSayingData.21.title'),
+      description: t('dotSayingData.21.description'),
+    },
+    {
+      title: t('dotSayingData.22.title'),
+      description: t('dotSayingData.22.description'),
+    },
+    {
+      title: t('dotSayingData.23.title'),
+      description: t('dotSayingData.24.description'),
+    },
+  ]
+  
   const [sayingIndex, setSayingIndex] = useState<number[]>([
     Math.floor(Math.random() * sayingIcons.length),
     Math.floor(Math.random() * dotSayingData.length),

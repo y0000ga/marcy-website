@@ -4,10 +4,14 @@ import PsychTest from '../components/PsychTest'
 import { BsDot, BsCircle } from 'react-icons/bs'
 import { TfiLayoutLineSolid } from 'react-icons/tfi'
 import { useTranslation } from 'react-i18next'
-
+import { useEffect } from 'react'
 
 const GamePage: React.FC = () => {
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation()
+  const lng = localStorage.getItem('lng') as string
+  useEffect(() => {
+    i18n.changeLanguage(lng)
+  }, [i18n, lng])
   const psychTestData = [
     {
       topic: t('phyTestTopic.0'),

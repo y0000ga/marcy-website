@@ -1,9 +1,14 @@
 import MainWrapper from '../Layout/MainWrapper'
 import Divider from '../Layout/Divider'
 import { useTranslation } from 'react-i18next'
+import { useEffect } from 'react'
 
 const HomePage: React.FC = () => {
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation()
+  const lng = localStorage.getItem('lng') as string
+  useEffect(() => {
+    i18n.changeLanguage(lng)
+  }, [i18n, lng])
   return (
     <MainWrapper>
       <div>

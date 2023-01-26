@@ -3,16 +3,38 @@ import HostIntroItem from './HostIntroItem'
 import { ReactComponent as MarkFace } from '../assets/Figure/MarkFace.svg'
 import { ReactComponent as MaryInThree } from '../assets/Figure/MaryInThree.svg'
 import { ReactComponent as HankCake } from '../assets/Figure/HankCake.svg'
-import { hostIntroData } from '../wordingData'
 import { useTranslation } from 'react-i18next'
 
 const HostIntro: React.FC = () => {
   const { t } = useTranslation()
+  const markIntro = [
+    t('hostIntroData.0.intro.0'),
+    t('hostIntroData.0.intro.1'),
+    t('hostIntroData.0.intro.2'),
+    t('hostIntroData.0.intro.3'),
+    t('hostIntroData.0.intro.4'),
+    t('hostIntroData.0.intro.5'),
+    t('hostIntroData.0.intro.6'),
+    t('hostIntroData.0.intro.7'),
+  ]
+  const maryIntro = [
+    t('hostIntroData.1.intro.0'),
+    t('hostIntroData.1.intro.1'),
+    t('hostIntroData.1.intro.2'),
+    t('hostIntroData.1.intro.3'),
+    t('hostIntroData.1.intro.4'),
+  ]
+
+  const hankIntro = [
+    t('hostIntroData.2.intro.0'),
+    t('hostIntroData.2.intro.1'),
+    t('hostIntroData.2.intro.2'),
+  ]
   return (
     <>
       <Divider content={t('divider.host') as string} />
-      <HostIntroItem title={hostIntroData[0].name}>
-        {hostIntroData[0].intro.map((data, index) => (
+      <HostIntroItem title={t('hostIntroData.0.name')}>
+        {markIntro.map((data, index) => (
           <li key={data}>
             {data}
             {index === 3 ? (
@@ -28,8 +50,8 @@ const HostIntro: React.FC = () => {
           </li>
         ))}
       </HostIntroItem>
-      <HostIntroItem title={hostIntroData[1].name}>
-        {hostIntroData[1].intro.map((data, index) => (
+      <HostIntroItem title={t('hostIntroData.1.name')}>
+        {maryIntro.map((data, index) => (
           <li key={data}>
             {data}
             {index === 3 ? (
@@ -45,8 +67,8 @@ const HostIntro: React.FC = () => {
           </li>
         ))}
       </HostIntroItem>
-      <HostIntroItem title={hostIntroData[2].name}>
-        {hostIntroData[2].intro.map((data, index) => (
+      <HostIntroItem title={t('hostIntroData.2.name')}>
+        {hankIntro.map((data, index) => (
           <li key={data}>
             {data}
             {index === 2 ? (

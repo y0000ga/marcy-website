@@ -5,14 +5,19 @@ import { ReactComponent as MarcyLogo } from '../assets/Logo/marcyLogo.svg'
 import DotHistory from '../components/DotHistory'
 import DotDictionary from '../components/DotDictionary'
 import { useTranslation } from 'react-i18next'
+import { useEffect } from 'react'
 
 const AboutPage: React.FC = () => {
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation()
+  const lng = localStorage.getItem('lng') as string
+  useEffect(() => {
+    i18n.changeLanguage(lng)
+  }, [i18n, lng])
   return (
     <MainWrapper>
-      <div className='flex justify-center items-center'>
+      <div className='flex justify-center items-center my-10'>
         <MarcyLogo className='w-16 mr-4' />
-        <div className='font-black text-3xl text-neutral-600'>
+        <div className='font-black text-3xl text-neutral-600 lg:text-6xl'>
           {t('marcyMailBox')}
         </div>
       </div>
