@@ -8,7 +8,6 @@ const HomePage: React.FC = () => {
   const lng = localStorage.getItem('lng') as string
   useEffect(() => {
     i18n.changeLanguage(lng)
-    console.log(lng)
   }, [i18n, lng])
   return (
     <MainWrapper>
@@ -27,7 +26,7 @@ const HomePage: React.FC = () => {
           </span>
           {t('pageOpeningData.home.4')}
         </div>
-        <Method/>
+        <Method />
       </div>
     </MainWrapper>
   )
