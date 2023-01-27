@@ -9,9 +9,17 @@ import SayingPage from './pages/SayingPage'
 import ErrorPage from './pages/ErrorPage'
 import SecretPage from './pages/SecretPage'
 import DiscountPage from './pages/DiscountPage'
+import { useEffect } from 'react'
 
 const App = () => {
   const lng = localStorage.getItem('lng') as string
+  useEffect(() => {
+    if (navigator.maxTouchPoints === 1) {
+      localStorage.setItem('device', 'keyboard')
+    } else {
+      localStorage.setItem('device', 'mobile')
+    }
+  }, [])
   return (
     <div
       style={{

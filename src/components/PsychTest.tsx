@@ -30,6 +30,7 @@ interface PsychTestProps {
 }
 
 const PsychTest: React.FC<PsychTestProps> = ({ number, topic, children }) => {
+  const device = localStorage.getItem('device')
   const { t } = useTranslation()
   const [action, setAction] = useState('mouse')
   const { register, handleSubmit } = useForm<PsychTestInputProps>()
@@ -68,7 +69,7 @@ const PsychTest: React.FC<PsychTestProps> = ({ number, topic, children }) => {
     }
 
     const handleMouseMove = (e: MouseEvent) => {
-      setAction('mouse')
+      setAction((prev) => (prev = 'mouse'))
       if (isDrawing) {
         const point = { x: e.offsetX, y: e.offsetY }
         handleDrawCanvas(point)
@@ -76,7 +77,7 @@ const PsychTest: React.FC<PsychTestProps> = ({ number, topic, children }) => {
     }
 
     const handleTouchMove = (e: TouchEvent) => {
-      setAction('touch')
+      setAction((prev) => (prev = 'touch'))
       if (isDrawing) {
         const r = canvasRef.current.getBoundingClientRect()
         const point = {
@@ -88,9 +89,9 @@ const PsychTest: React.FC<PsychTestProps> = ({ number, topic, children }) => {
     }
 
     if (canvasRef && canvasRef.current) {
-      if (action === 'mouse') {
+      if (device === 'keyboard') {
         canvasRef.current.addEventListener('mousemove', handleMouseMove)
-      } else {
+      } else if (device === 'mobile') {
         canvasRef.current.addEventListener('touchmove', handleTouchMove)
       }
     }
@@ -101,12 +102,12 @@ const PsychTest: React.FC<PsychTestProps> = ({ number, topic, children }) => {
 
     return () => {
       if (savedCanvasRefCurrentValue) {
-        if (action === 'mouse') {
+        if (device === 'keyboard') {
           savedCanvasRefCurrentValue.removeEventListener(
             'mousemove',
             handleMouseMove
           )
-        } else {
+        } else if (device === 'mobile') {
           savedCanvasRefCurrentValue.removeEventListener(
             'touchmove',
             handleTouchMove

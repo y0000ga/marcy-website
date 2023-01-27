@@ -33,7 +33,7 @@ const ScrollUpButton: React.FC = () => {
     <>
       {isShown ? (
         <div
-          className='fixed right-10 bottom-10 w-12 h-12 border bg-gray-100 text-xl rounded-md flex justify-center items-center cursor-pointer hover:bg-gray-200'
+          className='fixed right-10 bottom-10 w-12 h-12 border bg-gray-100 text-xl rounded-md flex justify-center items-center cursor-pointer hover:bg-gray-200 z-10'
           onClick={() => window.scrollTo(0, 0)}
         >
           <span className='text-sky-500'>▲</span>

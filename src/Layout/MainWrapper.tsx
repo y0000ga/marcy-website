@@ -26,13 +26,13 @@ const MainWrapper: React.FC<MainWrapperProps> = ({ children }) => {
         {children}
       </div>
       <div
-        className='bg-white w-24 h-24 fixed bottom-10 left-10 cursor-pointer animate-bounce'
+        className='bg-white w-24 h-24 fixed bottom-10 left-10 cursor-pointer animate-bounce z-10'
         onClick={donationHandler}
       >
         <img src={donationLogo} alt='donation' className='w-24 border' />
       </div>
       <ScrollUpButton />
-      <div className='border-t border-gray-200 p-10 text-center leading-loose shadow-2xl w-full'>
+      <div className='border-t border-gray-200 p-10 text-center leading-loose shadow-2xl w-full -z-10'>
         {t('footer.0')}
         <br />
         {t('footer.1')}
