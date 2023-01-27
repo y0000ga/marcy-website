@@ -30,7 +30,6 @@ interface PsychTestProps {
 }
 
 const PsychTest: React.FC<PsychTestProps> = ({ number, topic, children }) => {
-  const move = localStorage.getItem('move')
   const { t } = useTranslation()
   const { register, handleSubmit } = useForm<PsychTestInputProps>()
   let lastPoint: { x?: number; y?: number } | null = {}
@@ -67,26 +66,15 @@ const PsychTest: React.FC<PsychTestProps> = ({ number, topic, children }) => {
       ctx.closePath()
     }
 
-    const handleMouseMove = (e: any) => {
+    const handleMouseMove = (e: MouseEvent) => {
       if (isDrawing) {
-        if (e.type === 'mousemove') {
-          localStorage.setItem('move', 'mousemove')
-          const point = { x: e.offsetX, y: e.offsetY }
-          handleDrawCanvas(point)
-        } else if (e.type === 'touchmove') {
-          localStorage.setItem('move', 'touchmove')
-          const r = canvasRef.current.getBoundingClientRect()
-          const point = {
-            x: e.touches[0].clientX - r.left,
-            y: e.touches[0].clientY - r.top,
-          }
-          handleDrawCanvas(point)
-        }
+        const point = { x: e.offsetX, y: e.offsetY }
+        handleDrawCanvas(point)
       }
     }
 
     if (canvasRef && canvasRef.current) {
-      canvasRef.current.addEventListener(move, handleMouseMove)
+      canvasRef.current.addEventListener('mousemove', handleMouseMove)
     }
 
     if (canvasRef.current) {
@@ -95,7 +83,10 @@ const PsychTest: React.FC<PsychTestProps> = ({ number, topic, children }) => {
 
     return () => {
       if (savedCanvasRefCurrentValue) {
-        savedCanvasRefCurrentValue.removeEventListener(move, handleMouseMove)
+        savedCanvasRefCurrentValue.removeEventListener(
+          'mousemove',
+          handleMouseMove
+        )
       }
     }
   }, [isDrawing, canvasRef])
@@ -125,7 +116,7 @@ const PsychTest: React.FC<PsychTestProps> = ({ number, topic, children }) => {
         {children}
         <canvas
           id='canvas'
-          className='border m-auto rounded-md my-4 z-10'
+          className='border m-auto rounded-md my-4'
           ref={canvasRef}
           height={350}
           width={350}

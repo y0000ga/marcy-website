@@ -7,9 +7,12 @@ interface navItemProps {
 const NavItem: React.FC<navItemProps> = ({ title, pathname }) => {
   const navigate = useNavigate()
   const currentPathname = useLocation().pathname
+  console.log(navigator.maxTouchPoints)
   return (
     <li
-      className={`w-full h-12 flex justify-center items-center tracking-widest border-b cursor-pointer hover:text-blue-500 xl:border-none xl:w-fit mx-2 ${pathname === currentPathname && "text-sky-500"}`}
+      className={`w-full h-12 flex justify-center items-center tracking-widest border-b cursor-pointer hover:text-blue-500 xl:border-none xl:w-fit mx-2 ${
+        pathname === currentPathname && 'text-sky-500'
+      } ${navigator.maxTouchPoints > 1 && pathname === '/game' && 'hidden'}`}
       onClick={() => {
         navigate(pathname)
       }}
