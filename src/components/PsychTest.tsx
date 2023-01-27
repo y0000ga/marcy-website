@@ -30,7 +30,7 @@ interface PsychTestProps {
 }
 
 const PsychTest: React.FC<PsychTestProps> = ({ number, topic, children }) => {
-  const device = localStorage.getItem('device')
+  const move = localStorage.getItem('move')
   const { t } = useTranslation()
   const { register, handleSubmit } = useForm<PsychTestInputProps>()
   let lastPoint: { x?: number; y?: number } | null = {}
@@ -67,30 +67,26 @@ const PsychTest: React.FC<PsychTestProps> = ({ number, topic, children }) => {
       ctx.closePath()
     }
 
-    const handleMouseMove = (e: MouseEvent) => {
+    const handleMouseMove = (e: any) => {
       if (isDrawing) {
-        const point = { x: e.offsetX, y: e.offsetY }
-        handleDrawCanvas(point)
-      }
-    }
-
-    const handleTouchMove = (e: TouchEvent) => {
-      if (isDrawing) {
-        const r = canvasRef.current.getBoundingClientRect()
-        const point = {
-          x: e.touches[0].clientX - r.left,
-          y: e.touches[0].clientY - r.top,
+        if (e.type === 'mousemove') {
+          localStorage.setItem('move', 'mousemove')
+          const point = { x: e.offsetX, y: e.offsetY }
+          handleDrawCanvas(point)
+        } else if (e.type === 'touchmove') {
+          localStorage.setItem('move', 'touchmove')
+          const r = canvasRef.current.getBoundingClientRect()
+          const point = {
+            x: e.touches[0].clientX - r.left,
+            y: e.touches[0].clientY - r.top,
+          }
+          handleDrawCanvas(point)
         }
-        handleDrawCanvas(point)
       }
     }
 
     if (canvasRef && canvasRef.current) {
-      if (device === 'keyboard') {
-        canvasRef.current.addEventListener('mousemove', handleMouseMove)
-      } else if (device === 'mobile') {
-        canvasRef.current.addEventListener('touchmove', handleTouchMove)
-      }
+      canvasRef.current.addEventListener(move, handleMouseMove)
     }
 
     if (canvasRef.current) {
@@ -99,17 +95,7 @@ const PsychTest: React.FC<PsychTestProps> = ({ number, topic, children }) => {
 
     return () => {
       if (savedCanvasRefCurrentValue) {
-        if (device === 'keyboard') {
-          savedCanvasRefCurrentValue.removeEventListener(
-            'mousemove',
-            handleMouseMove
-          )
-        } else if (device === 'mobile') {
-          savedCanvasRefCurrentValue.removeEventListener(
-            'touchmove',
-            handleTouchMove
-          )
-        }
+        savedCanvasRefCurrentValue.removeEventListener(move, handleMouseMove)
       }
     }
   }, [isDrawing, canvasRef])
@@ -139,7 +125,7 @@ const PsychTest: React.FC<PsychTestProps> = ({ number, topic, children }) => {
         {children}
         <canvas
           id='canvas'
-          className='border m-auto rounded-md my-4'
+          className='border m-auto rounded-md my-4 z-10'
           ref={canvasRef}
           height={350}
           width={350}
