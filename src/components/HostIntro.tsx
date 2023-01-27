@@ -4,7 +4,7 @@ import { ReactComponent as MarkFace } from '../assets/Figure/MarkFace.svg'
 import { ReactComponent as MaryInThree } from '../assets/Figure/MaryInThree.svg'
 
 import { useTranslation } from 'react-i18next'
-import { createRef, useRef, useEffect } from 'react'
+import { createRef, useEffect } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
@@ -13,7 +13,7 @@ const HostIntro: React.FC = () => {
   const marcRef = createRef<HTMLDivElement>()
   const maryRef = createRef<HTMLDivElement>()
   const hankRef = createRef<HTMLDivElement>()
-  const triggerRef = useRef<HTMLDivElement | null>(null)
+  const triggerRef = createRef<HTMLDivElement>()
   gsap.registerPlugin(ScrollTrigger)
 
   useEffect(() => {
@@ -39,7 +39,7 @@ const HostIntro: React.FC = () => {
         { transform: 'translateX(-100%)' },
         { transform: 'translateX(0%)', duration: 1 }
       )
-  }, [hankRef, marcRef, maryRef])
+  }, [hankRef, marcRef, maryRef, triggerRef])
 
   const markIntro = [
     t('hostIntroData.0.intro.0'),
