@@ -113,6 +113,7 @@ const PsychTest: React.FC<PsychTestProps> = ({ number, topic, children }) => {
   }
   return (
     <div className='my-4'>
+      {move}
       <div className='text-xl font-medium leading-loose tracking-widest text-sky-500 text-center'>
         {t('psyTest.no')}
         {number}
