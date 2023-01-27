@@ -7,8 +7,7 @@ import PsychTestIcon_3 from '../assets/PsychTestIcon/PsychTestIcon(3).png'
 import PsychTestIcon_4 from '../assets/PsychTestIcon/PsychTestIcon(4).png'
 import PsychTestIcon_5 from '../assets/PsychTestIcon/PsychTestIcon(5).png'
 import PsychTestIcon_6 from '../assets/PsychTestIcon/PsychTestIcon(6).png'
-
-//phyTest
+import { useTranslation } from 'react-i18next'
 
 const psychTestIconData = [
   PsychTestIcon_1,
@@ -31,6 +30,7 @@ interface PsychTestProps {
 }
 
 const PsychTest: React.FC<PsychTestProps> = ({ number, topic, children }) => {
+  const { t } = useTranslation()
   const { register, handleSubmit } = useForm<PsychTestInputProps>()
   let lastPoint: { x?: number; y?: number } | null = {}
   const activeColor = '#000000'
@@ -108,7 +108,9 @@ const PsychTest: React.FC<PsychTestProps> = ({ number, topic, children }) => {
   return (
     <div className='my-4'>
       <div className='text-xl font-medium leading-loose tracking-widest text-sky-500 text-center'>
-        第{number}題
+        {t('psyTest.no')}
+        {number}
+        {t('psyTest.question')}
       </div>
       <div>
         {children}
@@ -119,10 +121,13 @@ const PsychTest: React.FC<PsychTestProps> = ({ number, topic, children }) => {
           height={350}
           width={350}
           onMouseDown={handleMouseDown}
+          onTouchStart={handleMouseDown}
           onMouseUp={handleMouseUp}
+          onTouchEnd={handleMouseUp}
           onMouseOver={handleMouseUp}
+          onTouchMove={handleMouseUp}
         >
-          抱歉，目前您的瀏覽器不支援 canvas 元素。
+          {t('psyTest.unsupport')}
         </canvas>
       </div>
       <form
@@ -130,7 +135,7 @@ const PsychTest: React.FC<PsychTestProps> = ({ number, topic, children }) => {
         className='flex flex-col items-center'
       >
         <div className='text-lg my-4 flex justify-between items-center'>
-          <label className='w-1/3'>第一個形容詞</label>
+          <label className='w-1/3'>{t('psyTest.firstAdj')}</label>
           <input
             className='border border-gray-300 rounded-md w-2/3 mr h-10 pl-2'
             {...register('adjective_1', { required: true, maxLength: 10 })}
@@ -138,7 +143,7 @@ const PsychTest: React.FC<PsychTestProps> = ({ number, topic, children }) => {
           />
         </div>
         <div className='text-lg my-4 flex justify-between items-center'>
-          <label className='w-1/3'>第二個形容詞</label>
+          <label className='w-1/3'>{t('psyTest.secondAdj')}</label>
           <input
             className='border border-gray-300 rounded-md w-2/3 mr h-10 pl-2'
             {...register('adjective_2', { required: true, maxLength: 10 })}
@@ -150,11 +155,12 @@ const PsychTest: React.FC<PsychTestProps> = ({ number, topic, children }) => {
             onClick={clearHandler}
             className='border border-sky-500 m-4 h-10 w-1/2 rounded-lg text-sky-500 hover:bg-sky-500 hover:text-white cursor-pointer'
           >
-            清除畫布內容
+            {t('psyTest.clearCanvas')}
           </button>
           <input
             type='submit'
             className='border border-sky-500 m-4 h-10 w-1/2 rounded-lg text-sky-500 hover:bg-sky-500 hover:text-white cursor-pointer'
+            value={t('psyTest.checkAnswer') as string}
           />
         </div>
       </form>

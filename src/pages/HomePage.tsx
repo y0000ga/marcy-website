@@ -6,9 +6,9 @@ import { useEffect } from 'react'
 const HomePage: React.FC = () => {
   const { t, i18n } = useTranslation()
   const lng = localStorage.getItem('lng') as string
-  console.log(lng)
   useEffect(() => {
     i18n.changeLanguage(lng)
+    console.log(lng)
   }, [i18n, lng])
   return (
     <MainWrapper>

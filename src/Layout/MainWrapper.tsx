@@ -3,6 +3,7 @@ import HeaderContainer from './HeaderContainer'
 import donationLogo from '../assets/Logo/donationLogo.svg'
 import { useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
+import ScrollUpButton from '../components/ScrollUpButton'
 
 interface MainWrapperProps {
   children: React.ReactNode
@@ -15,18 +16,22 @@ const MainWrapper: React.FC<MainWrapperProps> = ({ children }) => {
     navigate('/donation')
   }
   return (
-    <div className='w-full overflow-hidden flex flex-col items-center' style={{ minWidth: '320px' }}>
+    <div
+      className='w-full overflow-hidden flex flex-col items-center'
+      style={{ minWidth: '320px' }}
+    >
       <Header />
       <HeaderContainer />
       <div className=' my-10 px-5 sm:px-12 md:px-20 lg:px-36 xl:px-40 xl:text-xl 2xl:px-52 z-0 max-w-screen-2xl'>
         {children}
       </div>
       <div
-        className='bg-white w-24 h-24 fixed bottom-10 right-10 cursor-pointer animate-bounce'
+        className='bg-white w-24 h-24 fixed bottom-10 left-10 cursor-pointer animate-bounce'
         onClick={donationHandler}
       >
         <img src={donationLogo} alt='donation' className='w-24 border' />
       </div>
+      <ScrollUpButton />
       <div className='border-t border-gray-200 p-10 text-center leading-loose shadow-2xl w-full'>
         {t('footer.0')}
         <br />

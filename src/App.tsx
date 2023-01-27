@@ -11,7 +11,7 @@ import SecretPage from './pages/SecretPage'
 import DiscountPage from './pages/DiscountPage'
 
 const App = () => {
-  const lng = localStorage.getItem('lng')
+  const lng = localStorage.getItem('lng') as string
   return (
     <div
       style={{
@@ -21,7 +21,7 @@ const App = () => {
             ? 'Noto Sans SC, sans-serif'
             : 'Noto Sans TC, sans-serif',
       }}
-      className='box-border'
+      className='box-border select-none'
     >
       <HashRouter>
         <Routes>

@@ -28,7 +28,7 @@ const DotProductItem: React.FC<DotProductItemProps> = ({ data }) => {
         alt={title}
         className={type === 'book' ? 'w-96' : 'w-80'}
       />
-      <div className={`${type === 'book' ? '' : 'ml-8'} w-full `}>
+      <div className={`${type === 'book' ? '' : 'mx-8'} w-full `}>
         <div
           className='font-bold text-xl my-4 flex items-center justify-center cursor-pointer'
           onClick={buyHandler}

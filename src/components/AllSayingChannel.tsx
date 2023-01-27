@@ -26,7 +26,7 @@ const AllSayingChannel = () => {
   return (
     <>
       <Divider content={t('divider.allSayingPlace') as string} />
-      <div className='lg:flex lg:justify-around'>
+      <div className='flex flex-col items-start lg:flex-row lg:justify-around'>
         {markOrangeInfo && (
           <div
             className='flex my-4 justify-center'
@@ -42,9 +42,10 @@ const AllSayingChannel = () => {
             <img
               src={markOrangeInfo.snippet.thumbnails.default.url}
               alt='icon'
+              className='cursor-pointer'
             />
             <div className='mx-4 flex justify-center flex-col'>
-              <div className='font-bold text-2xl leading-loose tracking-widest hover:text-sky-500'>
+              <div className='font-bold text-2xl leading-loose tracking-widest cursor-pointer hover:text-sky-500'>
                 {markOrangeInfo.snippet.title}
               </div>
               <div className='flex '>

@@ -125,14 +125,14 @@ const SayingGet: React.FC = () => {
 
   return (
     <div className='leading-loose my-4 text-justify'>
-      或許你心裡有一些事情目前還處於無解的狀態，就讓教主教主給你一句話。偶然出現的言語或許能給你力量，一邊在內心想著問題並按下按鈕。
+      {t('sayingGet.opening')}
       <div
         onClick={chooseSayingHandler}
-        className='border border-sky-500 text-sky-500 w-fit mx-auto my-8 px-4 py-2 rounded-lg hover:text-white hover:bg-sky-500 cursor-pointer tracking-widest'
+        className='border border-sky-500 text-sky-500 w-fit  left-1/2 -translate-x-1/2 my-8 px-4 py-2 rounded-lg hover:text-white hover:bg-sky-500 cursor-pointer tracking-widest'
       >
-        獲得一句話
+        {t('sayingGet.buttonContent')}
       </div>
-      <div className='mt-4'>以下是馬克信箱的名言大集合，也可以參考看看喔!</div>
+      <div className='mt-4'>{t('sayingGet.allSaying')}</div>
       {dotSayingData.map((data) => (
         <div className='leading-loose mt-4 text-justify' key={data.title}>
           <span className='font-bold '>🔈 {data.title}</span>

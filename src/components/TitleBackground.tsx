@@ -43,7 +43,7 @@ const TitleBackground: React.FC<TitleBackgroundProps> = ({ pathname }) => {
   return (
     <>
       <div className='w-full overflow-hidden max-h-96 select-none border'>
-        <div className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 text-center text-neutral-600 text-4xl font-bold tracking-widest md:text-5xl lg:text-7xl'>
+        <div className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 text-center text-neutral-600 text-3xl font-bold tracking-widest md:text-5xl lg:text-7xl'>
           {currentTitle}
         </div>
         <div className='flex justify-center items-center'>
