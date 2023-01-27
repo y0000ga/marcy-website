@@ -4,7 +4,6 @@
   "homepage": "https://y0000ga.github.io/marcy-website",
   "private": true,
   "dependencies": {
-    "@hookform/resolvers": "^2.9.10",
     "@react-google-maps/api": "^2.17.1",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
@@ -15,13 +14,13 @@
     "@types/react-dom": "^18.0.10",
     "axios": "^1.2.3",
     "emoji-picker-react": "^4.4.7",
-    "firebase": "^9.16.0",
     "gh-pages": "^5.0.0",
     "gsap": "^3.11.4",
     "i18next": "^22.4.9",
     "i18next-http-backend": "^2.1.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-drawing": "^1.2.1",
     "react-hook-form": "^7.42.1",
     "react-i18next": "^12.1.4",
     "react-icons": "^4.7.1",
@@ -29,8 +28,7 @@
     "react-scripts": "5.0.1",
     "sweetalert2": "^11.7.0",
     "typescript": "^4.9.4",
-    "web-vitals": "^2.1.4",
-    "yup": "^0.32.11"
+    "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",

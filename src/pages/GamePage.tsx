@@ -16,81 +16,27 @@ const GamePage: React.FC = () => {
   const psychTestData = [
     {
       topic: t('phyTestTopic.0'),
-      children: (
-        <BsDot
-          className='absolute text-9xl'
-          style={{
-            top: '50%',
-            left: '50%',
-            transform: 'translate(-50%, -50%)',
-          }}
-        />
-      ),
+      children: <BsDot />,
     },
     {
       topic: t('phyTestTopic.1'),
-      children: (
-        <BsCircle
-          className='absolute text-9xl'
-          style={{
-            top: '50%',
-            left: '50%',
-            transform: 'translate(-50%, -50%)',
-          }}
-        />
-      ),
+      children: <BsCircle />,
     },
     {
       topic: t('phyTestTopic.2'),
-      children: (
-        <TfiLayoutLineSolid
-          className='absolute -translate-x-1/2 -translate-y-1/2 origin-center -rotate-45'
-          style={{
-            fontSize: '420px',
-            top: '50%',
-            left: '50%',
-          }}
-        />
-      ),
+      children: <TfiLayoutLineSolid className='origin-center -rotate-45' />,
     },
     {
       topic: t('phyTestTopic.3'),
-      children: (
-        <TfiLayoutLineSolid
-          className='absolute -translate-x-1/2 -translate-y-1/2 origin-center rotate-45'
-          style={{
-            fontSize: '420px',
-            top: '50%',
-            left: '50%',
-          }}
-        />
-      ),
+      children: <TfiLayoutLineSolid className=' origin-center rotate-45' />,
     },
     {
       topic: t('phyTestTopic.4'),
-      children: (
-        <TfiLayoutLineSolid
-          className='absolute -translate-x-1/2 -translate-y-1/2 '
-          style={{
-            fontSize: '350px',
-            top: '50%',
-            left: '50%',
-          }}
-        />
-      ),
+      children: <TfiLayoutLineSolid />,
     },
     {
       topic: t('phyTestTopic.5'),
-      children: (
-        <TfiLayoutLineSolid
-          className='absolute -translate-x-1/2 -translate-y-1/2 origin-center rotate-90'
-          style={{
-            fontSize: '350px',
-            top: '50%',
-            left: '50%',
-          }}
-        />
-      ),
+      children: <TfiLayoutLineSolid className=' origin-center rotate-90' />,
     },
   ]
   return (
