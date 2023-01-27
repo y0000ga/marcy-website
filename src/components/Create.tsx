@@ -33,7 +33,7 @@ const Create: React.FC = () => {
   ]
   return (
     <>
-      <Divider content='文創小物' />
+      <Divider content={t('divider.create') as string} />
       {creates.map((data) => (
         <DotProductItem data={data} key={data.title} />
       ))}

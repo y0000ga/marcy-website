@@ -10,7 +10,7 @@ const DotHistoryItem: React.FC<DotHistoryItemProps> = ({
   children,
 }) => {
   return (
-    <li className="my-4">
+    <li className='my-4 animate-historyShown'>
       <span className='text-sky-500'>{time}</span>
       <br />
       {content}

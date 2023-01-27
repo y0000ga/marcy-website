@@ -1,10 +1,9 @@
-import { useTranslation } from "react-i18next"
-import Divider from "../Layout/Divider"
-import DotProductItem from "./DotProductItem"
+import { useTranslation } from 'react-i18next'
+import Divider from '../Layout/Divider'
+import DotProductItem from './DotProductItem'
 
-
-const Book:React.FC= ()=> {
-  const {t} =useTranslation()
+const Book: React.FC = () => {
+  const { t } = useTranslation()
   const books = [
     {
       title: t('dotBookData.0.title'),
@@ -28,7 +27,7 @@ const Book:React.FC= ()=> {
   ]
   return (
     <>
-      <Divider content='青春巨著' />
+      <Divider content={t('divider.book') as string} />
       <div className='flex flex-col justify-center'>
         {books.map((data) => (
           <DotProductItem data={data} key={data.title} />

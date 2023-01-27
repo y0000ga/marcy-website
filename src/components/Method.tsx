@@ -19,7 +19,7 @@ const Method: React.FC = () => {
             <div className='text-lg text-sky-500 my-4'>
               {t('method.letter.title')}
             </div>
-            <div className='my-2'>📪 請寄到{t('method.letter.address')}</div>
+            <div className='my-2'>📪 {t('method.letter.address')}</div>
             <ul>
               <li>
                 👋<span className='ml-2'>{t('method.letter.warning.0')}</span>
@@ -36,7 +36,7 @@ const Method: React.FC = () => {
             <div className='text-lg text-sky-500 my-4'>
               {t('method.picture.title')}
             </div>
-            <div className='my-2'>📪 請寄到{t('method.picture.address')}</div>
+            <div className='my-2'>📪 {t('method.picture.address')}</div>
             <ul>
               <li>
                 👋<span className='ml-2'>{t('method.picture.warning.0')}</span>

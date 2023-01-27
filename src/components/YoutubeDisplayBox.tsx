@@ -1,6 +1,7 @@
 import { youtubeGetInfoApi } from '../api/youtubeApi'
 import { useEffect, useState } from 'react'
 import { AiOutlineEye, AiOutlineLike, AiOutlineComment } from 'react-icons/ai'
+import { useTranslation } from 'react-i18next'
 
 interface YoutubeDisplayBoxProps {
   title: string
@@ -28,6 +29,7 @@ const YoutubeDisplayBox: React.FC<YoutubeDisplayBoxProps> = ({
   start,
 }) => {
   const [staticsData, setStaticsData] = useState<staticsDataType>()
+  const { t } = useTranslation()
   useEffect(() => {
     const youtubeGetInfo = async () => {
       const res = (await youtubeGetInfoApi(id)) as any
@@ -78,7 +80,7 @@ const YoutubeDisplayBox: React.FC<YoutubeDisplayBoxProps> = ({
         </ul>
         {comment && comment.length !== 0 && (
           <div className='leading-loose my-4 text-justify text-sky-500'>
-            網友大讚 👍 {comment}
+            {t('good')} 👍 {comment}
           </div>
         )}
       </div>

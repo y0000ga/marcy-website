@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { weatherApi } from '../api/weatherApi'
 
 const WeatherBox: React.FC = () => {
   const [currentWeather, setCurrentWeather] = useState<string[]>()
+  const { t } = useTranslation()
   useEffect(() => {
     const weatherInfo = async () => {
       const res = (await weatherApi()) as any
@@ -16,8 +18,10 @@ const WeatherBox: React.FC = () => {
   return (
     <div className='h-10 flex justify-center items-center bg-red-500 overflow-hidden -z-10 w-full'>
       <p className='inline-block text-white animate-marquee'>
-        目前教主教母所在的天龍國
-        {currentWeather ? currentWeather?.join('且') : '未知'}
+        {t('weather.opening')}
+        {currentWeather
+          ? currentWeather?.join(t('weather.and') as string)
+          : t('weather.undefined')}
       </p>
     </div>
   )

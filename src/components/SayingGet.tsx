@@ -2,7 +2,7 @@ import SayingIcon_1 from '../assets/SayingIcon/SayingIcon (1).png'
 import SayingIcon_2 from '../assets/SayingIcon/SayingIcon (2).png'
 import SayingIcon_3 from '../assets/SayingIcon/SayingIcon (3).png'
 import SayingIcon_4 from '../assets/SayingIcon/SayingIcon (4).png'
-import { useState } from 'react'
+import { useState} from 'react'
 import Swal from 'sweetalert2'
 import { useTranslation } from 'react-i18next'
 
@@ -10,6 +10,7 @@ const sayingIcons = [SayingIcon_1, SayingIcon_2, SayingIcon_3, SayingIcon_4]
 
 const SayingGet: React.FC = () => {
   const { t } = useTranslation()
+
   const dotSayingData = [
     {
       title: t('dotSayingData.0.title'),
@@ -104,7 +105,7 @@ const SayingGet: React.FC = () => {
       description: t('dotSayingData.22.description'),
     },
   ]
-  
+
   const [sayingIndex, setSayingIndex] = useState<number[]>([
     Math.floor(Math.random() * sayingIcons.length),
     Math.floor(Math.random() * dotSayingData.length),
@@ -133,7 +134,7 @@ const SayingGet: React.FC = () => {
         {t('sayingGet.buttonContent')}
       </div>
       <div className='mt-4'>{t('sayingGet.allSaying')}</div>
-      {dotSayingData.map((data) => (
+      {dotSayingData.map((data,index) => (
         <div className='leading-loose mt-4 text-justify' key={data.title}>
           <span className='font-bold '>🔈 {data.title}</span>
           <br />

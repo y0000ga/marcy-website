@@ -6,11 +6,18 @@ module.exports = {
     extend: {
       keyframes: {
         marquee: {
-          '0%': { transform: 'translateX(100%)' },
-          '100%': { transform: 'translateX(-100%)' },
+          '0%': { transform: 'translateX(100vw)' },
+          '100%': { transform: 'translateX(-100vw)' },
+        },
+        historyShown: {
+          '0%': { opacity: 0 },
+          '100%': { opacity: 1 },
         },
       },
-      animation: { marquee: 'marquee 10s linear infinite' },
+      animation: {
+        marquee: 'marquee 20s linear infinite',
+        historyShown: 'historyShown 2.5s ease 1',
+      },
     },
   },
   plugins: [],

@@ -6,7 +6,7 @@ const ErrorPage = () => {
   useEffect(() => {
     navigate('home')
   }, [navigate])
-  return <div></div>
+  return <></>
 }
 
 export default ErrorPage
