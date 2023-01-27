@@ -13,6 +13,13 @@ const GamePage: React.FC = () => {
   useEffect(() => {
     i18n.changeLanguage(lng)
   }, [i18n, lng])
+  useEffect(() => {
+    if (navigator.maxTouchPoints > 1) {
+      localStorage.setItem('device', 'mobile')
+    } else {
+      localStorage.setItem('device', 'keyboard')
+    }
+  }, [])
   const psychTestData = [
     {
       topic: t('phyTestTopic.0'),

@@ -32,7 +32,6 @@ interface PsychTestProps {
 const PsychTest: React.FC<PsychTestProps> = ({ number, topic, children }) => {
   const device = localStorage.getItem('device')
   const { t } = useTranslation()
-  const [action, setAction] = useState('mouse')
   const { register, handleSubmit } = useForm<PsychTestInputProps>()
   let lastPoint: { x?: number; y?: number } | null = {}
   const activeColor = '#000000'
@@ -69,7 +68,6 @@ const PsychTest: React.FC<PsychTestProps> = ({ number, topic, children }) => {
     }
 
     const handleMouseMove = (e: MouseEvent) => {
-      setAction((prev) => (prev = 'mouse'))
       if (isDrawing) {
         const point = { x: e.offsetX, y: e.offsetY }
         handleDrawCanvas(point)
@@ -77,7 +75,6 @@ const PsychTest: React.FC<PsychTestProps> = ({ number, topic, children }) => {
     }
 
     const handleTouchMove = (e: TouchEvent) => {
-      setAction((prev) => (prev = 'touch'))
       if (isDrawing) {
         const r = canvasRef.current.getBoundingClientRect()
         const point = {
