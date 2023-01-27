@@ -1,4 +1,3 @@
-
 import { useForm, SubmitHandler } from 'react-hook-form'
 import Swal from 'sweetalert2'
 import PsychTestIcon_1 from '../assets/PsychTestIcon/PsychTestIcon(1).png'
@@ -8,7 +7,8 @@ import PsychTestIcon_4 from '../assets/PsychTestIcon/PsychTestIcon(4).png'
 import PsychTestIcon_5 from '../assets/PsychTestIcon/PsychTestIcon(5).png'
 import PsychTestIcon_6 from '../assets/PsychTestIcon/PsychTestIcon(6).png'
 import { useTranslation } from 'react-i18next'
-import Drawing, { brushArc } from 'react-drawing'
+import { ReactSketchCanvas } from 'react-sketch-canvas'
+import { useRef } from 'react'
 
 const psychTestIconData = [
   PsychTestIcon_1,
@@ -44,7 +44,7 @@ const PsychTest: React.FC<PsychTestProps> = ({ number, topic, children }) => {
     })
     event?.target.reset()
   }
-
+  const canvasRef = useRef<any>(null)
   return (
     <div className='my-4'>
       <div className='text-xl font-medium leading-loose tracking-widest text-sky-500 text-center'>
@@ -53,19 +53,17 @@ const PsychTest: React.FC<PsychTestProps> = ({ number, topic, children }) => {
         {t('psyTest.question')}
       </div>
       <div className='border'>
-        <div className='absolute text-9xl z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2'>
+        <div className='absolute text-9xl  top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2'>
           {children}
         </div>
-        <div className='border cursor-pointer'>
-          <Drawing
-            brush={brushArc({
-              fillStyle: '#0CA5E9',
-              size: 5,
-            })}
-            height={350}
-            width={350}
-          />
-        </div>
+        <ReactSketchCanvas
+          canvasColor='transparent'
+          strokeWidth={2}
+          strokeColor='blue'
+          width='350px'
+          height='350px'
+          ref={canvasRef}
+        />
       </div>
       <form
         onSubmit={handleSubmit(onSubmit)}
@@ -88,7 +86,15 @@ const PsychTest: React.FC<PsychTestProps> = ({ number, topic, children }) => {
           />
         </div>
         <div className='flex justify-around w-full'>
-          <button className='border border-sky-500 m-4 h-10 w-1/2 rounded-lg text-sky-500 hover:bg-sky-500 hover:text-white cursor-pointer'>
+          <button
+            className='border border-sky-500 m-4 h-10 w-1/2 rounded-lg text-sky-500 hover:bg-sky-500 hover:text-white cursor-pointer'
+            onClick={(event) => {
+              event.preventDefault()
+              if (canvasRef.current !== null) {
+                canvasRef.current.clearCanvas()
+              }
+            }}
+          >
             {t('psyTest.clearCanvas')}
           </button>
           <input
