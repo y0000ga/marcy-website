@@ -30,10 +30,10 @@ interface PsychTestProps {
 }
 
 const PsychTest: React.FC<PsychTestProps> = ({ number, topic, children }) => {
+  const move = localStorage.getItem('move')
   const { t } = useTranslation()
   const { register, handleSubmit } = useForm<PsychTestInputProps>()
   let lastPoint: { x?: number; y?: number } | null = {}
-  const activeColor = '#000000'
   const canvasRef = useRef<any>()
   const [isDrawing, setIsDrawing] = useState<boolean>(false)
   const onSubmit: SubmitHandler<PsychTestInputProps> = async (data, event) => {
@@ -53,7 +53,7 @@ const PsychTest: React.FC<PsychTestProps> = ({ number, topic, children }) => {
     let savedCanvasRefCurrentValue: any
     const handleDrawCanvas = (point: { x: number; y: number }) => {
       const ctx = canvasRef.current.getContext('2d')
-      ctx.strokeStyle = activeColor
+      ctx.strokeStyle = '#000000'
       ctx.lineWidth = 1
       ctx.lineCap = 'round'
       ctx.lineJoin = 'round'
@@ -66,15 +66,24 @@ const PsychTest: React.FC<PsychTestProps> = ({ number, topic, children }) => {
       ctx.closePath()
     }
 
-    const handleMouseMove = (e: MouseEvent) => {
+    const handleMouseMove = (e: any) => {
       if (isDrawing) {
-        const point = { x: e.offsetX, y: e.offsetY }
-        handleDrawCanvas(point)
+        if (move === 'touchmove') {
+          let r = canvasRef.current.getBoundingClientRect()
+          const point = {
+            x: e.touches[0].clientX - r.left,
+            y: e.touches[0].clientY - r.top,
+          }
+          handleDrawCanvas(point)
+        } else if (move === 'mousemove') {
+          const point = { x: e.offsetX, y: e.offsetY }
+          handleDrawCanvas(point)
+        }
       }
     }
 
     if (canvasRef && canvasRef.current) {
-      canvasRef.current.addEventListener('mousemove', handleMouseMove)
+      canvasRef.current.addEventListener(move, handleMouseMove)
     }
 
     if (canvasRef.current) {
@@ -83,10 +92,7 @@ const PsychTest: React.FC<PsychTestProps> = ({ number, topic, children }) => {
 
     return () => {
       if (savedCanvasRefCurrentValue) {
-        savedCanvasRefCurrentValue.removeEventListener(
-          'mousemove',
-          handleMouseMove
-        )
+        savedCanvasRefCurrentValue.removeEventListener(move, handleMouseMove)
       }
     }
   }, [isDrawing, canvasRef])
@@ -114,21 +120,33 @@ const PsychTest: React.FC<PsychTestProps> = ({ number, topic, children }) => {
       </div>
       <div>
         {children}
-        <canvas
-          id='canvas'
-          className='border m-auto rounded-md my-4'
-          ref={canvasRef}
-          height={350}
-          width={350}
-          onMouseDown={handleMouseDown}
-          onTouchStart={handleMouseDown}
-          onMouseUp={handleMouseUp}
-          onTouchEnd={handleMouseUp}
-          onMouseOver={handleMouseUp}
-          onTouchMove={handleMouseUp}
-        >
-          {t('psyTest.unsupport')}
-        </canvas>
+        {move === 'mousemove' ? (
+          <canvas
+            id='canvas'
+            className='border m-auto rounded-md my-4 z-10'
+            ref={canvasRef}
+            height={350}
+            width={350}
+            onMouseDown={handleMouseDown}
+            onMouseUp={handleMouseUp}
+            onMouseOver={handleMouseUp}
+          >
+            {t('psyTest.unsupport')}
+          </canvas>
+        ) : (
+          <canvas
+            id='canvas'
+            className='border m-auto rounded-md my-4 z-10'
+            ref={canvasRef}
+            height={350}
+            width={350}
+            onTouchStart={handleMouseDown}
+            onTouchEnd={handleMouseUp}
+            onTouchMove={handleMouseUp}
+          >
+            {t('psyTest.unsupport')}
+          </canvas>
+        )}
       </div>
       <form
         onSubmit={handleSubmit(onSubmit)}

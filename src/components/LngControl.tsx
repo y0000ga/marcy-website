@@ -10,24 +10,26 @@ const LngControl: React.FC = () => {
     }
   }, [lng])
   return (
-    <li className='w-full h-12 flex justify-center items-center tracking-widest cursor-pointer xl:border-none xl:w-fit xl:mx-2'>
+    <li
+      className={`w-full h-12 flex justify-center items-center tracking-widest border-b cursor-pointer hover:text-blue-500 xl:border-none xl:w-fit mx-2 `}
+    >
       <span
-        className={`hover:text-blue-500 mx-2 ${
+        className={`hover:text-blue-500 ${
           lng === 'tw' && 'text-blue-500'
-        }`}
+        } mx-2`}
         onClick={() => {
           i18n.changeLanguage('tw')
           localStorage.setItem('lng', 'tw')
         }}
       >
-        繁中{' '}
-      </span>{' '}
+        繁中
+      </span>
       |
       <span
         style={{ fontFamily: 'Noto Sans SC, sans-serif' }}
-        className={`hover:text-blue-500 mx-2  ${
+        className={`hover:text-blue-500  ${
           lng === 'cn' && 'text-blue-500'
-        }`}
+        } mx-2`}
         onClick={() => {
           i18n.changeLanguage('cn')
           localStorage.setItem('lng', 'cn')
