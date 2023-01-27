@@ -67,6 +67,7 @@ const PsychTest: React.FC<PsychTestProps> = ({ number, topic, children }) => {
     }
 
     const handleMouseMove = (e: any) => {
+      localStorage.setItem('move', e.type)
       if (isDrawing) {
         if (move === 'touchmove') {
           let r = canvasRef.current.getBoundingClientRect()
