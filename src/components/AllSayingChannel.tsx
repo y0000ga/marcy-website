@@ -77,9 +77,10 @@ const AllSayingChannel = () => {
             <img
               src={marcyMailboxInfo.snippet.thumbnails.default.url}
               alt='icon'
+              className='cursor-pointer'
             />
             <div className='mx-4 flex justify-center flex-col'>
-              <div className='font-bold text-2xl leading-loose tracking-widest hover:text-sky-500'>
+              <div className='font-bold text-2xl leading-loose tracking-widest cursor-pointer hover:text-sky-500'>
                 {marcyMailboxInfo.snippet.title}
               </div>
               <div className='flex  '>

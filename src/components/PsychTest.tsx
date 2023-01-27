@@ -43,6 +43,9 @@ const PsychTest: React.FC<PsychTestProps> = ({ number, topic, children }) => {
       text: `${data.adjective_1}且${data.adjective_2}`,
     })
     event?.target.reset()
+    if (canvasRef.current !== null) {
+      canvasRef.current.clearCanvas()
+    }
   }
   const canvasRef = useRef<any>(null)
   return (

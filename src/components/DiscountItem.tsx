@@ -31,7 +31,7 @@ const DiscountItem: React.FC<DiscountItemProps> = ({
     t('discountTypeData.6'),
   ]
   return (
-    <div className='my-4 w-full tracking-widest md:w-1/2 flex flex-col'>
+    <div className='my-4 w-full tracking-widest md:w-1/2 flex flex-col animate-slowShown'>
       <div className='flex items-center'>
         <div
           className={`border w-fit p-2 rounded-md font-light ${
@@ -65,20 +65,22 @@ const DiscountItem: React.FC<DiscountItemProps> = ({
           {t('discountItem.offer')}
           {content}
         </div>
-        {address && <div
-          className='my-2 flex items-start cursor-pointer hover:text-sky-500'
-          onClick={() => {
-            setTimeout(() => {
-              window.open(
-                `https://www.google.com/maps/search/?api=1&query=${title}`,
-                '_blank'
-              )
-            })
-          }}
-        >
-          <div>🚩</div>
-          {address}
-        </div>}
+        {address && (
+          <div
+            className='my-2 flex items-start cursor-pointer hover:text-sky-500'
+            onClick={() => {
+              setTimeout(() => {
+                window.open(
+                  `https://www.google.com/maps/search/?api=1&query=${title}`,
+                  '_blank'
+                )
+              })
+            }}
+          >
+            <div>🚩</div>
+            {address}
+          </div>
+        )}
       </div>
     </div>
   )

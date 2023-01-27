@@ -9,14 +9,14 @@ module.exports = {
           '0%': { transform: 'translateX(100vw)' },
           '100%': { transform: 'translateX(-100vw)' },
         },
-        historyShown: {
+        slowShown: {
           '0%': { opacity: 0 },
           '100%': { opacity: 1 },
         },
       },
       animation: {
         marquee: 'marquee 20s linear infinite',
-        historyShown: 'historyShown 2.5s ease 1',
+        slowShown: 'slowShown 2.5s ease 1',
       },
     },
   },
