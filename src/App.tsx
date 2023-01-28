@@ -9,8 +9,12 @@ import SayingPage from './pages/SayingPage'
 import ErrorPage from './pages/ErrorPage'
 import SecretPage from './pages/SecretPage'
 import DiscountPage from './pages/DiscountPage'
+import { useEffect } from 'react'
 
 const App = () => {
+  useEffect(() => {
+    localStorage.setItem('lng', 'tw')
+  }, [])
   return (
     <div
       style={{
