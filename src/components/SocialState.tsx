@@ -17,7 +17,7 @@ const SocialState: React.FC<SocialStateProps> = ({
   videoCount,
 }) => {
   return (
-    <div className='flex text-xl justify-center'>
+    <div className='flex text-md'>
       {subscriberCount && (
         <div className='flex items-center mx-2'>
           <BsPerson />

@@ -35,13 +35,12 @@ const HostIntro: React.FC = () => {
             {t('figureDescription.1')}
           </div>
         </div>
-        <div className='lg:ml-4'>
+        <ul className='list-disc list-inside lg:ml-4'>
           {markIntro.map((data) => (
             <li key={data}>{data}</li>
           ))}
-        </div>
+        </ul>
       </HostIntroItem>
-      <div className='text-6xl tracking-widest w-full text-center text-gray-200'>𐫴𐫴𐫴𐫴𐫴𐫴</div>
       <HostIntroItem title={t('hostIntroData.1.name')}>
         <div className='flex flex-col items-center'>
           <MaryInThree className='w-full border h-full p-2 my-2 lg:w-96' />
@@ -49,11 +48,11 @@ const HostIntro: React.FC = () => {
             {t('figureDescription.2')}
           </div>
         </div>
-        <div className='lg:ml-4'>
+        <ul className='list-disc list-inside lg:ml-4'>
           {maryIntro.map((data) => (
             <li key={data}>{data}</li>
           ))}
-        </div>
+        </ul>
       </HostIntroItem>
     </div>
   )

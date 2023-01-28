@@ -28,7 +28,7 @@ const AllSayingChannel = () => {
   return (
     <>
       <Divider content={t('divider.allSayingPlace') as string} />
-      <div className='flex flex-col justify-around lg:flex-row'>
+      <div className='flex flex-col justify-around lg:flex-row w-full'>
         {markOrangeInfo && (
           <ChannelItem
             websiteUrl={marcYoutube}

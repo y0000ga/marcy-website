@@ -51,7 +51,7 @@ const YoutubeDisplayBox: React.FC<YoutubeDisplayBoxProps> = ({
           allowFullScreen={true}
         />
       </div>
-      <div className='w-full flex flex-col justify-center'>
+      <div className='w-full flex flex-col justify-center items-center'>
         <div className='my-4 font-bold text-center tracking-widest text-xl'>
           {title}
         </div>

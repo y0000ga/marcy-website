@@ -24,25 +24,21 @@ const Footer: React.FC = () => {
         className='text-4xl whitespace-nowrap italic font-black text-sky-50 tracking-widest'
         ref={loopRef}
       >
-        Marcy🎔 Marcy🎔 Marcy🎔 Marcy🎔 Marcy🎔 Marcy🎔 Marcy🎔 Marcy🎔 Marcy🎔 Marcy🎔
-        Marcy🎔 Marcy🎔 Marcy🎔 Marcy🎔 Marcy🎔 Marcy🎔 Marcy🎔 Marcy🎔 Marcy🎔 Marcy🎔
-        Marcy🎔 Marcy🎔 Marcy🎔 Marcy🎔 Marcy🎔 Marcy🎔 Marcy🎔 Marcy🎔 Marcy🎔 Marcy🎔
-        Marcy🎔 Marcy🎔
+        Oh! Marcy! Oh! Marcy! Oh! Marcy! Oh! Marcy! Oh! Marcy! Oh! Marcy! Oh!
+        Marcy! Oh! Marcy! Oh! Marcy! Oh! Marcy! Oh! Marcy! Oh! Marcy! Oh! Marcy!
+        Oh! Marcy! Oh! Marcy! Oh! Marcy! Oh! Marcy! Oh! Marcy!
         <br />
-        Marcy🎔 Marcy🎔 Marcy🎔 Marcy🎔 Marcy🎔 Marcy🎔 Marcy🎔 Marcy🎔 Marcy🎔 Marcy🎔
-        Marcy🎔 Marcy🎔 Marcy🎔 Marcy🎔 Marcy🎔 Marcy🎔 Marcy🎔 Marcy🎔 Marcy🎔 Marcy🎔
-        Marcy🎔 Marcy🎔 Marcy🎔 Marcy🎔 Marcy🎔 Marcy🎔 Marcy🎔 Marcy🎔 Marcy🎔 Marcy🎔
-        Marcy🎔 Marcy🎔
+        Oh! Marcy! Oh! Marcy! Oh! Marcy! Oh! Marcy! Oh! Marcy! Oh! Marcy! Oh!
+        Marcy! Oh! Marcy! Oh! Marcy! Oh! Marcy! Oh! Marcy! Oh! Marcy! Oh! Marcy!
+        Oh! Marcy! Oh! Marcy! Oh! Marcy! Oh! Marcy! Oh! Marcy!
         <br />
-        Marcy🎔 Marcy🎔 Marcy🎔 Marcy🎔 Marcy🎔 Marcy🎔 Marcy🎔 Marcy🎔 Marcy🎔 Marcy🎔
-        Marcy🎔 Marcy🎔 Marcy🎔 Marcy🎔 Marcy🎔 Marcy🎔 Marcy🎔 Marcy🎔 Marcy🎔 Marcy🎔
-        Marcy🎔 Marcy🎔 Marcy🎔 Marcy🎔 Marcy🎔 Marcy🎔 Marcy🎔 Marcy🎔 Marcy🎔 Marcy🎔
-        Marcy🎔 Marcy🎔
+        Oh! Marcy! Oh! Marcy! Oh! Marcy! Oh! Marcy! Oh! Marcy! Oh! Marcy! Oh!
+        Marcy! Oh! Marcy! Oh! Marcy! Oh! Marcy! Oh! Marcy! Oh! Marcy! Oh! Marcy!
+        Oh! Marcy! Oh! Marcy! Oh! Marcy! Oh! Marcy! Oh! Marcy!
         <br />
-        Marcy🎔 Marcy🎔 Marcy🎔 Marcy🎔 Marcy🎔 Marcy🎔 Marcy🎔 Marcy🎔 Marcy🎔 Marcy🎔
-        Marcy🎔 Marcy🎔 Marcy🎔 Marcy🎔 Marcy🎔 Marcy🎔 Marcy🎔 Marcy🎔 Marcy🎔 Marcy🎔
-        Marcy🎔 Marcy🎔 Marcy🎔 Marcy🎔 Marcy🎔 Marcy🎔 Marcy🎔 Marcy🎔 Marcy🎔 Marcy🎔
-        Marcy🎔 Marcy🎔
+        Oh! Marcy! Oh! Marcy! Oh! Marcy! Oh! Marcy! Oh! Marcy! Oh! Marcy! Oh!
+        Marcy! Oh! Marcy! Oh! Marcy! Oh! Marcy! Oh! Marcy! Oh! Marcy! Oh! Marcy!
+        Oh! Marcy! Oh! Marcy! Oh! Marcy! Oh! Marcy! Oh! Marcy!
       </div>
     </div>
   )

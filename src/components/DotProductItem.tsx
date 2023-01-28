@@ -22,12 +22,14 @@ const DotProductItem: React.FC<DotProductItemProps> = ({ data }) => {
   const { t } = useTranslation()
 
   return (
-    <div className='my-4 flex flex-col items-center lg:flex-row'>
-      <img
-        src={imgUrl}
-        alt={title}
-        className={type === 'book' ? 'w-96' : 'w-80'}
-      />
+    <div className='my-8 flex flex-col items-center lg:flex-row'>
+      <div className='border'>
+        <img
+          src={imgUrl}
+          alt={title}
+          className={`${type === 'book' ? 'w-96' : 'w-80'}`}
+        />
+      </div>
       <div className={`${type === 'book' ? '' : 'mx-8'} w-full `}>
         <div
           className='font-bold text-xl my-4 flex items-center justify-center cursor-pointer'

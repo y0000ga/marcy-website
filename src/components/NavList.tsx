@@ -14,7 +14,7 @@ export const ToggleNavList: React.FC = () => {
     { title: t('navItemInfo.6.title'), pathname: '/discount' },
   ]
   return (
-    <ul className='absolute top-full w-full border-t bg-white xl:hidden'>
+    <ul className='absolute top-full w-full border-t bg-white z-50 xl:hidden'>
       {navItemInfo.map((navItem) => (
         <NavItem
           title={navItem.title}
