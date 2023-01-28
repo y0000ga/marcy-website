@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next'
 import Divider from '../Layout/Divider'
-import seal from '../assets/Figure/seal.png'
+import DotDictionaryItem from './DotDictinaryItem'
 
 const DotDictionary: React.FC = () => {
   const { t } = useTranslation()
@@ -48,25 +48,11 @@ const DotDictionary: React.FC = () => {
       <div className='leading-loose mt-4 text-justify flex flex-col'>
         <ul className='md:flex md:flex-wrap'>
           {dotDictionary.map((word) => (
-            <li
+            <DotDictionaryItem
               key={word.title}
-              className='my-4 py-4 px-8 md:border-r-8 md:border-l-8 md:border-white bg-yellow-100 md:w-1/2 underline underline-offset-8'
-            >
-              <img
-                src={seal}
-                alt='seal'
-                className='absolute w-10 -right-2 -top-2'
-              />
-              <div className='w-fit absolute top-0 left-0 z-10 leading-4 text-white'>
-                ◤
-              </div>
-              <div className='w-fit absolute top-0 left-0 z-10 leading-4 text-yellow-300'>
-                ◢
-              </div>
-              <span className='font-semibold'>{word.title}</span>
-              <br />
-              {word.description}
-            </li>
+              title={word.title}
+              description={word.description}
+            />
           ))}
         </ul>
       </div>

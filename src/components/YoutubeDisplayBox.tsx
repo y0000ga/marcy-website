@@ -1,7 +1,8 @@
 import { youtubeGetInfoApi } from '../api/youtubeApi'
 import { useEffect, useState } from 'react'
-import { AiOutlineEye, AiOutlineLike, AiOutlineComment } from 'react-icons/ai'
 import { useTranslation } from 'react-i18next'
+import { youtubeBaseEmbedUrl } from '../wordingData'
+import SocialState from './SocialState'
 
 interface YoutubeDisplayBoxProps {
   title: string
@@ -11,8 +12,6 @@ interface YoutubeDisplayBoxProps {
   comment?: string
   start?: string
 }
-
-const youtubeBaseEmbedUrl = 'https://www.youtube.com/embed/'
 
 type staticsDataType = {
   commentCount: string
@@ -56,20 +55,11 @@ const YoutubeDisplayBox: React.FC<YoutubeDisplayBoxProps> = ({
         <div className='my-4 font-bold text-center tracking-widest text-xl'>
           {title}
         </div>
-        <div className='flex text-xl justify-center'>
-          <div className='flex items-center mx-2'>
-            <AiOutlineEye />
-            <span className='mx-2'>{staticsData?.viewCount}</span>
-          </div>
-          <div className='flex items-center mx-2'>
-            <AiOutlineLike />
-            <span className='mx-2'>{staticsData?.likeCount}</span>
-          </div>
-          <div className='flex items-center mx-2'>
-            <AiOutlineComment />
-            <span className='mx-2'>{staticsData?.commentCount}</span>
-          </div>
-        </div>
+        <SocialState
+          viewCount={staticsData?.viewCount as string}
+          likeCount={staticsData?.likeCount as string}
+          commentCount={staticsData?.commentCount as string}
+        />
         <div className='leading-loose my-4 text-justify'>{description}</div>
         <ul className='leading-loose my-4 text-justify'>
           {quote?.map((data) => (

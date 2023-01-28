@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next'
 import { RxExternalLink } from 'react-icons/rx'
+import { googleMapSearchBaseUrl } from '../wordingData'
 
 interface DiscountItemProps {
   title: string
@@ -70,10 +71,7 @@ const DiscountItem: React.FC<DiscountItemProps> = ({
             className='my-2 flex items-start cursor-pointer hover:text-sky-500'
             onClick={() => {
               setTimeout(() => {
-                window.open(
-                  `https://www.google.com/maps/search/?api=1&query=${title}`,
-                  '_blank'
-                )
+                window.open(`${googleMapSearchBaseUrl}${title}`, '_blank')
               })
             }}
           >

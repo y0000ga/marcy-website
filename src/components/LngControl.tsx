@@ -1,8 +1,28 @@
 import { useTranslation } from 'react-i18next'
 import { useEffect } from 'react'
 
-const LngControl: React.FC = () => {
+interface SingleLngProps {
+  lngShort: string
+  lngName: string
+}
+
+const SingleLng: React.FC<SingleLngProps> = ({ lngShort, lngName }) => {
   const { i18n } = useTranslation()
+  const lng = localStorage.getItem('lng')
+  return (
+    <span
+      className={`hover:text-blue-500 ${lng === lngShort && 'text-blue-500'} mx-2`}
+      onClick={() => {
+        i18n.changeLanguage(lngShort)
+        localStorage.setItem('lng', lngShort)
+      }}
+    >
+      {lngName}
+    </span>
+  )
+}
+
+const LngControl: React.FC = () => {
   const lng = localStorage.getItem('lng')
   useEffect(() => {
     if (lng === 'null') {
@@ -13,30 +33,9 @@ const LngControl: React.FC = () => {
     <li
       className={`w-full h-12 flex justify-center items-center tracking-widest border-b cursor-pointer hover:text-blue-500 xl:border-none xl:w-fit mx-2 `}
     >
-      <span
-        className={`hover:text-blue-500 ${
-          lng === 'tw' && 'text-blue-500'
-        } mx-2`}
-        onClick={() => {
-          i18n.changeLanguage('tw')
-          localStorage.setItem('lng', 'tw')
-        }}
-      >
-        繁中
-      </span>
+      <SingleLng lngName='繁中' lngShort='tw' />
       |
-      <span
-        style={{ fontFamily: 'Noto Sans SC, sans-serif' }}
-        className={`hover:text-blue-500  ${
-          lng === 'cn' && 'text-blue-500'
-        } mx-2`}
-        onClick={() => {
-          i18n.changeLanguage('cn')
-          localStorage.setItem('lng', 'cn')
-        }}
-      >
-        简中
-      </span>
+      <SingleLng lngName='簡中' lngShort='cn' />
     </li>
   )
 }

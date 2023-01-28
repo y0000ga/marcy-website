@@ -16,9 +16,9 @@ const SayingPage: React.FC = () => {
       <div className='leading-loose mt-4 text-justify'>
         {t('pageOpeningData.saying.0')}
       </div>
+      <AllSayingChannel />
       <Divider content={t('divider.allSaying') as string} />
       <SayingGet />
-      <AllSayingChannel />
     </MainWrapper>
   )
 }

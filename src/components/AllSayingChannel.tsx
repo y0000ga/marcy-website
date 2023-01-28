@@ -1,8 +1,10 @@
 import { youtubeGetChannelInfoApi } from '../api/youtubeApi'
 import Divider from '../Layout/Divider'
 import { useState, useEffect } from 'react'
-import { BsPerson, BsCameraVideo, BsEye } from 'react-icons/bs'
 import { useTranslation } from 'react-i18next'
+import { marcYoutube, marcyYoutube } from '../wordingData'
+
+import ChannelItem from './ChannelItem'
 
 const AllSayingChannel = () => {
   const { t } = useTranslation()
@@ -28,83 +30,24 @@ const AllSayingChannel = () => {
       <Divider content={t('divider.allSayingPlace') as string} />
       <div className='flex flex-col justify-around lg:flex-row'>
         {markOrangeInfo && (
-          <div
-            className='flex my-4 justify-center pr-4 '
-            onClick={() => {
-              setTimeout(() => {
-                window.open(
-                  'https://www.youtube.com/channel/UC2EwpAwcsIAohhPgIKtrPsg',
-                  '_blank'
-                )
-              })
-            }}
-          >
-  
-              <img
-                src={markOrangeInfo.snippet.thumbnails.default.url}
-                alt='icon'
-                className='cursor-pointer rounded-full'
-              />
-    
-
-            <div className='mx-4 flex justify-center flex-col'>
-              <div className='font-bold text-2xl leading-loose tracking-widest cursor-pointer hover:text-sky-500'>
-                {markOrangeInfo.snippet.title}
-              </div>
-              <div className='flex '>
-                <div className='flex items-center mr-2'>
-                  <BsPerson className='mr-2' />
-                  {markOrangeInfo.statistics.subscriberCount}
-                </div>
-                <div className='flex items-center mr-2'>
-                  <BsCameraVideo className='mr-2' />
-                  {markOrangeInfo.statistics.videoCount}
-                </div>
-                <div className='flex items-center mr-2'>
-                  <BsEye className='mr-2' />
-                  {markOrangeInfo.statistics.viewCount}
-                </div>
-              </div>
-            </div>
-          </div>
+          <ChannelItem
+            websiteUrl={marcYoutube}
+            imgUrl={markOrangeInfo.snippet.thumbnails.default.url}
+            title={markOrangeInfo.snippet.title}
+            viewCount={markOrangeInfo.statistics.viewCount}
+            subscriberCount={markOrangeInfo.statistics.subscriberCount}
+            videoCount={markOrangeInfo.statistics.videoCount}
+          />
         )}
         {marcyMailboxInfo && (
-          <div
-            className='flex my-4 justify-center pr-4'
-            onClick={() => {
-              setTimeout(() => {
-                window.open('https://www.youtube.com/@dearmarcy', '_blank')
-              })
-            }}
-          >
-           
-              <img
-                src={marcyMailboxInfo.snippet.thumbnails.default.url}
-                alt='icon'
-                className='cursor-pointer'
-              />
-  
-
-            <div className='mx-4 flex justify-center flex-col'>
-              <div className='font-bold text-2xl leading-loose tracking-widest cursor-pointer hover:text-sky-500'>
-                {marcyMailboxInfo.snippet.title}
-              </div>
-              <div className='flex  '>
-                <div className='flex items-center mr-2'>
-                  <BsPerson className='mr-2' />
-                  {marcyMailboxInfo.statistics.subscriberCount}
-                </div>
-                <div className='flex items-center mr-2'>
-                  <BsCameraVideo className='mr-2' />
-                  {marcyMailboxInfo.statistics.videoCount}
-                </div>
-                <div className='flex items-center mr-2'>
-                  <BsEye className='mr-2' />
-                  {marcyMailboxInfo.statistics.viewCount}
-                </div>
-              </div>
-            </div>
-          </div>
+          <ChannelItem
+            websiteUrl={marcyYoutube}
+            imgUrl={marcyMailboxInfo.snippet.thumbnails.default.url}
+            title={marcyMailboxInfo.snippet.title}
+            viewCount={marcyMailboxInfo.statistics.viewCount}
+            subscriberCount={marcyMailboxInfo.statistics.subscriberCount}
+            videoCount={marcyMailboxInfo.statistics.videoCount}
+          />
         )}
       </div>
     </>

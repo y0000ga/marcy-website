@@ -2,6 +2,7 @@ import Divider from '../Layout/Divider'
 import { useState } from 'react'
 import DotHistoryItem from './DotHistoryItem'
 import { useTranslation } from 'react-i18next'
+import { historyYears } from '../wordingData'
 
 const DotHistory: React.FC = () => {
   const { t } = useTranslation()
@@ -126,27 +127,14 @@ const DotHistory: React.FC = () => {
   ]
   const [year, setYear] = useState('all')
   const [history, setHistory] = useState(dotHistory)
-  const allHistoryYear = [
-    t('unlimitedYear'),
-    '2013',
-    '2014',
-    '2015',
-    '2016',
-    '2017',
-    '2018',
-    '2019',
-    '2020',
-    '2021',
-    '2022',
-    '2023',
-  ]
+  const allHistoryYear = [t('unlimitedYear'), ...historyYears]
 
   return (
     <>
       <Divider content={t('divider.history') as string} />
       <div className='leading-loose mt-4 text-justify flex flex-col'>
         <select
-        className='border w-80 p-2 my-4 rounded-lg left-1/2 -translate-x-1/2'
+          className='border w-80 p-2 my-4 rounded-lg left-1/2 -translate-x-1/2'
           value={year}
           onChange={(event) => {
             setYear(event.target.value)

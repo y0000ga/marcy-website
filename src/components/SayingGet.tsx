@@ -2,9 +2,10 @@ import SayingIcon_1 from '../assets/SayingIcon/SayingIcon (1).png'
 import SayingIcon_2 from '../assets/SayingIcon/SayingIcon (2).png'
 import SayingIcon_3 from '../assets/SayingIcon/SayingIcon (3).png'
 import SayingIcon_4 from '../assets/SayingIcon/SayingIcon (4).png'
-import { useState} from 'react'
+import { useState } from 'react'
 import Swal from 'sweetalert2'
 import { useTranslation } from 'react-i18next'
+import SayingItem from './SayingItem'
 
 const sayingIcons = [SayingIcon_1, SayingIcon_2, SayingIcon_3, SayingIcon_4]
 
@@ -134,23 +135,12 @@ const SayingGet: React.FC = () => {
         {t('sayingGet.buttonContent')}
       </div>
       <div className='mt-4'>{t('sayingGet.allSaying')}</div>
-      {dotSayingData.map((data, index) => (
-        <div className='mt-4'>
-          <div className='w-fit absolute top-0 left-0 z-10 leading-4 text-white'>
-            ◤
-          </div>
-          <div className='w-fit absolute top-0 left-0 z-10 leading-4 text-yellow-300'>
-            ◢
-          </div>
-          <div
-            className='leading-loose p-4 pt-6 text-justify bg-yellow-100 relative -z-10'
-            key={data.title}
-          >
-            <span className='font-bold '>🔈 {data.title}</span>
-            <br />
-            {data.description}
-          </div>
-        </div>
+      {dotSayingData.map((data) => (
+        <SayingItem
+          title={data.title}
+          description={data.description}
+          key={data.title}
+        />
       ))}
     </div>
   )

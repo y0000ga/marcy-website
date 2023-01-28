@@ -14,8 +14,8 @@ const resources = {
 
 i18n.use(initReactI18next).init({
   resources,
-  lng: 'tw', //預設語言
-  fallbackLng: 'tw', //如果當前切換的語言沒有對應的翻譯則使用這個語言，
+  lng: 'tw',
+  fallbackLng: 'tw', 
   interpolation: {
     escapeValue: false,
   },
