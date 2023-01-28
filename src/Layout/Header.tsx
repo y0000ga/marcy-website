@@ -2,14 +2,13 @@ import { RxHamburgerMenu } from 'react-icons/rx'
 import { ReactComponent as MarcyLogo } from '../assets/Logo/marcyLogo.svg'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { useTranslation } from 'react-i18next'
 import { ToggleNavList, NavList } from '../components/NavList'
-
+import TypingWord from '../components/TypingWord'
+import { useTranslation } from 'react-i18next'
 const Header = () => {
   const [isToggle, setIsToggle] = useState(false)
   const navigate = useNavigate()
   const { t } = useTranslation()
-
   return (
     <nav className='relative w-full h-1/5 flex items-center justify-between border-b drop-shadow-2xl z-50'>
       <div className='mx-6 my-4 flex flex-row items-center cursor-pointer'>
@@ -20,15 +19,15 @@ const Header = () => {
           }}
         />
         <div
-          className='font-black text-3xl text-neutral-600'
+          className='font-black text-3xl text-neutral-600 flex'
           onClick={() => {
             navigate('/')
           }}
         >
-          {t('marcyMailBox')}
+          <TypingWord title={t('marcyMailBox')} />
         </div>
       </div>
-      <NavList/>
+      <NavList />
       <RxHamburgerMenu
         className='text-2xl mx-6 my-4 cursor-pointer xl:hidden'
         onClick={() => {

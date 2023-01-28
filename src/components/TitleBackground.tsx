@@ -6,6 +6,7 @@ import gameBackground from '../assets/HeaderBackground/gameBackground.svg'
 import sayingBackground from '../assets/HeaderBackground/sayingBackground.svg'
 import discountBackground from '../assets/HeaderBackground/discountBackground.png'
 import secretBackground from '../assets/HeaderBackground/secretBackground.png'
+import TypingWord from './TypingWord'
 
 interface TitleBackgroundProps {
   pathname: string
@@ -44,7 +45,7 @@ const TitleBackground: React.FC<TitleBackgroundProps> = ({ pathname }) => {
     <>
       <div className='w-full overflow-hidden max-h-96 select-none border'>
         <div className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 text-center text-neutral-600 text-3xl font-bold tracking-widest md:text-5xl lg:text-7xl'>
-          {currentTitle}
+          <TypingWord title={currentTitle} />
         </div>
         <div className='flex justify-center items-center'>
           <img

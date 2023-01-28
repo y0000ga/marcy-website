@@ -14,7 +14,7 @@ const Method: React.FC = () => {
             className='border w-full my-4 md:w-96'
           />
         </div>
-        <div className=' lg:ml-4'>
+        <div className='lg:pl-8'>
           <div className='leading-loose tracking-widest my-4'>
             <div className='text-lg text-sky-500 my-4'>
               {t('method.letter.title')}
@@ -32,6 +32,9 @@ const Method: React.FC = () => {
               </li>
             </ul>
           </div>
+          <span className='text-9xl font-black absolute animate-pulse opacity-5 scale-150 right-10 bottom-10'>
+            ?
+          </span>
           <div className='leading-loose tracking-widest my-4'>
             <div className='text-lg text-sky-500 my-4'>
               {t('method.picture.title')}

@@ -6,8 +6,8 @@ module.exports = {
     extend: {
       keyframes: {
         marquee: {
-          '0%': { transform: 'translateX(100vw)' },
-          '100%': { transform: 'translateX(-100vw)' },
+          '0%': { transform: 'translateX(-100%)' },
+          '100%': { transform: 'translateX(100%)' },
         },
         slowShown: {
           '0%': { opacity: 0 },
@@ -15,7 +15,7 @@ module.exports = {
         },
       },
       animation: {
-        marquee: 'marquee 20s linear infinite',
+        marquee: 'marquee 5s linear alternate infinite',
         slowShown: 'slowShown 2.5s ease 1',
       },
     },

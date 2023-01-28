@@ -2,15 +2,14 @@ import Header from './Header'
 import HeaderContainer from './HeaderContainer'
 import donationLogo from '../assets/Logo/donationLogo.svg'
 import { useNavigate } from 'react-router-dom'
-import { useTranslation } from 'react-i18next'
 import ScrollUpButton from '../components/ScrollUpButton'
-
+import Footer from './Footer'
 interface MainWrapperProps {
   children: React.ReactNode
 }
 
 const MainWrapper: React.FC<MainWrapperProps> = ({ children }) => {
-  const { t } = useTranslation()
+
   const navigate = useNavigate()
   const donationHandler = () => {
     navigate('/donation')
@@ -32,11 +31,7 @@ const MainWrapper: React.FC<MainWrapperProps> = ({ children }) => {
         <img src={donationLogo} alt='donation' className='w-24 border' />
       </div>
       <ScrollUpButton />
-      <div className='border-t border-gray-200 p-10 text-center leading-loose shadow-2xl w-full -z-10'>
-        {t('footer.0')}
-        <br />
-        {t('footer.1')}
-      </div>
+      <Footer />
     </div>
   )
 }

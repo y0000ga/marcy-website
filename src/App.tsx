@@ -11,15 +11,11 @@ import SecretPage from './pages/SecretPage'
 import DiscountPage from './pages/DiscountPage'
 
 const App = () => {
-  const lng = localStorage.getItem('lng') as string
   return (
     <div
       style={{
         minWidth: '390px',
-        fontFamily:
-          lng === 'cn'
-            ? 'Noto Sans SC, sans-serif'
-            : 'Noto Sans TC, sans-serif',
+        fontFamily: 'Noto Sans SC, sans-serif',
       }}
       className='box-border select-none'
     >

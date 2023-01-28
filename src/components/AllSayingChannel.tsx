@@ -26,10 +26,10 @@ const AllSayingChannel = () => {
   return (
     <>
       <Divider content={t('divider.allSayingPlace') as string} />
-      <div className='flex flex-col items-start lg:flex-row lg:justify-around'>
+      <div className='flex flex-col justify-around lg:flex-row'>
         {markOrangeInfo && (
           <div
-            className='flex my-4 justify-center'
+            className='flex my-4 justify-center pr-4 '
             onClick={() => {
               setTimeout(() => {
                 window.open(
@@ -39,11 +39,14 @@ const AllSayingChannel = () => {
               })
             }}
           >
-            <img
-              src={markOrangeInfo.snippet.thumbnails.default.url}
-              alt='icon'
-              className='cursor-pointer'
-            />
+  
+              <img
+                src={markOrangeInfo.snippet.thumbnails.default.url}
+                alt='icon'
+                className='cursor-pointer rounded-full'
+              />
+    
+
             <div className='mx-4 flex justify-center flex-col'>
               <div className='font-bold text-2xl leading-loose tracking-widest cursor-pointer hover:text-sky-500'>
                 {markOrangeInfo.snippet.title}
@@ -67,18 +70,21 @@ const AllSayingChannel = () => {
         )}
         {marcyMailboxInfo && (
           <div
-            className='flex my-4 justify-center'
+            className='flex my-4 justify-center pr-4'
             onClick={() => {
               setTimeout(() => {
                 window.open('https://www.youtube.com/@dearmarcy', '_blank')
               })
             }}
           >
-            <img
-              src={marcyMailboxInfo.snippet.thumbnails.default.url}
-              alt='icon'
-              className='cursor-pointer'
-            />
+           
+              <img
+                src={marcyMailboxInfo.snippet.thumbnails.default.url}
+                alt='icon'
+                className='cursor-pointer'
+              />
+  
+
             <div className='mx-4 flex justify-center flex-col'>
               <div className='font-bold text-2xl leading-loose tracking-widest cursor-pointer hover:text-sky-500'>
                 {marcyMailboxInfo.snippet.title}
