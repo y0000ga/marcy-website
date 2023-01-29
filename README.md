@@ -71,6 +71,7 @@ http://localhost:3000/
 ## 專案主要技術
 * React
 * Typescript
+* Tailwindcss
 * React Router Dom
 * React-hook-form
 * @react-google-maps/api
