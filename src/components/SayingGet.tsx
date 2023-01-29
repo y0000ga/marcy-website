@@ -130,7 +130,7 @@ const SayingGet: React.FC = () => {
       {t('sayingGet.opening')}
       <div
         onClick={chooseSayingHandler}
-        className='border border-sky-500 text-sky-500 w-fit  left-1/2 -translate-x-1/2 my-8 px-4 py-2 rounded-lg hover:text-white hover:bg-sky-500 cursor-pointer tracking-widest'
+        className='border border-sky-500 text-sky-500 w-fit left-1/2 -translate-x-1/2 my-8 px-4 py-2 rounded-lg hover:text-white hover:bg-sky-500 cursor-pointer tracking-widest'
       >
         {t('sayingGet.buttonContent')}
       </div>
