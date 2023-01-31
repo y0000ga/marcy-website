@@ -2,7 +2,7 @@
 
 馬克信箱介紹網站是一個使用 React.js 與 Typescript等工具所打造的前端專案，不只可以查看馬克信箱相關資訊，使用者可從該網站得知目前主持人居住地的天氣，透過年份篩選差看馬克信箱發展歷史，閱覽各年度追思紀念會與歌曲的 Youtube 影片，體驗繪畫式心理測驗，並可透過 Google map 查看提供馬克信箱聽眾優惠的商家。
 
-### [DEMO 頁面](https://y0000ga.github.io/marcy-website/)
+### [網站入口](https://y0000ga.github.io/marcy-website/)
 <div align=center><kbd><img width="75%"  src="https://i.imgur.com/iV1dPUA.png"/></kbd></div>
 
 ## 功能與畫面
