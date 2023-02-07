@@ -1,19 +1,19 @@
 import { useEffect, useState } from 'react'
 
 export const createThrottle = (
-  callback: Function,
+  callback: (...args: any) => void,
   delay?: number,
-  thisArg?: unknown
 ): Function => {
   let lastInvokeTime: number = Date.now()
-  const _delay = Number(delay) || 200
+  console.log(lastInvokeTime)
+  const _delay = delay || 200
   return (...args: any[]): void => {
     const now = Date.now()
     if (now - _delay <= lastInvokeTime) {
       return
     }
     lastInvokeTime = now
-    callback.call(thisArg, ...args)
+    callback(...args)
   }
 }
 

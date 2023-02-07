@@ -8,7 +8,7 @@ const AdvertiseBox: React.FC = () => {
   const enabled = true
   const [advertise, setAdvertise] = useState(0)
   useEffect(() => {
-    let timeId: any
+    let timeId:any
     if (enabled) {
       timeId = setInterval(() => {
         if (advertise === 4) {
