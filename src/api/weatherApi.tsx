@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { weatherAuth } from '../keyData'
+import { weatherAuth } from '../App'
 
 export const weatherApi = async () => {
   try {

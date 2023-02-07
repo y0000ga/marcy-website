@@ -10,6 +10,10 @@ import ErrorPage from './pages/ErrorPage'
 import SecretPage from './pages/SecretPage'
 import DiscountPage from './pages/DiscountPage'
 import { useEffect } from 'react'
+require('dotenv').config()
+export const weatherAuth = process.env.REACT_APP_WEATHER_AUTH
+export const youtubeAuth = process.env.REACT_APP_YOUTUBE_AUTH
+export const googleMapAuth = process.env.REACT_APP_GOOGLEMAP_AUTH
 
 const App = () => {
   useEffect(() => {

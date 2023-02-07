@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { youtubeAuth } from '../keyData'
+import { youtubeAuth } from '../App'
 
 const youtubeURL = 'https://www.googleapis.com/youtube/v3'
 

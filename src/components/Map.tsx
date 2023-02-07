@@ -7,7 +7,7 @@ import {
 import { useState } from 'react'
 import DiscountItem from './DiscountItem'
 import { useTranslation } from 'react-i18next'
-import { googleMapAuth } from '../keyData'
+import { googleMapAuth } from '../App'
 
 const center = { lat: 24.985859218125146, lng: 120.20513028560073 }
 
@@ -55,7 +55,7 @@ const Map: React.FC<MapProps> = ({ discount }) => {
   }>()
   const [isInfoShown, setIsInfoShown] = useState(false)
   const { isLoaded } = useLoadScript({
-    googleMapsApiKey: googleMapAuth,
+    googleMapsApiKey: googleMapAuth as string,
   })
   if (!isLoaded) return <div>Loading...</div>
   return (
