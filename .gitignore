@@ -3,6 +3,7 @@
 /.pnp
 .pnp.js
 /src/keyData.tsx
+.env
 
 # testing
 /coverage
@@ -16,6 +17,7 @@
 .env.development.local
 .env.test.local
 .env.production.local
+
 
 npm-debug.log*
 yarn-debug.log*
