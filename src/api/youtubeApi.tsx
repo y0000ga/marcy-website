@@ -12,6 +12,9 @@ export const youtubeGetInfoApi = async (id: string) => {
         part: 'statistics',
         key: `${youtubeAuth}`,
       },
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
     })
     return res
   } catch (error) {
