@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/marcy-website/static/css/main.d85d9aa4.css",
-    "main.js": "/marcy-website/static/js/main.54aa9c3a.js",
+    "main.css": "/marcy-website/static/css/main.51714b93.css",
+    "main.js": "/marcy-website/static/js/main.473beaf7.js",
     "static/media/sayingBackground.svg": "/marcy-website/static/media/sayingBackground.d32257e0cc529420b2b2b013e595e43f.svg",
     "static/media/gameBackground.svg": "/marcy-website/static/media/gameBackground.018f354922e6c8a65d6e34d75c1eb001.svg",
     "static/media/donationBackground.svg": "/marcy-website/static/media/donationBackground.a9872333f8f9f9cc6506c5379804dbb8.svg",
@@ -40,11 +40,11 @@
     "static/media/payPalLogo.png": "/marcy-website/static/media/payPalLogo.25b341e7e8db7bd5e1e5.png",
     "static/media/seal.png": "/marcy-website/static/media/seal.2e9d01d4e74715a2265f.png",
     "index.html": "/marcy-website/index.html",
-    "main.d85d9aa4.css.map": "/marcy-website/static/css/main.d85d9aa4.css.map",
-    "main.54aa9c3a.js.map": "/marcy-website/static/js/main.54aa9c3a.js.map"
+    "main.51714b93.css.map": "/marcy-website/static/css/main.51714b93.css.map",
+    "main.473beaf7.js.map": "/marcy-website/static/js/main.473beaf7.js.map"
   },
   "entrypoints": [
-    "static/css/main.d85d9aa4.css",
-    "static/js/main.54aa9c3a.js"
+    "static/css/main.51714b93.css",
+    "static/js/main.473beaf7.js"
   ]
 }
