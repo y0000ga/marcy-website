@@ -27,29 +27,34 @@ const AllSayingChannel = () => {
 
   return (
     <>
-      <Divider content={t('divider.allSayingPlace') as string} />
-      <div className='flex flex-col justify-around lg:flex-row w-full'>
-        {markOrangeInfo && (
-          <ChannelItem
-            websiteUrl={marcYoutube}
-            imgUrl={markOrangeInfo.snippet.thumbnails.default.url}
-            title={markOrangeInfo.snippet.title}
-            viewCount={markOrangeInfo.statistics.viewCount}
-            subscriberCount={markOrangeInfo.statistics.subscriberCount}
-            videoCount={markOrangeInfo.statistics.videoCount}
-          />
+      {markOrangeInfo &&
+        marcyMailboxInfo && (
+          <>
+            <Divider content={t('divider.allSayingPlace') as string} />
+            <div className='flex flex-col justify-around lg:flex-row w-full'>
+              {markOrangeInfo && (
+                <ChannelItem
+                  websiteUrl={marcYoutube}
+                  imgUrl={markOrangeInfo.snippet.thumbnails.default.url}
+                  title={markOrangeInfo.snippet.title}
+                  viewCount={markOrangeInfo.statistics.viewCount}
+                  subscriberCount={markOrangeInfo.statistics.subscriberCount}
+                  videoCount={markOrangeInfo.statistics.videoCount}
+                />
+              )}
+              {marcyMailboxInfo && (
+                <ChannelItem
+                  websiteUrl={marcyYoutube}
+                  imgUrl={marcyMailboxInfo.snippet.thumbnails.default.url}
+                  title={marcyMailboxInfo.snippet.title}
+                  viewCount={marcyMailboxInfo.statistics.viewCount}
+                  subscriberCount={marcyMailboxInfo.statistics.subscriberCount}
+                  videoCount={marcyMailboxInfo.statistics.videoCount}
+                />
+              )}
+            </div>
+          </>
         )}
-        {marcyMailboxInfo && (
-          <ChannelItem
-            websiteUrl={marcyYoutube}
-            imgUrl={marcyMailboxInfo.snippet.thumbnails.default.url}
-            title={marcyMailboxInfo.snippet.title}
-            viewCount={marcyMailboxInfo.statistics.viewCount}
-            subscriberCount={marcyMailboxInfo.statistics.subscriberCount}
-            videoCount={marcyMailboxInfo.statistics.videoCount}
-          />
-        )}
-      </div>
     </>
   )
 }

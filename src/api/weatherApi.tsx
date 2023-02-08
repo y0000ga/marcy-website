@@ -11,7 +11,6 @@ export const weatherApi = async () => {
         },
       }
     )
-
     return res
   } catch (error) {
     console.error('[Weather Failed]: ', error)

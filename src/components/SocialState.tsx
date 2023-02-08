@@ -36,7 +36,7 @@ const SocialState: React.FC<SocialStateProps> = ({
       )}
       <div className='flex items-center mx-2'>
         <AiOutlineEye />
-        <span className='mx-2'>{viewCount}</span>
+        <span className='mx-2'>{viewCount? viewCount:"999"}</span>
       </div>
       {type === 'youtube' && (
         <div className='flex items-center mx-2'>
