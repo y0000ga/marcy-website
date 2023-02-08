@@ -63,11 +63,7 @@ npm start
 ```
 http://localhost:3000/
 ```
-## 資料夾說明
-* Layout - 重複網站結構放置處
-* api - 串 API 相關方法放置處
-* assets - 靜態資源放置處
-* pages - 各頁面完整結構放置處
+
 ## 專案主要技術
 * React
 * Typescript
