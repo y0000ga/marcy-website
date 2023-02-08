@@ -35,7 +35,7 @@ const DiscountItem: React.FC<DiscountItemProps> = ({
     <div className='my-4 w-full tracking-widest md:w-1/2 flex flex-col animate-slowShown'>
       <div className='flex items-center'>
         <div
-          className={`border w-fit p-2 rounded-md font-light ${
+          className={`border w-24 text-center p-2 rounded-md font-light ${
             type === discountTypes[0] && 'bg-red-100 border-red-500'
           } ${type === discountTypes[1] && 'bg-orange-100 border-orange-500'} ${
             type === discountTypes[2] && 'bg-yellow-100 border-yellow-500'
