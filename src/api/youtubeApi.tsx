@@ -2,7 +2,7 @@ import axios from 'axios'
 import { youtubeAuth } from '../App'
 
 const youtubeURL =
-  'https://cors-anywhere.herokuapp.com/https://www.googleapis.com/youtube/v3'
+  'https://www.googleapis.com/youtube/v3'
 
 export const youtubeGetInfoApi = async (id: string) => {
   try {
