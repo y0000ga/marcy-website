@@ -5,7 +5,6 @@ export const createThrottle = (
   delay?: number,
 ): Function => {
   let lastInvokeTime: number = Date.now()
-  console.log(lastInvokeTime)
   const _delay = delay || 200
   return (...args: any[]): void => {
     const now = Date.now()
