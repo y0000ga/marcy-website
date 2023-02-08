@@ -6,7 +6,6 @@ const youtubeURL =
 
 export const youtubeGetInfoApi = async (id: string) => {
   try {
-    axios.defaults.headers.get['Access-Control-Allow-Origin'] = '*' 
     const res = await axios.get(`${youtubeURL}/videos`, {
       params: {
         id: id,
