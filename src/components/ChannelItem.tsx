@@ -39,6 +39,7 @@ const ChannelItem: React.FC<ChannelItemProps> = ({
         {title}
       </div>
       <SocialState
+        type='channel'
         viewCount={viewCount}
         subscriberCount={subscriberCount}
         videoCount={videoCount}

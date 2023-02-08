@@ -56,6 +56,7 @@ const YoutubeDisplayBox: React.FC<YoutubeDisplayBoxProps> = ({
           {title}
         </div>
         <SocialState
+          type='youtube'
           viewCount={staticsData?.viewCount as string}
           likeCount={staticsData?.likeCount as string}
           commentCount={staticsData?.commentCount as string}

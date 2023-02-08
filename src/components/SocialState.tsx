@@ -2,6 +2,7 @@ import { AiOutlineEye, AiOutlineLike, AiOutlineComment } from 'react-icons/ai'
 import { BsPerson, BsCameraVideo } from 'react-icons/bs'
 
 interface SocialStateProps {
+  type: string
   viewCount: string
   likeCount?: string
   commentCount?: string
@@ -15,35 +16,38 @@ const SocialState: React.FC<SocialStateProps> = ({
   commentCount,
   subscriberCount,
   videoCount,
+  type,
 }) => {
   return (
     <div className='flex text-md'>
-      {subscriberCount && (
+      {type === 'channel' && (
         <div className='flex items-center mx-2'>
           <BsPerson />
-          <span className='mx-2'>{subscriberCount}</span>
+          <span className='mx-2'>
+            {subscriberCount ? subscriberCount : '999'}
+          </span>
         </div>
       )}
-      {videoCount && (
+      {type === 'channel' && (
         <div className='flex items-center mx-2'>
           <BsCameraVideo />
-          <span className='mx-2'>{videoCount}</span>
+          <span className='mx-2'>{videoCount ? videoCount : '999'}</span>
         </div>
       )}
       <div className='flex items-center mx-2'>
         <AiOutlineEye />
         <span className='mx-2'>{viewCount}</span>
       </div>
-      {likeCount && (
+      {type === 'youtube' && (
         <div className='flex items-center mx-2'>
           <AiOutlineLike />
-          <span className='mx-2'>{likeCount}</span>
+          <span className='mx-2'>{likeCount ? likeCount : '999'}</span>
         </div>
       )}
-      {commentCount && (
+      {type === 'youtube' && (
         <div className='flex items-center mx-2'>
           <AiOutlineComment />
-          <span className='mx-2'>{commentCount}</span>
+          <span className='mx-2'>{commentCount ? commentCount : '999'}</span>
         </div>
       )}
     </div>
