@@ -21,7 +21,7 @@ const WeatherBox: React.FC = () => {
         {t('weather.opening')}
         {currentWeather
           ? currentWeather?.join(t('weather.and') as string)
-          : t('weather.undefined')}
+          : t('weather.undefined')}!
       </p>
     </div>
   )
