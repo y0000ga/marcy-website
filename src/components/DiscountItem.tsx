@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next'
 import { RxExternalLink } from 'react-icons/rx'
 import { googleMapSearchBaseUrl } from '../wordingData'
-
+import { useEffect } from 'react'
 interface DiscountItemProps {
   title: string
   type: string
@@ -21,7 +21,11 @@ const DiscountItem: React.FC<DiscountItemProps> = ({
   content,
   address,
 }) => {
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation()
+  const lng = localStorage.getItem('lng') as string
+  useEffect(() => {
+    i18n.changeLanguage(lng)
+  }, [i18n, lng])
   const discountTypes = [
     t('discountTypeData.0'),
     t('discountTypeData.1'),
@@ -31,6 +35,7 @@ const DiscountItem: React.FC<DiscountItemProps> = ({
     t('discountTypeData.5'),
     t('discountTypeData.6'),
   ]
+
   return (
     <div className='my-4 w-full tracking-widest md:w-1/2 flex flex-col animate-slowShown'>
       <div className='flex items-center'>

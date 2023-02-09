@@ -1,11 +1,19 @@
 import Divider from '../Layout/Divider'
 import Map from './Map'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import DiscountItem from './DiscountItem'
 import { useTranslation } from 'react-i18next'
 
 const OnSiteDiscount: React.FC = () => {
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation()
+  const lng = localStorage.getItem('lng') as string
+
+  useEffect(() => {
+    i18n.changeLanguage(lng)
+    setDiscountType(onSiteDiscountType[0])
+    setDiscount(onSiteDiscount)
+  }, [i18n, lng])
+
   const [discountType, setDiscountType] = useState<string>(
     t('discount.selectAll') as string
   )
