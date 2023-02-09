@@ -1,3 +1,4 @@
+
 import Divider from '../Layout/Divider'
 import Map from './Map'
 import { useState, useEffect } from 'react'
@@ -12,6 +13,7 @@ const OnSiteDiscount: React.FC = () => {
     i18n.changeLanguage(lng)
     setDiscountType(onSiteDiscountType[0])
     setDiscount(onSiteDiscount)
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [i18n, lng])
 
   const [discountType, setDiscountType] = useState<string>(

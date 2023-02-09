@@ -186,6 +186,7 @@ const OnlineDiscount: React.FC = () => {
     i18n.changeLanguage(lng)
     setDiscountType(onlineDiscountType[0])
     setDiscount(onlineDiscount)
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [i18n, lng])
 
   const [discountType, setDiscountType] = useState<string>(
