@@ -1,10 +1,11 @@
-import { Fragment, ReactNode } from 'react'
+import { Fragment } from 'react'
 import {
   Dialog,
   DialogPanel,
   Transition,
   TransitionChild,
 } from '@headlessui/react'
+import { IWrapper } from '@/type/common.type'
 
 interface IProps extends IWrapper {
   open: boolean

@@ -1,9 +1,10 @@
 'use client'
 
-import { ReactNode, useRef } from 'react'
+import { useRef } from 'react'
 import { gsap } from 'gsap'
 import { useGSAP } from '@gsap/react'
 import { range } from 'lodash'
+import { IWrapper } from '@/type/common.type'
 
 export const Footer = ({ children }: IWrapper) => {
   const footerRef = useRef(null)
