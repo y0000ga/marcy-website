@@ -1,11 +1,6 @@
 import pictureFromOthers from '/public/assets/Figure/pictureFromOthers.png'
 import Image from 'next/image'
-import {
-  MARCY_API_URL,
-  recommendVideoIds,
-  ytImgUrl,
-  ytVideoUrl,
-} from '@/helper/constant'
+import { recommendVideoIds, ytImgUrl, ytVideoUrl } from '@/helper/constant'
 import initTranslations from '@/i18n'
 import { IPage } from '@/type/common.type'
 import { range } from 'lodash'
@@ -27,7 +22,7 @@ const Page = async ({ params }: IPage) => {
 
   const { data: WeatherData } = await axios.request({
     method: 'GET',
-    url: `${MARCY_API_URL}/weather`,
+    url: `${process.env.MARCY_API_URL}/weather`,
   })
 
   const finalData = WeatherData.data

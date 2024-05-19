@@ -30,8 +30,6 @@ export const YOUTUBE_EMBED_URL = 'https://www.youtube.com/embed'
 
 export const YOUTUBE_CHANNEL_URL = 'https://www.youtube.com/channel'
 
-export const MARCY_API_URL = 'http://localhost:3000/api'
-
 export const OPEN_DATA_API_URL =
   'https://opendata.cwa.gov.tw/api/v1/rest/datastore/F-D0047-089'
 

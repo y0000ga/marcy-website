@@ -4,11 +4,7 @@ import { IPlaylistItemReq } from '@/type/api/youtube.type'
 import axios from 'axios'
 import { useEffect, useRef, useState } from 'react'
 import { Loading } from '../Loading'
-import {
-  MARCY_API_URL,
-  MARCY_PLAYLIST_ID,
-  YOUTUBE_EMBED_URL,
-} from '@/helper/constant'
+import { MARCY_PLAYLIST_ID, YOUTUBE_EMBED_URL } from '@/helper/constant'
 
 interface IProps {
   initialPlaylistItemData: IPlaylistItemReq
@@ -25,7 +21,7 @@ export const Playlist = ({ initialPlaylistItemData }: IProps) => {
     if (!!pageToken) {
       const { data: newPlaylistItemData } = await axios.request({
         method: 'GET',
-        url: `${MARCY_API_URL}/playlistItem`,
+        url: `${process.env.MARCY_API_URL}/playlistItem`,
         params: {
           playlistId: MARCY_PLAYLIST_ID,
           pageToken,

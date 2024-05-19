@@ -1,15 +1,16 @@
 import axios from 'axios'
 import { Playlist } from '../Playlist/index.client'
 import { IPlaylistItemReq } from '@/type/api/youtube.type'
-import { MARCY_API_URL, MARCY_PLAYLIST_ID } from '@/helper/constant'
+import {  MARCY_PLAYLIST_ID } from '@/helper/constant'
 import { Loading } from '@/components/Loading'
 
 // TODO: 可以改造成 Wrapper
 
 const InfiniteScroll = async () => {
+  console.log('CHECK -----', process.env.MARCY_API_URL )
   const { data: playlistItemData } = await axios.request({
     method: 'GET',
-    url: `${MARCY_API_URL}/playlistItem`,
+    url: `${process.env.MARCY_API_URL}/playlistItem`,
     params: { playlistId: MARCY_PLAYLIST_ID },
   })
 

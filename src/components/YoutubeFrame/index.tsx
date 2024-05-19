@@ -1,5 +1,4 @@
 import {
-  MARCY_API_URL,
   YOUTUBE_EMBED_URL,
   httpRegex,
   tagRegex,
@@ -17,7 +16,7 @@ interface IProps {
 export const YoutubeFrame = async ({ id }: IProps) => {
   const { data: videoData } = await axios.request({
     method: 'GET',
-    url: `${MARCY_API_URL}/video`,
+    url: `${process.env.MARCY_API_URL}/video`,
     params: { id },
   })
 
@@ -33,7 +32,7 @@ export const YoutubeFrame = async ({ id }: IProps) => {
 
   // const { data: commentData } = await axios.request({
   //   method: 'GET',
-  //   url: `${MARCY_API_URL}/comment`,
+  //   url: `/comment`,
   //   params: { videoId: id },
   // })
 

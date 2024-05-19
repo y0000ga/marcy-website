@@ -2,7 +2,7 @@ import Image from 'next/image'
 import { SocialState } from '../SocialState'
 import axios from 'axios'
 import { IChannel } from '@/type/video.type'
-import { MARCY_API_URL, YOUTUBE_CHANNEL_URL } from '@/helper/constant'
+import { YOUTUBE_CHANNEL_URL } from '@/helper/constant'
 import { Loading } from '@/components/Loading'
 import { SocialType } from '../SocialState/index.type'
 
@@ -13,7 +13,7 @@ interface IProps {
 export const Channel = async ({ id }: IProps) => {
   const { data: channelData } = await axios.request({
     method: 'GET',
-    url: `${MARCY_API_URL}/channel`,
+    url: `${process.env.MARCY_API_URL}/channel`,
     params: { channelId: id },
   })
 
