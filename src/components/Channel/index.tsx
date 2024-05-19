@@ -13,7 +13,7 @@ interface IProps {
 export const Channel = async ({ id }: IProps) => {
   const { data: channelData } = await axios.request({
     method: 'GET',
-    url: `${process.env.MARCY_API_URL}/channel`,
+    url: `${process.env.NEXT_PUBLIC_MARCY_API_URL}/channel`,
     params: { channelId: id },
   })
 

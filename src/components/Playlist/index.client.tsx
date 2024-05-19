@@ -21,7 +21,7 @@ export const Playlist = ({ initialPlaylistItemData }: IProps) => {
     if (!!pageToken) {
       const { data: newPlaylistItemData } = await axios.request({
         method: 'GET',
-        url: `${process.env.MARCY_API_URL}/playlistItem`,
+        url: `${process.env.NEXT_PUBLIC_MARCY_API_URL}/playlistItem`,
         params: {
           playlistId: MARCY_PLAYLIST_ID,
           pageToken,

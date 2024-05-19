@@ -8,7 +8,7 @@ declare global {
       OPEN_WEATHER_API_KEY: string
       GOOGLE_API_KEY: string
       CLARITY_KEY: string
-      MARCY_API_URL:string
+      NEXT_PUBLIC_MARCY_API_URL:string
     }
   }
 }

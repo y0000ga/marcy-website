@@ -22,7 +22,7 @@ const Page = async ({ params }: IPage) => {
 
   const { data: WeatherData } = await axios.request({
     method: 'GET',
-    url: `${process.env.MARCY_API_URL}/weather`,
+    url: `${process.env.NEXT_PUBLIC_MARCY_API_URL}/weather`,
   })
 
   const finalData = WeatherData.data
@@ -104,7 +104,7 @@ const Page = async ({ params }: IPage) => {
             </div>
           </div>
         </div>
-        <TypingHeader content='OH MARCY!' />
+        <TypingHeader content='2024 OH MARCY!' />
         <InfiniteScroll />
       </section>
     </>

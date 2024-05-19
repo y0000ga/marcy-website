@@ -7,10 +7,9 @@ import { Loading } from '@/components/Loading'
 // TODO: 可以改造成 Wrapper
 
 const InfiniteScroll = async () => {
-  console.log('CHECK -----', process.env.MARCY_API_URL )
   const { data: playlistItemData } = await axios.request({
     method: 'GET',
-    url: `${process.env.MARCY_API_URL}/playlistItem`,
+    url: `${process.env.NEXT_PUBLIC_MARCY_API_URL}/playlistItem`,
     params: { playlistId: MARCY_PLAYLIST_ID },
   })
 

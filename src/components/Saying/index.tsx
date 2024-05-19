@@ -5,7 +5,7 @@ import { IProps, SayingType } from './index.type'
 const icons = ['◤', '◢']
 
 export const Saying = ({ title, text, type }: IProps) => (
-  <li className='mt-4 relative'>
+  <div className='mt-4 relative'>
     {type === SayingType.dictionary && (
       <Image
         src={seal}
@@ -33,5 +33,5 @@ export const Saying = ({ title, text, type }: IProps) => (
       <br />
       {text}
     </div>
-  </li>
+  </div>
 )

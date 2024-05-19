@@ -13,7 +13,7 @@ import payPalLogo from '/public/assets/Logo/payPalLogo.png'
 import streetLogo from '/public/assets/Logo/streetLogo.png'
 import { Locale } from '@/type/common.type'
 
-export const MARCY_PLAYLIST_ID = 'PLuGVMNMvIB_GW6pwd0Tj6rjoEvZxn6UuE'
+export const MARCY_PLAYLIST_ID = 'PLuGVMNMvIB_H60n7I4NKEsOg-qd497ee8'
 
 export const YOUTUBE_PLAYLIST_URL = 'https://www.youtube.com/playlist'
 

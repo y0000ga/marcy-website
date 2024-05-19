@@ -3,12 +3,11 @@ import { ElementName } from '@/type/api/weather.type'
 import { Status } from '@/type/common.type'
 import axios from 'axios'
 
+const url = `${OPEN_DATA_API_URL}?Authorization=${process.env.OPEN_WEATHER_API_KEY}&format=JSON&locationName=臺北市&elementName=${ElementName.WD}`
+
 export const GET = async () => {
   try {
-    const res = await axios(
-      `${OPEN_DATA_API_URL}?Authorization=${process.env.OPEN_WEATHER_API_KEY}&format=JSON&locationName=臺北市&elementName=${ElementName.WD}`
-    )
-
+    const res = await axios(url)
     const weather =
       res.data.records.locations[0].location[0].weatherElement[0].time[0]
         .elementValue[0].value

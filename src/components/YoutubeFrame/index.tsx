@@ -16,7 +16,7 @@ interface IProps {
 export const YoutubeFrame = async ({ id }: IProps) => {
   const { data: videoData } = await axios.request({
     method: 'GET',
-    url: `${process.env.MARCY_API_URL}/video`,
+    url: `${process.env.NEXT_PUBLIC_MARCY_API_URL}/video`,
     params: { id },
   })
 
