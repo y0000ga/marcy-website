@@ -8,7 +8,7 @@ const Layout = async ({ children, params }: Readonly<ILayout>) => {
   return (
     <>
       <TypingHeaderImage
-        title={t('navItemInfo.2.title')}
+        title={t('navItemInfo.3.title')}
         imgSrc={ytImgUrl('XVRtFV9wpDk')}
       />
       <section className='main-content'>{children}</section>

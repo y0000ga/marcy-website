@@ -73,18 +73,20 @@ export const DiscountCollection = ({ name, types, discounts }: IProps) => {
         ))}
       </select>
       <div className='flex flex-wrap justify-between'>
-        {discounts.map(({ type, title, service, offer, url, colorClass }) => (
-          <Discount
-            key={title}
-            title={title}
-            type={type}
-            url={url}
-            service={service}
-            offer={offer}
-            colorClass={colorClass}
-            isList={true}
-          />
-        ))}
+        {discounts
+          .filter((discount) => discount.type === type)
+          .map(({ type, title, service, offer, url, colorClass }) => (
+            <Discount
+              key={title}
+              title={title}
+              type={type}
+              url={url}
+              service={service}
+              offer={offer}
+              colorClass={colorClass}
+              isList={true}
+            />
+          ))}
       </div>
     </div>
   )

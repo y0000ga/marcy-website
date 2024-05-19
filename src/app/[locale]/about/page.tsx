@@ -30,7 +30,6 @@ const Page = async ({ params }: IPage) => {
     content: t(`dotHistory.${time}`),
   }))
 
-  const yearOptions = [t('unlimitedYear'), ...years]
 
   const guides = [
     {
@@ -114,7 +113,7 @@ const Page = async ({ params }: IPage) => {
         contents={range(5).map((num) => t(`hostIntroData.1.intro.${num}`))}
       />
       <TypingHeader content={t('divider.history')} />
-      <History dotHistory={dotHistory} yearOptions={yearOptions} />
+      <History dotHistory={dotHistory} yearOptions={years} />
       <TypingHeader content={t('divider.listeningGuide')} />
       <Guide guides={guides} />
       <a
