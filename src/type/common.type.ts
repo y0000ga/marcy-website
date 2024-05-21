@@ -3,7 +3,6 @@ import { ReactNode } from 'react'
 export enum Locale {
   en = 'en',
   zh = 'zh',
-  es = 'es',
 }
 
 export const Route = {
