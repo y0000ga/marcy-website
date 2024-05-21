@@ -19,5 +19,6 @@ export interface IProps {
     offer: string
     url: string
     colorClass: string
+    address?: string
   }[]
 }

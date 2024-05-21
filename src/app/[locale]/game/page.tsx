@@ -34,12 +34,10 @@ const Page = async ({ params }: IPage) => {
       <div className='flex flex-wrap justify-around'>
         {objects.map((object, index) => (
           <PsyGame
-            indexPrefix={`${t('psyTest.no')}${index + 1}${t(
-              'psyTest.question'
-            )}`}
+            index={index + 1}
             translation={{
-              adj1: t('psyTest.firstAdj'),
-              adj2: t('psyTest.secondAdj'),
+              adj1: t('psyTest.adjective') + '1',
+              adj2: t('psyTest.adjective') + '2',
               clear: t('psyTest.clearCanvas'),
               check: t('psyTest.checkAnswer'),
             }}

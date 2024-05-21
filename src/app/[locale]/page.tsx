@@ -4,21 +4,34 @@ import { recommendVideoIds, ytImgUrl, ytVideoUrl } from '@/helper/constant'
 import initTranslations from '@/i18n'
 import { IPage } from '@/type/common.type'
 import { range } from 'lodash'
-import { Weather } from '@/components/Weather'
 import axios from 'axios'
 import InfiniteScroll from '@/components/InfiniteScroll'
 import { Loading } from '@/components/Loading'
-import { Marquee } from '@/components/Marquee/index.client'
+import { Carousel, ISlide } from '@/components/Carousel/index.client'
 import { TypingHeader } from '@/components/Typing'
+import { Marquee } from '@/components/Marquee'
 
 const Page = async ({ params }: IPage) => {
   const { t } = await initTranslations(params.locale)
 
-  const slides = recommendVideoIds.map((id, index) => ({
-    title: t(`advertiseTitle.${index}`), // TODO: get by youtube
-    imgSrc: ytImgUrl(id),
-    externalUrl: ytVideoUrl(id),
-  }))
+  const requests = recommendVideoIds.map((id) =>
+    axios.request({
+      method: 'GET',
+      url: `${process.env.NEXT_PUBLIC_MARCY_API_URL}/video`,
+      params: { id },
+    })
+  )
+
+  let slides: ISlide[] = []
+
+  await Promise.all(requests).then((reses) => {
+    slides = reses.map((res, index) => ({
+      title: res.data.data.title,
+      id: recommendVideoIds[index],
+      imgSrc: ytImgUrl(recommendVideoIds[index]),
+      externalUrl: ytVideoUrl(recommendVideoIds[index]),
+    }))
+  })
 
   const { data: WeatherData } = await axios.request({
     method: 'GET',
@@ -35,12 +48,12 @@ const Page = async ({ params }: IPage) => {
 
   return (
     <>
-      <Weather>
+      <Marquee textColor='text-white' backgroundColor='bg-red-500'>
         {t('weather.opening')}
         {weather === 'Error' ? t('weather.undefined') : weather}
-      </Weather>
+      </Marquee>
       <section className='main-content'>
-        <Marquee slides={slides} />
+        <Carousel slides={slides} />
         <div className='text-3xl text-center mb-4 font-bold tracking-widest'>
           {t('marcyMailBox')}
         </div>

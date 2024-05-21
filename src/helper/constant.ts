@@ -11,7 +11,12 @@ import PsychTestIcon_6 from '/public/assets/PsychTestIcon/PsychTestIcon(6).png'
 import allPayLogo from '/public/assets/Logo/allPayLogo.png'
 import payPalLogo from '/public/assets/Logo/payPalLogo.png'
 import streetLogo from '/public/assets/Logo/streetLogo.png'
+import ListeningGuideIcon01 from '/public/assets/ListeningGuideIcon/ListeningGuideIcon (1).png'
+import ListeningGuideIcon02 from '/public/assets/ListeningGuideIcon/ListeningGuideIcon (2).png'
+import ListeningGuideIcon03 from '/public/assets/ListeningGuideIcon/ListeningGuideIcon (3).png'
+import ListeningGuideIcon04 from '/public/assets/ListeningGuideIcon/ListeningGuideIcon (4).png'
 import { Locale } from '@/type/common.type'
+import { uniq } from 'lodash'
 
 export const MARCY_PLAYLIST_ID = 'PLuGVMNMvIB_H60n7I4NKEsOg-qd497ee8'
 
@@ -39,7 +44,6 @@ export const YOUTUBE_IMG_URL = 'https://i.ytimg.com/vi'
 
 export const Language = {
   [Locale.en]: '英文',
-  [Locale.es]: '西班牙文',
   [Locale.zh]: '中文',
 }
 
@@ -68,12 +72,10 @@ export const memoryIds = [
 
 export const books = [
   {
-    date: '2015/08/10',
     imgSrc: 'https://cf.shopee.tw/file/f43d8018674932c86378140f04932014',
     buyUrl: 'https://www.books.com.tw/products/0010685025',
   },
   {
-    date: '2022/09/30',
     imgSrc: 'https://cf.shopee.tw/file/3fdffaafe2fc7218900d92b20697234b',
     buyUrl: 'https://www.books.com.tw/products/0010935968',
   },
@@ -261,12 +263,9 @@ export const histories = [
   { time: 20230119 },
 ]
 
-export const guideUrls = [
-  ytVideoUrl('cGXcxClM1FE&t=888s'),
-  ytVideoUrl('-qnwkwVZOQ8'),
-  ytVideoUrl('h_ED1q-q33U'),
-  ytVideoUrl('KGXbpBEnR_k&t=457s'),
-]
+export const yearOptions = uniq(
+  histories.map((history) => history.time.toString().substring(0, 4))
+)
 
 export const ytImgUrl = (id: string) =>
   `${YOUTUBE_IMG_URL}/${id}/maxresdefault.jpg`
@@ -276,3 +275,22 @@ export const SPOTIFY_URIS = [
   '3qmQ7MdoFfHtiolWQ8lxhe',
   '7Css4s3mQEoknooU45gmQX',
 ].map((uri) => `spotify:episode:${uri}`)
+
+export const guides = [
+  {
+    imgUrl: ListeningGuideIcon01.src,
+    id: 'cGXcxClM1FE&t=888s',
+  },
+  {
+    imgUrl: ListeningGuideIcon04.src,
+    id: '-qnwkwVZOQ8',
+  },
+  {
+    imgUrl: ListeningGuideIcon02.src,
+    id: 'h_ED1q-q33U',
+  },
+  {
+    imgUrl: ListeningGuideIcon03.src,
+    id: 'KGXbpBEnR_k&t=457s',
+  },
+]

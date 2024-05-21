@@ -8,6 +8,7 @@ import { IWrapper } from '@/type/common.type'
 
 export const Footer = ({ children }: IWrapper) => {
   const footerRef = useRef(null)
+  
   useGSAP(
     () => {
       gsap.to('p', {
@@ -21,7 +22,7 @@ export const Footer = ({ children }: IWrapper) => {
   )
 
   return (
-    <footer className='border-t relative border-gray-200 h-40 leading-loose shadow-2xl w-full -z-10 overflow-hidden' ref={footerRef}>
+    <footer className='border-t relative border-gray-200 h-40 leading-loose shadow-2xl w-screen -z-10 overflow-hidden' ref={footerRef}>
       <div className='absolute z-10 text-xl leading-loose tracking-widest w-full h-full flex justify-center items-center text-center'>
         {children}
       </div>

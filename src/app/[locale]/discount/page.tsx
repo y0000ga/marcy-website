@@ -27,10 +27,7 @@ const Page = async ({ params }: IPage) => {
       type,
       title: t(`onlineDiscountData.${index}.title`),
       service: t(`onlineDiscountData.${index}.service`),
-      offer:
-        t(`onlineDiscountData.${index}.method`) +
-        t('discountItem.offer') +
-        t(`onlineDiscountData.${index}.content`),
+      offer: t(`onlineDiscountData.${index}.method`),
       url,
       colorClass: colorClasses[i],
     }
@@ -45,10 +42,7 @@ const Page = async ({ params }: IPage) => {
         type,
         title: t(`onSiteDiscountData.${index}.title`),
         service: t(`onSiteDiscountData.${index}.service`),
-        offer:
-          t(`onSiteDiscountData.${index}.method`) +
-          t('discountItem.offer') +
-          t(`onSiteDiscountData.${index}.content`),
+        offer: t(`onSiteDiscountData.${index}.method`),
         address: t(`onSiteDiscountData.${index}.address`),
         url,
         location,

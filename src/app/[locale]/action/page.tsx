@@ -24,15 +24,13 @@ const Page = async ({ params }: IPage) => {
       <TypingHeader content={t('superstar')} />
       <YoutubeFrame id='TM_BUvazr_Y' />
       <TypingHeader content={t('divider.book') as string} />
-      {books.map(({ imgSrc, buyUrl, date }, index) => (
+      {books.map(({ imgSrc, buyUrl }, index) => (
         <Product
           key={buyUrl}
-          locale={locale}
           title={t(`dotBookData.${index}.title`)}
           description={t(`dotBookData.${index}.description`)}
           imgSrc={imgSrc}
           buyUrl={buyUrl}
-          date={date}
           type={ProductType.book}
         />
       ))}
@@ -40,7 +38,6 @@ const Page = async ({ params }: IPage) => {
       {creations.map(({ imgSrc, buyUrl }, index) => (
         <Product
           key={buyUrl}
-          locale={locale}
           title={t(`dotCreateData.${index}.title`)}
           description={t(`dotCreateData.${index}.description`)}
           imgSrc={imgSrc}

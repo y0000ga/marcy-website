@@ -12,6 +12,7 @@ import Script from 'next/script'
 import { SecretDialog } from '@/components/SecretDialog/index.client'
 import { SPOTIFY_SCRIPT_SRC } from '@/helper/constant'
 import { ScrollUpButton } from '@/components/layout/SrcollUpButton/index.client'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -55,29 +56,28 @@ const RootLayout = async ({ params, children }: Readonly<ILayout>) => {
   }
 
   return (
-    <html lang={locale}>
+    <html lang={locale} className='overflow-x-hidden max-w-screen'>
+      <Script src={SPOTIFY_SCRIPT_SRC} async></Script>
       <body
-        className={`${inter.className} w-full h-full flex flex-col items-center scroll-smooth`}
+        className={`${inter.className} max-w-screen  flex flex-col items-center scroll-smooth`}
         style={{ minWidth: '320px' }}
       >
-        <Script src={SPOTIFY_SCRIPT_SRC} async></Script>
+        <SpeedInsights />
         <Header locale={locale} />
-        <main className='w-full'>{children}</main>
-        <Link
-          className='bg-white w-24 h-24 fixed bottom-10 left-10 cursor-pointer animate-bounce z-10 rounded-full overflow-hidden'
-          href={`/${locale}/donation`}
-        >
-          <Image
-            layout='fill'
-            src={donationLogo}
-            alt='donation'
-            className='w-24 border'
-          />
-        </Link>
-        <div className='fixed right-10 bottom-10 flex flex-col items-center gap-4'>
+        <div className='fixed bottom-0 right-0 z-20 flex p-6 items-center flex-col gap-4'>
           <ScrollUpButton />
+          <Link href={`/${locale}/donation`}>
+            <Image
+              width={100}
+              height={100}
+              src={donationLogo}
+              alt='donation'
+              className='h-24 w-24 bg-white border rounded-full'
+            />
+          </Link>
           <SecretDialog translation={secretTranslation} options={options} />
         </div>
+        <main className='w-full'>{children}</main>
         <Footer>
           <>
             {t('footer.0')}

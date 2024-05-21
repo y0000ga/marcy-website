@@ -19,7 +19,7 @@ export interface IForm {
 }
 
 export interface IProps extends IWrapper {
-  indexPrefix: string
+  index: number
   topic: string
   translation: { adj1: string; adj2: string; check: string; clear: string }
 }

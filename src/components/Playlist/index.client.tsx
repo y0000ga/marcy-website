@@ -45,29 +45,33 @@ export const Playlist = ({ initialPlaylistItemData }: IProps) => {
     }
 
     const throttledLoadMoreData = throttleListener(
-      (entries: IntersectionObserverEntry[]) => {
+      (
+        entries: IntersectionObserverEntry[],
+        _observer: IntersectionObserver
+      ) => {
         if (entries[0].isIntersecting) {
           loadMoreData(playlistItemData.nextPageToken)
         }
       },
-      1000
+      200
     )
 
     const observer = new IntersectionObserver(throttledLoadMoreData, {
       threshold: 0.5,
     })
 
-    if (scrollTrigger.current) {
-      observer.observe(scrollTrigger.current)
+    const currentScrollTrigger = scrollTrigger.current
+
+    if (currentScrollTrigger) {
+      observer.observe(currentScrollTrigger)
     }
 
     return () => {
-      if (scrollTrigger.current) {
-        observer.unobserve(scrollTrigger.current)
+      if (currentScrollTrigger) {
+        observer.unobserve(currentScrollTrigger)
       }
     }
   }, [playlistItemData.nextPageToken])
-
   return (
     <>
       <section className='w-full flex flex-wrap justify-between gap-y-4'>

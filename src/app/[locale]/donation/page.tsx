@@ -30,7 +30,7 @@ const Page = async ({ params }: IPage) => {
         {Object.entries(donations).map(([key, { imgSrc, url }], index) => (
           <Donation
             key={key}
-            title={t(`donationData.${index}.title`)}
+            title={t(`donationData.${index}`)}
             url={url}
           >
             {imgSrc ? (

@@ -35,12 +35,7 @@ const Button = ({ onClick, name, type = 'button' }: IButtonProps) => (
   </button>
 )
 
-export const PsyGame = ({
-  indexPrefix,
-  translation,
-  topic,
-  children,
-}: IProps) => {
+export const PsyGame = ({ index, translation, topic, children }: IProps) => {
   const canvasRef = useRef<any>(null)
   const { register, handleSubmit } = useForm<IForm>()
   const { adj1, adj2, clear, check } = translation
@@ -66,7 +61,7 @@ export const PsyGame = ({
   return (
     <div className='my-4 relative'>
       <div className='text-xl font-medium leading-loose tracking-widest text-sky-500 text-center'>
-        {indexPrefix}
+        {index}
       </div>
       <div className='border relative'>
         <div className='absolute text-9xl  top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2'>

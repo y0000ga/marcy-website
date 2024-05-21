@@ -1,27 +1,21 @@
 import initTranslations from '@/i18n'
 import marcyLogoSrc from '/public/assets/Logo/marcyLogo.svg'
 import Image from 'next/image'
-import { HostIntro } from '@/components/about/HostIntro'
-import { range, uniq } from 'lodash'
+import { range } from 'lodash'
 import { IPage } from '@/type/common.type'
 import {
   MARCY_PLAYLIST_ID,
   YOUTUBE_PLAYLIST_URL,
+  guides,
   histories,
+  yearOptions,
+  ytVideoUrl,
 } from '@/helper/constant'
 import { History } from '@/components/History'
-import ListeningGuideIcon01 from '/public/assets/ListeningGuideIcon/ListeningGuideIcon (1).png'
-import ListeningGuideIcon02 from '/public/assets/ListeningGuideIcon/ListeningGuideIcon (2).png'
-import ListeningGuideIcon03 from '/public/assets/ListeningGuideIcon/ListeningGuideIcon (3).png'
-import ListeningGuideIcon04 from '/public/assets/ListeningGuideIcon/ListeningGuideIcon (4).png'
-import { guideUrls } from '@/helper/constant'
 import { Guide } from '@/components/Guide'
 import { Dictionary } from '@/components/Dictionary'
 import { TypingHeader } from '@/components/Typing'
-
-const years = uniq(
-  histories.map((history) => history.time.toString().substring(0, 4))
-)
+import { HostIntro } from '@/components/HostIntro'
 
 const Page = async ({ params }: IPage) => {
   const { t } = await initTranslations(params.locale)
@@ -30,37 +24,20 @@ const Page = async ({ params }: IPage) => {
     content: t(`dotHistory.${time}`),
   }))
 
+  const guideDetail = (index: number) => {
+    const prefix = 'listeningGuideData.' + index.toString()
+    return {
+      title: t(`${prefix}.title`),
+      description: t(`${prefix}.description`),
+      button: t(`${prefix}.button`),
+    }
+  }
 
-  const guides = [
-    {
-      title: t('listeningGuideData.0.title'),
-      description: t('listeningGuideData.0.description'),
-      imgUrl: ListeningGuideIcon01.src,
-      button: t('listeningGuideData.0.button'),
-      videoUrl: guideUrls[0],
-    },
-    {
-      title: t('listeningGuideData.1.title'),
-      description: t('listeningGuideData.1.description'),
-      imgUrl: ListeningGuideIcon04.src,
-      button: t('listeningGuideData.1.button'),
-      videoUrl: guideUrls[1],
-    },
-    {
-      title: t('listeningGuideData.2.title'),
-      description: t('listeningGuideData.2.description'),
-      imgUrl: ListeningGuideIcon02.src,
-      button: t('listeningGuideData.2.button'),
-      videoUrl: guideUrls[2],
-    },
-    {
-      title: t('listeningGuideData.3.title'),
-      description: t('listeningGuideData.3.description'),
-      imgUrl: ListeningGuideIcon03.src,
-      button: t('listeningGuideData.3.button'),
-      videoUrl: guideUrls[3],
-    },
-  ]
+  const guideDetails = guides.map(({ imgUrl, id }, index) => ({
+    imgUrl,
+    videoUrl: ytVideoUrl(id),
+    ...guideDetail(index),
+  }))
 
   const dictionaries = range(1, 10).map((num) => ({
     title: t(`dotDictionary0${num}.title`),
@@ -90,9 +67,6 @@ const Page = async ({ params }: IPage) => {
             width={500}
             className='my-4 rounded-lg'
           />
-          <div className='text-center text-neutral-400 mb-4'>
-            {t('figureDescription.0')}
-          </div>
         </div>
         <div>
           {t('pageOpeningData.about.0')}
@@ -102,20 +76,18 @@ const Page = async ({ params }: IPage) => {
       <TypingHeader content={t('divider.host')} />
       <HostIntro
         name={t('hostIntroData.0.name')}
-        description={t('figureDescription.1')}
         imgSrc='https://i.imgur.com/liu3NdI.jpeg'
         contents={range(8).map((num) => t(`hostIntroData.0.intro.${num}`))}
       />
       <HostIntro
         name={t('hostIntroData.1.name')}
-        description={t('figureDescription.2')}
         imgSrc='https://media.zenfs.com/zh-tw/news_tvbs_com_tw_938/d811d1a0d2fcfd2860d01d373372e01d'
         contents={range(5).map((num) => t(`hostIntroData.1.intro.${num}`))}
       />
       <TypingHeader content={t('divider.history')} />
-      <History dotHistory={dotHistory} yearOptions={years} />
+      <History dotHistory={dotHistory} yearOptions={yearOptions} />
       <TypingHeader content={t('divider.listeningGuide')} />
-      <Guide guides={guides} />
+      <Guide guides={guideDetails} />
       <a
         className='relative border border-slate-300 w-fit p-4 rounded-md m-4 cursor-pointer hover:bg-red-500 hover:text-white'
         href={`${YOUTUBE_PLAYLIST_URL}?list=${MARCY_PLAYLIST_ID}`}

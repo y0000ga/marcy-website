@@ -11,7 +11,7 @@ const HistoryItem = ({ time, content }: IItemProps) => {
     '/' +
     time.toString().substring(6, 8)
   return (
-    <li className='w-full my-8 p-4 animate-slowShown border rounded-md shadow-md'>
+    <li className='w-full my-8 p-4 animate-slow-shown border rounded-md shadow-md'>
       <span className='text-sky-500'>{formattedTime}</span>
       <br />
       {content}。
