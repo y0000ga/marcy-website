@@ -13,6 +13,7 @@ import { SecretDialog } from '@/components/SecretDialog/index.client'
 import { SPOTIFY_SCRIPT_SRC } from '@/helper/constant'
 import { ScrollUpButton } from '@/components/layout/SrcollUpButton/index.client'
 import { SpeedInsights } from '@vercel/speed-insights/next'
+import { Analytics } from '@vercel/analytics/react'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -63,6 +64,7 @@ const RootLayout = async ({ params, children }: Readonly<ILayout>) => {
         style={{ minWidth: '320px' }}
       >
         <SpeedInsights />
+        <Analytics />
         <Header locale={locale} />
         <div className='fixed bottom-0 right-0 z-20 flex p-6 items-center flex-col gap-4'>
           <ScrollUpButton />

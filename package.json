@@ -12,6 +12,7 @@
     "@gsap/react": "^2.1.1",
     "@headlessui/react": "^2.0.3",
     "@react-google-maps/api": "^2.19.3",
+    "@vercel/analytics": "^1.2.2",
     "@vercel/speed-insights": "^1.0.10",
     "axios": "^1.6.8",
     "emoji-picker-react": "^4.9.2",
