@@ -5,6 +5,7 @@ import axios from 'axios'
 import { useEffect, useRef, useState } from 'react'
 import { Loading } from '../Loading'
 import { MARCY_PLAYLIST_ID, YOUTUBE_EMBED_URL } from '@/helper/constant'
+import { throttleListener } from '@/util/throttleListener'
 
 interface IProps {
   initialPlaylistItemData: IPlaylistItemReq
@@ -43,14 +44,18 @@ export const Playlist = ({ initialPlaylistItemData }: IProps) => {
       return
     }
 
-    const observer = new IntersectionObserver(
-      (entries) => {
+    const throttledLoadMoreData = throttleListener(
+      (entries: IntersectionObserverEntry[]) => {
         if (entries[0].isIntersecting) {
           loadMoreData(playlistItemData.nextPageToken)
         }
       },
-      { threshold: 0.5 }
+      1000
     )
+
+    const observer = new IntersectionObserver(throttledLoadMoreData, {
+      threshold: 0.5,
+    })
 
     if (scrollTrigger.current) {
       observer.observe(scrollTrigger.current)

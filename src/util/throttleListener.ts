@@ -1,12 +1,11 @@
-export const throttleListener = (
-  callback: (...args: unknown[]) => void,
-  delay?: number
-): EventListener => {
+export const throttleListener = <T extends (...args: any[]) => void>(
+  callback: T,
+  delay = 200
+): ((...args: Parameters<T>) => void) => {
   let lastInvokeTime = Date.now()
-  const _delay = delay || 200
-  return (...args: unknown[]): void => {
+  return (...args: Parameters<T>) => {
     const now = Date.now()
-    if (now - _delay <= lastInvokeTime) {
+    if (now - lastInvokeTime <= delay) {
       return
     }
     lastInvokeTime = now
