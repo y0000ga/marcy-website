@@ -7,11 +7,13 @@ import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 
+export interface ISlide { title: string; imgSrc: string; externalUrl?: string }
+
 interface IProps {
-  slides: { title?: string; imgSrc: string; externalUrl?: string }[]
+  slides: ISlide[]
 }
 
-export const Marquee = ({ slides }: IProps) => (
+export const Carousel = ({ slides }: IProps) => (
   <Swiper
     navigation
     pagination={{ type: 'fraction' }}
