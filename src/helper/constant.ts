@@ -43,7 +43,7 @@ export const SPOTIFY_SCRIPT_SRC = 'https://open.spotify.com/embed/iframe-api/v1'
 export const YOUTUBE_IMG_URL = 'https://i.ytimg.com/vi'
 
 export const Language = {
-  [Locale.en]: '英文',
+  [Locale.en]: 'English',
   [Locale.zh]: '中文',
 }
 

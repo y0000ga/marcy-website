@@ -7,27 +7,20 @@ import { useParams, usePathname } from 'next/navigation'
 import { ILngLink, INavLink } from './index.type'
 import { useMemo } from 'react'
 
-const createHref = (
-  pathname: string,
-  locale: Locale,
-  currentLocale: Locale
-) => {
-  const isHome = Object.keys(Language)
-    .map((item) => (item === Language.zh ? '/' : `/${item}`))
-    .includes(pathname)
-
-  return isHome
-    ? `/${locale}`
-    : `/${locale}/${pathname
-        .split('/')
-        .slice(currentLocale === Locale.zh ? 1 : 2)
-        .join('/')}`
-}
-
 export const LngLink = ({ children, locale }: ILngLink) => {
   const pathname = usePathname()
   const params = useParams()
-  const lngHref = createHref(pathname, locale, params.locale as Locale)
+  const lngHref = useMemo(() => {
+    // 目前是中文的中文語系
+    if (locale === Locale.zh && params.locale === Locale.zh) {
+      return `/${locale}${pathname}`
+    }
+
+    return `/${locale}/${pathname
+      .split('/')
+      .slice(params.locale === Locale.zh ? 1 : 2)
+      .join('/')}`
+  }, [locale, params.locale, pathname])
 
   return (
     <Link
