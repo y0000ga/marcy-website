@@ -60,8 +60,7 @@ const RootLayout = async ({ params, children }: Readonly<ILayout>) => {
     <html lang={locale} className='overflow-x-hidden max-w-screen'>
       <Script src={SPOTIFY_SCRIPT_SRC} async></Script>
       <body
-        className={`${inter.className} max-w-screen  flex flex-col items-center scroll-smooth`}
-        style={{ minWidth: '320px' }}
+        className={`${inter.className} max-w-screen  flex flex-col items-center scroll-smooth min-w-[320px]`}
       >
         <SpeedInsights />
         <Analytics />

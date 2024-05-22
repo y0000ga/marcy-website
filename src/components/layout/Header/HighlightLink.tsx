@@ -5,38 +5,36 @@ import { Locale } from '@/type/common.type'
 import Link from 'next/link'
 import { useParams, usePathname } from 'next/navigation'
 import { ILngLink, INavLink } from './index.type'
+import { useMemo } from 'react'
 
 const createHref = (
   pathname: string,
   locale: Locale,
   currentLocale: Locale
 ) => {
-  if (
-    Object.keys(Language)
-      .map((item) => (item === Language.zh ? '/' : `/${item}`))
-      .includes(pathname)
-  ) {
-    return `/${locale}`
-  }
-  return `/${locale}/${pathname
-    .split('/')
-    .slice(currentLocale === Locale.zh ? 1 : 2)
-    .join('/')}`
+  const isHome = Object.keys(Language)
+    .map((item) => (item === Language.zh ? '/' : `/${item}`))
+    .includes(pathname)
+
+  return isHome
+    ? `/${locale}`
+    : `/${locale}/${pathname
+        .split('/')
+        .slice(currentLocale === Locale.zh ? 1 : 2)
+        .join('/')}`
 }
 
 export const LngLink = ({ children, locale }: ILngLink) => {
   const pathname = usePathname()
   const params = useParams()
   const lngHref = createHref(pathname, locale, params.locale as Locale)
+
   return (
     <Link
       href={lngHref}
       className={`hover:text-blue-500 ${
         params.locale === locale && 'text-blue-500'
       } mx-2`}
-      onClick={() => {
-        fetch(lngHref)
-      }}
     >
       {children}
     </Link>
@@ -46,9 +44,14 @@ export const LngLink = ({ children, locale }: ILngLink) => {
 export const NavLink = ({ children, pathname }: INavLink) => {
   const currentPathname = usePathname()
   const { locale } = useParams()
-  const href = `/${locale}${pathname}`
-  const isCurrent =
-    href === `${locale === Locale.zh ? `/${Locale.zh}` : ''}${currentPathname}`
+  const href = useMemo(() => `/${locale}${pathname}`, [locale, pathname])
+  const isCurrent = useMemo(
+    () =>
+      href ===
+      `${locale === Locale.zh ? `/${Locale.zh}` : ''}${currentPathname}`,
+    [currentPathname, href, locale]
+  )
+
   return (
     <Link
       href={href}

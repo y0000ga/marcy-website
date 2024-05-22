@@ -1,5 +1,4 @@
-import { ILocale, IWrapper, Locale } from '@/type/common.type'
-import { ReactNode } from 'react'
+import { ILocale, IWrapper } from '@/type/common.type'
 
 export enum Position {
   left,
