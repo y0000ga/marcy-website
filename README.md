@@ -48,7 +48,7 @@
 
 ### 青點優惠庫
 
-#### 📜 串接 GoogleMap API，在 GoogleMap 上取得特定商店資訊
+#### 📜 串接 Map Javascript API，在 GoogleMap 上取得特定商店資訊
 
 <img src='https://github.com/y0000ga/marcy-website/assets/111579529/1deb32bb-4d20-44be-8736-22f56f75f968' width='50%' />
 
