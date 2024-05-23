@@ -43,7 +43,7 @@ export const TypingWord = ({ title }: IProps) => {
   }, [title])
   return (
     <div className='flex'>
-      <div ref={typingRef}></div>
+      <div ref={typingRef} />
       <div ref={cursorRef}>_</div>
     </div>
   )

@@ -34,8 +34,8 @@ export const Channel = async ({ id }: IProps) => {
       target='_blank'
     >
       <div className='flex justify-center items-center'>
-        <span className='absolute w-24 h-24 bg-red-200 rounded-full animate-ping'></span>
-        <span className='absolute w-20 h-20 bg-red-300 rounded-full animate-ping'></span>
+        <span className='absolute w-24 h-24 bg-red-200 rounded-full animate-ping' />
+        <span className='absolute w-20 h-20 bg-red-300 rounded-full animate-ping' />
         <Image
           src={imgSrc}
           alt='icon'
