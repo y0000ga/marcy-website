@@ -7,7 +7,7 @@ import { range } from 'lodash'
 import axios from 'axios'
 import InfiniteScroll from '@/components/InfiniteScroll'
 import { Loading } from '@/components/Loading'
-import { Carousel, ISlide } from '@/components/Carousel/index.client'
+import { Carousel } from '@/components/Carousel/index.client'
 import { TypingHeader } from '@/components/Typing'
 import { Marquee } from '@/components/Marquee'
 
@@ -22,16 +22,14 @@ const Page = async ({ params }: IPage) => {
     })
   )
 
-  let slides: ISlide[] = []
+  const responses = await Promise.all(requests)
 
-  await Promise.all(requests).then((reses) => {
-    slides = reses.map((res, index) => ({
-      title: res.data.data.title,
-      id: recommendVideoIds[index],
-      imgSrc: ytImgUrl(recommendVideoIds[index]),
-      externalUrl: ytVideoUrl(recommendVideoIds[index]),
-    }))
-  })
+  const slides = responses.map((res, index) => ({
+    title: res.data.data.title,
+    id: recommendVideoIds[index],
+    imgSrc: ytImgUrl(recommendVideoIds[index]),
+    externalUrl: ytVideoUrl(recommendVideoIds[index]),
+  }))
 
   const { data: WeatherData } = await axios.request({
     method: 'GET',
