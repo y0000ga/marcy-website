@@ -1,40 +1,21 @@
 'use client'
 
-import { Language } from '@/helper/constant'
-import { Locale } from '@/type/common.type'
 import Link from 'next/link'
 import { useParams, usePathname } from 'next/navigation'
 import { ILngLink, INavLink } from './index.type'
 import { useMemo } from 'react'
+import i18nConfig from '@/i18n/config'
 
 export const LngLink = ({ children, locale }: ILngLink) => {
   const pathname = usePathname()
   const params = useParams()
-  const lngHref = useMemo(() => {
-    /**
-     * 中文選項，目前在中文頁面
-     * 英文選項，目前在英文頁面
-     */
-    if (params.locale === locale) {
-      return pathname
-    }
-
-    /**
-     * 中文選項，目前在英文頁面
-     */
-    if (params.locale === Locale.en && locale === Locale.zh) {
-      return pathname.replace(Locale.en, Locale.zh)
-    }
-
-    /**
-     * 英文選項，目前在中文頁面
-     */
-    if (params.locale === Locale.zh && locale === Locale.en) {
-      return `/${locale}${pathname}`
-    }
-
-    return `/${Locale.zh}`
-  }, [locale, params.locale, pathname])
+  const lngHref = useMemo(
+    () =>
+      params.locale === i18nConfig.defaultLocale
+        ? `/${locale}${pathname}`
+        : pathname.replace(params.locale as string, locale),
+    [locale, params, pathname]
+  )
 
   return (
     <Link
@@ -52,7 +33,8 @@ export const NavLink = ({ children, pathname }: INavLink) => {
   const currentPathname = usePathname()
   const { locale } = useParams()
   const href = useMemo(
-    () => `${locale === Locale.zh ? '' : `/${Locale.en}`}${pathname}`,
+    () =>
+      locale === i18nConfig.defaultLocale ? pathname : `/${locale}${pathname}`,
     [locale, pathname]
   )
 
