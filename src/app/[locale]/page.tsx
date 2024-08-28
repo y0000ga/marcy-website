@@ -22,14 +22,16 @@ const Page = async ({ params }: IPage) => {
     })
   )
 
-  const responses = await Promise.all(requests)
+  const responses = await Promise.allSettled(requests)
 
-  const slides = responses.map((res, index) => ({
-    title: res.data.data.title,
-    id: recommendVideoIds[index],
-    imgSrc: ytImgUrl(recommendVideoIds[index]),
-    externalUrl: ytVideoUrl(recommendVideoIds[index]),
-  }))
+  const slides = responses
+    .filter((res) => res.status === 'fulfilled')
+    .map(({ value }, index) => ({
+      title: value.data.data.title,
+      id: recommendVideoIds[index],
+      imgSrc: ytImgUrl(recommendVideoIds[index]),
+      externalUrl: ytVideoUrl(recommendVideoIds[index]),
+    }))
 
   const { data: WeatherData } = await axios.request({
     method: 'GET',
