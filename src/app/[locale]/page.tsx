@@ -4,7 +4,7 @@ import { recommendVideoIds, ytImgUrl, ytVideoUrl } from '@/helper/constant'
 import initTranslations from '@/i18n'
 import { IPage } from '@/type/common.type'
 import { range } from 'lodash'
-import axios from 'axios'
+import axios, { AxiosResponse } from 'axios'
 import InfiniteScroll from '@/components/InfiniteScroll'
 import { Loading } from '@/components/Loading'
 import { Carousel } from '@/components/Carousel/index.client'
@@ -26,12 +26,17 @@ const Page = async ({ params }: IPage) => {
 
   const slides = responses
     .filter((res) => res.status === 'fulfilled')
-    .map(({ value }, index) => ({
-      title: value.data.data.title,
-      id: recommendVideoIds[index],
-      imgSrc: ytImgUrl(recommendVideoIds[index]),
-      externalUrl: ytVideoUrl(recommendVideoIds[index]),
-    }))
+    .map((res, index) => {
+      const fulfilledRes = res as PromiseFulfilledResult<
+        AxiosResponse<{ data: { title: string } }>
+      >
+      return {
+        title: fulfilledRes.value.data.data.title,
+        id: recommendVideoIds[index],
+        imgSrc: ytImgUrl(recommendVideoIds[index]),
+        externalUrl: ytVideoUrl(recommendVideoIds[index]),
+      }
+    })
 
   const { data: WeatherData } = await axios.request({
     method: 'GET',
