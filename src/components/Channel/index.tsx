@@ -1,3 +1,4 @@
+import React from 'react'
 import Image from 'next/image'
 import { SocialState } from '../SocialState'
 import axios from 'axios'
@@ -11,19 +12,17 @@ interface IProps {
 }
 
 export const Channel = async ({ id }: IProps) => {
-  const { data: channelData } = await axios.request({
+  const result = await axios.request({
     method: 'GET',
     url: `${process.env.NEXT_PUBLIC_MARCY_API_URL}/channel`,
     params: { channelId: id },
   })
 
-  const finalData = channelData.data as IChannel
-
-  if (!finalData) {
+  if (!result?.data?.data) {
     return <Loading />
   }
 
-  const { imgSrc, title, statistics } = finalData
+  const { imgSrc, title, statistics } = result.data.data as IChannel
 
   const { videoCount, subscriberCount, viewCount } = statistics
 

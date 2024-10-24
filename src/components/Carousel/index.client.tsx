@@ -1,5 +1,6 @@
 'use client'
 
+import React from 'react';
 import Image from 'next/image'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation, Pagination } from 'swiper/modules'
@@ -7,7 +8,11 @@ import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 
-export interface ISlide { title: string; imgSrc: string; externalUrl?: string }
+export interface ISlide {
+  title: string
+  imgSrc: string
+  externalUrl?: string
+}
 
 interface IProps {
   slides: ISlide[]
@@ -34,7 +39,7 @@ export const Carousel = ({ slides }: IProps) => (
         )}
         <Image
           src={imgSrc}
-          alt={externalUrl || imgSrc}
+          alt={title}
           layout='fill'
           className='w-full -z-50 cursor-pointer opacity-40 transition-opacity'
           onClick={() => {

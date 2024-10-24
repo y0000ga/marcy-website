@@ -5,19 +5,20 @@ import initTranslations from '@/i18n'
 import { IPage } from '@/type/common.type'
 import { range } from 'lodash'
 
+const colorClasses = [
+  'bg-red-100 border-red-500',
+  'bg-orange-100 border-orange-500',
+  'bg-yellow-100 border-yellow-500',
+  'bg-green-100 border-green-500',
+  'bg-blue-100 border-blue-500',
+  'bg-cyan-100 border-cyan-500',
+  'bg-purple-100 border-purple-500',
+]
+
 const Page = async ({ params }: IPage) => {
   const { locale } = params
   const { t } = await initTranslations(locale)
   const types = range(0, 7).map((num) => t(`discountTypeData.${num}`))
-  const colorClasses = [
-    'bg-red-100 border-red-500',
-    'bg-orange-100 border-orange-500',
-    'bg-yellow-100 border-yellow-500',
-    'bg-green-100 border-green-500',
-    'bg-blue-100 border-blue-500',
-    'bg-cyan-100 border-cyan-500',
-    'bg-purple-100 border-purple-500',
-  ]
 
   const onlineDiscounts = discountList.online.map(({ url }, index) => {
     const type = t(`onlineDiscountData.${index}.type`)

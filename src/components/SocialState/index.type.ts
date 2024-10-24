@@ -7,7 +7,7 @@ export enum SocialType {
 
 export interface IProps {
   type: SocialType
-  viewCount: string
+  viewCount?: string
   likeCount?: string
   commentCount?: string
   subscriberCount?: string

@@ -1,7 +1,9 @@
+import React from 'react'
 import { AiOutlineEye, AiOutlineLike, AiOutlineComment } from 'react-icons/ai'
 import { BsPerson, BsCameraVideo } from 'react-icons/bs'
 import { IItemProps, IProps, SocialType } from './index.type'
 import { IWrapper } from '@/type/common.type'
+import { iconTestid } from '@/__mock__/testid'
 
 const Container = ({ children }: IWrapper) => (
   <div className='flex text-md'>{children}</div>
@@ -21,44 +23,30 @@ export const SocialState = ({
   subscriberCount,
   videoCount,
   type,
-}: IProps) => {
-  if (type === SocialType.channel) {
-    return (
-      <Container>
-        <Item content={viewCount}>
-          <AiOutlineEye />
-        </Item>
+}: IProps) => (
+  <Container>
+    <Item content={viewCount}>
+      <AiOutlineEye data-testid={iconTestid.AiOutlineEye} />
+    </Item>
+    {type === SocialType.channel && (
+      <>
         <Item content={subscriberCount}>
-          <BsPerson />
+          <BsPerson data-testid={iconTestid.BsPerson} />
         </Item>
         <Item content={videoCount}>
-          <BsCameraVideo />
+          <BsCameraVideo data-testid={iconTestid.BsCameraVideo} />
         </Item>
-      </Container>
-    )
-  }
-
-  if (type === SocialType.video) {
-    return (
-      <Container>
-        <Item content={viewCount}>
-          <AiOutlineEye />
-        </Item>
+      </>
+    )}
+    {type === SocialType.video && (
+      <>
         <Item content={likeCount}>
-          <AiOutlineLike />
+          <AiOutlineLike data-testid={iconTestid.AiOutlineLike} />
         </Item>
         <Item content={commentCount}>
-          <AiOutlineComment />
+          <AiOutlineComment data-testid={iconTestid.AiOutlineComment} />
         </Item>
-      </Container>
-    )
-  }
-
-  return (
-    <Container>
-      <Item content={viewCount}>
-        <AiOutlineEye />
-      </Item>
-    </Container>
-  )
-}
+      </>
+    )}
+  </Container>
+)
